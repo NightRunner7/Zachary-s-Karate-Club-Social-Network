@@ -1,0 +1,75 @@
+Task 1:
+Number node: 0, faction (my results): Mr. Hi, club after fission (real results): Mr. Hi
+Number node: 1, faction (my results): Mr. Hi, club after fission (real results): Mr. Hi
+Number node: 2, faction (my results): Officer, club after fission (real results): Mr. Hi	<< !!!
+Number node: 3, faction (my results): Mr. Hi, club after fission (real results): Mr. Hi
+Number node: 4, faction (my results): Mr. Hi, club after fission (real results): Mr. Hi
+Number node: 5, faction (my results): Mr. Hi, club after fission (real results): Mr. Hi
+Number node: 6, faction (my results): Mr. Hi, club after fission (real results): Mr. Hi
+Number node: 7, faction (my results): Mr. Hi, club after fission (real results): Mr. Hi
+Number node: 8, faction (my results): Officer, club after fission (real results): Officer
+Number node: 9, faction (my results): Officer, club after fission (real results): Officer
+Number node: 10, faction (my results): Mr. Hi, club after fission (real results): Mr. Hi
+Number node: 11, faction (my results): Mr. Hi, club after fission (real results): Mr. Hi
+Number node: 12, faction (my results): Mr. Hi, club after fission (real results): Mr. Hi
+Number node: 13, faction (my results): Mr. Hi, club after fission (real results): Mr. Hi
+Number node: 14, faction (my results): Officer, club after fission (real results): Officer
+Number node: 15, faction (my results): Officer, club after fission (real results): Officer
+Number node: 16, faction (my results): Mr. Hi, club after fission (real results): Mr. Hi
+Number node: 17, faction (my results): Mr. Hi, club after fission (real results): Mr. Hi
+Number node: 18, faction (my results): Officer, club after fission (real results): Officer
+Number node: 19, faction (my results): Mr. Hi, club after fission (real results): Mr. Hi
+Number node: 20, faction (my results): Officer, club after fission (real results): Officer
+Number node: 21, faction (my results): Mr. Hi, club after fission (real results): Mr. Hi
+Number node: 22, faction (my results): Officer, club after fission (real results): Officer
+Number node: 23, faction (my results): Officer, club after fission (real results): Officer
+Number node: 24, faction (my results): Officer, club after fission (real results): Officer
+Number node: 25, faction (my results): Officer, club after fission (real results): Officer
+Number node: 26, faction (my results): Officer, club after fission (real results): Officer
+Number node: 27, faction (my results): Officer, club after fission (real results): Officer
+Number node: 28, faction (my results): Officer, club after fission (real results): Officer
+Number node: 29, faction (my results): Officer, club after fission (real results): Officer
+Number node: 30, faction (my results): Officer, club after fission (real results): Officer
+Number node: 31, faction (my results): Officer, club after fission (real results): Officer
+Number node: 32, faction (my results): Officer, club after fission (real results): Officer
+Number node: 33, faction (my results): Officer, club after fission (real results): Officer
+-----------------------------------------------------------------------------------------------
+Task 2:
+Node: `2` survive the longest as the bridge between the two groups.
+-----------------------------------------------------------------------------------------------
+Task 3(Extra):
+Number node: 0, faction (my results): Mr. Hi, club after fission (real results): Mr. Hi
+Number node: 1, faction (my results): Mr. Hi, club after fission (real results): Mr. Hi
+Number node: 2, faction (my results): Mr. Hi, club after fission (real results): Mr. Hi
+Number node: 3, faction (my results): Mr. Hi, club after fission (real results): Mr. Hi
+Number node: 4, faction (my results): Mr. Hi, club after fission (real results): Mr. Hi
+Number node: 5, faction (my results): Mr. Hi, club after fission (real results): Mr. Hi
+Number node: 6, faction (my results): Mr. Hi, club after fission (real results): Mr. Hi
+Number node: 7, faction (my results): Mr. Hi, club after fission (real results): Mr. Hi
+Number node: 8, faction (my results): Officer, club after fission (real results): Officer
+Number node: 9, faction (my results): Officer, club after fission (real results): Officer
+Number node: 10, faction (my results): Mr. Hi, club after fission (real results): Mr. Hi
+Number node: 11, faction (my results): Mr. Hi, club after fission (real results): Mr. Hi
+Number node: 12, faction (my results): Mr. Hi, club after fission (real results): Mr. Hi
+Number node: 13, faction (my results): Mr. Hi, club after fission (real results): Mr. Hi
+Number node: 14, faction (my results): Officer, club after fission (real results): Officer
+Number node: 15, faction (my results): Officer, club after fission (real results): Officer
+Number node: 16, faction (my results): Mr. Hi, club after fission (real results): Mr. Hi
+Number node: 17, faction (my results): Mr. Hi, club after fission (real results): Mr. Hi
+Number node: 18, faction (my results): Officer, club after fission (real results): Officer
+Number node: 19, faction (my results): Mr. Hi, club after fission (real results): Mr. Hi
+Number node: 20, faction (my results): Officer, club after fission (real results): Officer
+Number node: 21, faction (my results): Mr. Hi, club after fission (real results): Mr. Hi
+Number node: 22, faction (my results): Officer, club after fission (real results): Officer
+Number node: 23, faction (my results): Officer, club after fission (real results): Officer
+Number node: 24, faction (my results): Officer, club after fission (real results): Officer
+Number node: 25, faction (my results): Officer, club after fission (real results): Officer
+Number node: 26, faction (my results): Officer, club after fission (real results): Officer
+Number node: 27, faction (my results): Officer, club after fission (real results): Officer
+Number node: 28, faction (my results): Officer, club after fission (real results): Officer
+Number node: 29, faction (my results): Officer, club after fission (real results): Officer
+Number node: 30, faction (my results): Officer, club after fission (real results): Officer
+Number node: 31, faction (my results): Officer, club after fission (real results): Officer
+Number node: 32, faction (my results): Officer, club after fission (real results): Officer
+Number node: 33, faction (my results): Officer, club after fission (real results): Officer
+
