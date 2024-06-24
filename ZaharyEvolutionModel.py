@@ -14,6 +14,7 @@ import networkx as nx
 import numpy as np
 
 
+# ######################################## BASIC MODEL ############################################################### #
 class ZaharyEvolutionModel:
     def __init__(self, D=5, beta=10, dt=0.01):
         """
@@ -156,4 +157,114 @@ class ZaharyEvolutionModel:
 
     def return_network_evolution_state(self):
         """Return dictionary contains evolution of state of the nodes."""
+        return self.networkState
+
+
+# ######################################## MATRIX MODEL ############################################################## #
+class ZaharyEvolutionModelMatrix:
+    def __init__(self, D=5, beta=10, dt=0.01):
+        self.D = D
+        self.beta = beta
+        self.dt = dt
+
+        # Load the Karate Club graph
+        self.network = nx.karate_club_graph()
+        self.network.nodes[8]['club'] = 'Officer'  # I find a mistake in the `networkx` <<< !!!
+
+        # Initialize node states
+        self.s_vec = np.array([1 if node == 0 else 0 if node == 33 else 0.5 for node in self.network.nodes])
+
+        # Initialize adjacency and weight matrices
+        self.adj_mat = nx.to_numpy_array(self.network)
+        self.w_mat = np.where(self.adj_mat > 0, 0.5, 0)  # Initial weights set to 0.5 where there is an edge
+
+        # Save the initial state
+        self.networkState = {node: np.array([state]) for node, state in enumerate(self.s_vec)}
+
+    @staticmethod
+    def f(s_vec):
+        """
+        Compute the interaction function for all node pairs.
+
+        :param s_vec: State vector
+        :return: Interaction matrix
+        """
+        diff = np.abs(s_vec[:, np.newaxis] - s_vec)
+        return (diff - 0.25) ** 3
+
+    # ----------------------------------------- UPDATE FUNCTION ------------------------------------------------------ #
+    def update_weights(self):
+        """Update the weights of the edges based on the states of the connected nodes."""
+        interaction = self.f(self.s_vec)
+        dw_dt = - self.beta * self.w_mat * (1 - self.w_mat) * interaction
+        self.w_mat += self.dt * dw_dt
+
+    def update_states(self):
+        """Update the states of the nodes based on the weights of the connecting edges."""
+        # Ensure that Mr. Hi and John A. retain their initial states
+        self.s_vec[0] = 1
+        self.s_vec[33] = 0
+
+        # Compute the state changes
+        delta_s_vec = self.D * (np.dot(self.w_mat, self.s_vec) - self.s_vec * np.sum(self.w_mat, axis=1))
+
+        # Update states (skip Mr. Hi and John A.)
+        self.s_vec[1:33] += self.dt * delta_s_vec[1:33]
+
+        # Save the updated states
+        for node in self.network.nodes:
+            self.networkState[node] = np.append(self.networkState[node], self.s_vec[node])
+
+    # ----------------------------------------- EXTRA SETTINGS ------------------------------------------------------- #
+    def save_network_state(self):
+        """Save the current state of each node in the network to the networkState dictionary."""
+        for node, state in enumerate(self.s_vec):
+            self.networkState[node] = np.append(self.networkState[node], state)
+
+    def change_init_network_publication(self):
+        """
+        Initialize the network based on the publication:
+        "An Information Flow Model for Conflict and Fission in Small Groups".
+
+        - Mr. Hi (node 0) is initialized with a state of 1.
+        - John A. (node 33) is initialized with a state of 0.
+        - All other nodes are initialized with a state of 0.5.
+        - Edge weights are scaled down by a factor of 10.
+
+        This function sets up the current network and saves the initial state.
+        """
+        # Load the Karate Club graph
+        self.network = nx.karate_club_graph()
+        self.network.nodes[8]['club'] = 'Officer'  # I find a mistake in the `networkx` <<< !!!
+
+        # Initialize node states
+        self.s_vec = np.array([1 if node == 0 else 0 if node == 33 else 0.5 for node in self.network.nodes])
+
+        # Initialize adjacency and weight matrices
+        self.adj_mat = nx.to_numpy_array(self.network)
+        self.w_mat = self.adj_mat / 10  # Edge weights are scaled down by a factor of 10
+
+        # Save the initial state
+        self.networkState = {node: np.array([state]) for node, state in enumerate(self.s_vec)}
+
+    # ----------------------------------------- DEAL WITH EVOLUTION -------------------------------------------------- #
+    def evolve(self):
+        """Perform one evolution step: update weights and then update states."""
+        self.update_weights()
+        self.update_states()
+
+    # ----------------------------------------- RETURN --------------------------------------------------------------- #
+    def return_network(self):
+        """Update Return the current network."""
+        for i in range(len(self.w_mat)):
+            # add attribute 'state'
+            self.network.nodes[i]['state'] = self.s_vec[i]
+            for j in range(len(self.w_mat[i])):
+                if self.w_mat[i][j] != 0:
+                    # add attribute 'weights'
+                    self.network[i][j]['weight'] = self.w_mat[i][j]
+        return self.network
+
+    def return_network_evolution_state(self):
+        """Return dictionary containing the evolution of the states of the nodes."""
         return self.networkState
