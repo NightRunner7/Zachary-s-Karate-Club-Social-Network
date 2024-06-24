@@ -7,7 +7,12 @@ This repository contains Python code for simulating the evolution of the Zachary
 - Visualization: Plot and save visual representations of the network at intervals and create GIFs to visualize its evolution.
 - Node State Analysis: Plot the evolution of individual node states over time and compare simulated faction outcomes with real-world results.
 - Publication-based Initialization: Initialize the network based on the publication "An Information Flow Model for Conflict and Fission in Small Groups" for comparative analysis.
-  
+
+## Key Components:
+
+- ZaharyEvolutionModel Class: Implements the Zachary Evolution Model with methods for updating weights, states, and managing network evolution.
+- Auxiliary Functions: Includes functions for directory management, GIF creation, and plotting node state evolution.
+
 ## Getting Started
 ### Installation
 Clone the repository:
