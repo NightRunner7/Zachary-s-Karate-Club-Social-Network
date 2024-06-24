@@ -31,20 +31,26 @@ Last Modified:
 """
 # --- IMPORT FROM FILES
 import auxiliaryFunctions as auxFun
-from ZaharyEvolutionModel import ZaharyEvolutionModel
+from ZaharyEvolutionModel import ZaharyEvolutionModel, ZaharyEvolutionModelMatrix
 
 # --- SETTINGS OF SIMULATION
 makePlot = False
+changeInitNetwork = False
 timeStepsDraw = 10
 timeSteps = 5500
 val_D = 5
 val_beta = 10
 val_dt = 0.01
-run = 3
+run = 1
 
 # Make directory
-output_main = f"./D-{val_D:.1f}-beta-{val_beta:.1f}-dt-{val_dt}-Run-{run}"
-# output_main = f"./ExtraTask-D-{val_D:.1f}-beta-{val_beta:.1f}-dt-{val_dt}-Run-{run}"  # change initial network << !!!
+if changeInitNetwork:
+    # output_main = f"./ExtraTask-D-{val_D:.1f}-beta-{val_beta:.1f}-dt-{val_dt}-Run-{run}"
+    output_main = f"./MatrixExtraTask-D-{val_D:.1f}-beta-{val_beta:.1f}-dt-{val_dt}-Run-{run}"
+else:
+    # output_main = f"./D-{val_D:.1f}-beta-{val_beta:.1f}-dt-{val_dt}-Run-{run}"
+    output_main = f"./MatrixD-{val_D:.1f}-beta-{val_beta:.1f}-dt-{val_dt}-Run-{run}"
+
 output_evolutionNodes = f"{output_main}/evolutionNodes"
 
 if makePlot:
@@ -52,8 +58,12 @@ if makePlot:
     auxFun.make_directory(output_evolutionNodes)
 
 # Create network
-NetworkModel = ZaharyEvolutionModel()
-# NetworkModel.change_init_network_publication()  # change initial network << !!!
+# NetworkModel = ZaharyEvolutionModel(D=val_D, beta=val_beta, dt=val_dt)
+NetworkModel = ZaharyEvolutionModelMatrix(D=val_D, beta=val_beta, dt=val_dt)
+
+# change or not change init network
+if changeInitNetwork:
+    NetworkModel.change_init_network_publication()  # change initial network << !!!
 
 # --- EVOLVE NETWORK
 for step in range(0, timeSteps):
