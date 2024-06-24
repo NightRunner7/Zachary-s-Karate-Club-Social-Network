@@ -31,11 +31,11 @@ python basicTask.py
   - Compare simulated faction outcomes with actual club factions post-fission.
 
 ## Dependencies
-Python 3.x
-NetworkX
-NumPy
-Matplotlib
-Pillow (PIL)
+- Python 3.x
+- NetworkX
+- NumPy
+- Matplotlib
+- Pillow (PIL)
 
 ## Author
 Krzysztof Szafrański
