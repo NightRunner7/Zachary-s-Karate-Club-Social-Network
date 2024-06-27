@@ -174,53 +174,54 @@ class ZaharyEvolutionModelMatrix:
         # Initialize node states
         self.s_vec = np.array([1 if node == 0 else 0 if node == 33 else 0.5 for node in self.network.nodes])
 
-        # Initialize adjacency and weight matrices
-        self.adj_mat = nx.to_numpy_array(self.network)
-        self.w_mat = np.where(self.adj_mat > 0, 0.5, 0)  # Initial weights set to 0.5 where there is an edge
+        # Initialize adjacency and weight matrices using sparse matrix
+        self.adj_mat = nx.to_scipy_sparse_array(self.network, format='csr')
+        self.w_mat = self.adj_mat.copy()
+        self.w_mat.data = np.where(self.w_mat.data > 0, 0.5, 0)
 
         # Save the initial state
         self.networkState = {node: np.array([state]) for node, state in enumerate(self.s_vec)}
 
-    @staticmethod
-    def f(s_vec):
+    # ----------------------------------------- INTERACTIONS --------------------------------------------------------- #
+    def f(self):
         """
         Compute the interaction function for all node pairs.
 
-        :param s_vec: State vector
         :return: Interaction matrix
         """
-        diff = np.abs(s_vec[:, np.newaxis] - s_vec)
-        return (diff - 0.25) ** 3
+        rows, cols = self.w_mat.nonzero()
+        state_diff = np.abs(self.s_vec[rows] - self.s_vec[cols])
+        f_values = (state_diff - 0.25) ** 3
+        return f_values
 
     # ----------------------------------------- UPDATE FUNCTION ------------------------------------------------------ #
     def update_weights(self):
         """Update the weights of the edges based on the states of the connected nodes."""
-        interaction = self.f(self.s_vec)
-        dw_dt = - self.beta * self.w_mat * (1 - self.w_mat) * interaction
-        self.w_mat += self.dt * dw_dt
+        interaction = self.f()
+        dwij_dt = -self.beta * self.w_mat.data * (1 - self.w_mat.data) * interaction
+
+        # Update weights
+        self.w_mat.data += self.dt * dwij_dt
 
     def update_states(self):
         """Update the states of the nodes based on the weights of the connecting edges."""
+        # Compute the state changes using sparse matrix operations
+        delta_s_vec = self.D * (self.w_mat @ self.s_vec - self.s_vec * self.w_mat.sum(axis=1))
+
+        # Update states (skip Mr. Hi and John A.)
+        self.s_vec += self.dt * delta_s_vec
+
         # Ensure that Mr. Hi and John A. retain their initial states
         self.s_vec[0] = 1
         self.s_vec[33] = 0
 
-        # Compute the state changes
-        delta_s_vec = self.D * (np.dot(self.w_mat, self.s_vec) - self.s_vec * np.sum(self.w_mat, axis=1))
-
-        # Update states (skip Mr. Hi and John A.)
-        self.s_vec[1:33] += self.dt * delta_s_vec[1:33]
-
+    def update_networkState(self):
+        """Update states of the network in the self.networkState"""
         # Save the updated states
-        for node in self.network.nodes:
+        for node in range(self.s_vec.shape[0]):
             self.networkState[node] = np.append(self.networkState[node], self.s_vec[node])
 
     # ----------------------------------------- EXTRA SETTINGS ------------------------------------------------------- #
-    def save_network_state(self):
-        """Save the current state of each node in the network to the networkState dictionary."""
-        for node, state in enumerate(self.s_vec):
-            self.networkState[node] = np.append(self.networkState[node], state)
-
     def change_init_network_publication(self):
         """
         Initialize the network based on the publication:
@@ -235,19 +236,25 @@ class ZaharyEvolutionModelMatrix:
         """
         # Load the Karate Club graph
         self.network = nx.karate_club_graph()
-        self.network.nodes[8]['club'] = 'Officer'  # I find a mistake in the `networkx` <<< !!!
+        self.network.nodes[8]['club'] = 'Officer'  # I found a mistake in the `networkx` <<< !!!
 
         # Initialize node states
         self.s_vec = np.array([1 if node == 0 else 0 if node == 33 else 0.5 for node in self.network.nodes])
 
         # Initialize adjacency and weight matrices
-        self.adj_mat = nx.to_numpy_array(self.network)
+        self.adj_mat = nx.to_scipy_sparse_array(self.network)
         self.w_mat = self.adj_mat / 10  # Edge weights are scaled down by a factor of 10
 
         # Save the initial state
         self.networkState = {node: np.array([state]) for node, state in enumerate(self.s_vec)}
 
     # ----------------------------------------- DEAL WITH EVOLUTION -------------------------------------------------- #
+    def evolve_with_update_networkState(self):
+        """Perform one evolution step: update weights and then update states."""
+        self.update_weights()
+        self.update_states()
+        self.update_networkState()
+
     def evolve(self):
         """Perform one evolution step: update weights and then update states."""
         self.update_weights()
@@ -255,16 +262,48 @@ class ZaharyEvolutionModelMatrix:
 
     # ----------------------------------------- RETURN --------------------------------------------------------------- #
     def return_network(self):
-        """Update Return the current network."""
-        for i in range(len(self.w_mat)):
-            # add attribute 'state'
+        """Update and return the current network."""
+        # Update node states
+        for i in range(len(self.s_vec)):
             self.network.nodes[i]['state'] = self.s_vec[i]
-            for j in range(len(self.w_mat[i])):
-                if self.w_mat[i][j] != 0:
-                    # add attribute 'weights'
-                    self.network[i][j]['weight'] = self.w_mat[i][j]
+
+        # Update edge weights
+        row, col = self.w_mat.nonzero()
+        for i, j in zip(row, col):
+            self.network[i][j]['weight'] = self.w_mat[i, j]
+
         return self.network
+
+    def return_state_vector(self):
+        """Return the current state vector"""
+        return self.s_vec
 
     def return_network_evolution_state(self):
         """Return dictionary containing the evolution of the states of the nodes."""
         return self.networkState
+
+    def connection_strength_of_division(self):
+        """
+        Calculate the connection strength of division in the network.
+
+        This function measures the total weight of connections between different factions
+        (Mr. Hi's faction and Officer's faction) in the network. It computes the sum of the
+        weights of edges that connect nodes from different factions.
+
+        :return: The connection strength of division (float)
+        """
+        # Binary vectors indicating faction membership
+        ins_member = np.where(self.s_vec >= 0.5, 1, 0)  # 1 if instructor (Mr. Hi) member, else 0
+        off_member = np.where(ins_member == 0, 1, 0)  # 1 if officer (John A.) member, else 0
+
+        # Calculate internal connection weights for each faction
+        ins_weights = ins_member @ self.w_mat @ ins_member.T  # Total weight of connections within instructor's faction
+        off_weights = off_member @ self.w_mat @ off_member.T  # Total weight of connections within officer's faction
+
+        # Calculate the total weight of all connections in the network
+        sum_weights = np.sum(self.w_mat)
+
+        # Calculate the connection strength of division by excluding internal connections
+        division_strength = sum_weights - ins_weights - off_weights
+
+        return division_strength
