@@ -1,6 +1,7 @@
 import time
 # --- IMPORT FROM FILES
 from ZaharyEvolutionModel import ZaharyEvolutionModel, ZaharyEvolutionModelMatrix
+import auxiliaryFunctions as auxFun
 import networkx as nx
 import numpy as np
 from pprint import pprint
@@ -52,3 +53,19 @@ print("ins_weights: ", ins_weights)
 print("ins_weights: ", off_weights)
 print("sum_weights: ", sum_weights)
 
+
+# --- DEAL WITH DIFFERENT GRAPHS FROM auxiliaryFunctions.py
+# create_constant_weighted_graph
+members = 30
+radical_members = 2
+network = auxFun.create_constant_weighted_graph(members, radical_members)
+w_mat = nx.to_numpy_array(network)
+
+print("create_constant_weighted_graph")
+matprint(w_mat)
+
+# create_zahary_club_graph
+network = auxFun.create_zahary_club_graph()
+w_mat = nx.to_numpy_array(network)
+print("create_zahary_club_graph")
+matprint(w_mat)

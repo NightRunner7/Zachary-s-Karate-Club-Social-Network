@@ -19,11 +19,14 @@ Last Modified:
 """
 import os
 import glob
+import itertools
 import numpy as np
 import networkx as nx
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 from PIL import Image
+from scipy.stats import norm
+from networkx.algorithms.community import girvan_newman
 
 # ------------------------------------------- DEAL WITH MATRICES ----------------------------------------------------- #
 def matprint(mat, fmt="g"):
@@ -62,13 +65,17 @@ def make_gif(frame_folder, name):
         print(f"No PNG images found in {frame_folder}")
 
 # ------------------------------------------- PLOTS ------------------------------------------------------------------ #
-def draw_graph(graph, output_path, step):
+# --- DRAW SPRING
+def draw_graph(graph: nx.Graph,
+               output_path: str, step: str,
+               file_name: str = 'Zahary-evolution-in-step') -> None:
     """
     Draw the graph with node states and edge weights, and save it as an image.
 
     :param graph: The NetworkX graph to draw
     :param output_path: The directory where the image will be saved
     :param step: The current step of the evolution (used in the filename)
+    :param file_name:
     """
     node_colors = [graph.nodes[i]['state'] for i in graph.nodes]
     edge_weights = [graph.edges[i, j]['weight'] for i, j in graph.edges]
@@ -79,10 +86,106 @@ def draw_graph(graph, output_path, step):
                    edge_cmap=mpl.colormaps['binary'], edge_vmin=0, edge_vmax=1,
                    edge_color=edge_weights)
 
-    plt.savefig(f"{output_path}/Zahary-evolution-in-step-{step}.png")
+    plt.savefig(f"{output_path}/{file_name}-{step}.png")
     plt.close()
 
+# --- SPECTRAL LAYOUT
+def draw_graph_spectral(graph: nx.Graph,
+                        output_path: str, step: str,
+                        file_name: str = 'Twitter-network-in-step') -> None:
+    """
+    Draw the graph with node states and edge weights, and save it as an image. Here we'll use
+    a specific layout: `spectral_layout`. Use it for large graph.
 
+    :param graph: The NetworkX graph to draw
+    :param output_path: The directory where the image will be saved
+    :param step: The current step of the evolution (used in the filename)
+    :param file_name: Base name for the output file
+    """
+    pos = nx.spectral_layout(graph)
+    node_colors = [graph.nodes[i]['state'] for i in graph.nodes]
+    edge_weights = [graph.edges[i, j]['weight'] for i, j in graph.edges]
+
+    plt.figure(figsize=(12, 12))  # Increase the figure size
+
+    nx.draw(graph, pos,
+            cmap=plt.get_cmap('cool'), vmin=0, vmax=1, with_labels=False,  # Remove labels
+            node_color=node_colors, node_size=50,  # Adjust node size
+            edge_color=edge_weights, edge_cmap=plt.get_cmap('binary'),
+            edge_vmin=0, edge_vmax=1, alpha=0.5)  # Adjust edge transparency
+
+    plt.savefig(f"{output_path}/{file_name}-{step}.png")
+    plt.close()
+
+def draw_graph_spectral_with_communities(graph: nx.Graph,
+                                         output_path: str, step: str,
+                                         file_name: str = 'Twitter-network-in-step') -> None:
+    """
+    Draw the graph with node states and edge weights, highlighting communities, and save it as an image.
+    Here we'll use a specific layout: `spectral_layout`. NOT WORKING !!!
+
+    :param graph: The NetworkX graph to draw
+    :param output_path: The directory where the image will be saved
+    :param step: The current step of the evolution (used in the filename)
+    :param file_name: Base name for the output file
+    """
+    pos = nx.spectral_layout(graph)
+    node_colors = [graph.nodes[i]['state'] for i in graph.nodes]
+    edge_weights = [graph.edges[i, j]['weight'] for i, j in graph.edges]
+
+    # Detect communities using Girvan-Newman algorithm
+    communities_generator = girvan_newman(graph)
+    top_level_communities = next(communities_generator)
+    next_level_communities = next(communities_generator)
+    communities = sorted(map(sorted, next_level_communities))
+
+    # Assign colors based on communities
+    community_map = {}
+    for community_index, community in enumerate(communities):
+        for node in community:
+            community_map[node] = community_index
+
+    node_colors = [community_map[node] for node in graph.nodes]
+
+    plt.figure(figsize=(12, 12))
+
+    nx.draw(graph, pos,
+            cmap=plt.get_cmap('cool'), vmin=0, vmax=len(communities), with_labels=False,
+            node_color=node_colors, node_size=50,
+            edge_color=edge_weights, edge_cmap=plt.get_cmap('binary'), edge_vmin=0, edge_vmax=1, alpha=0.5)
+
+    plt.savefig(f"{output_path}/{file_name}-{step}.png")
+    plt.close()
+
+# --- KAMADA KAWAI LAYOUT
+def draw_graph_kamada_kawai(graph: nx.Graph,
+                            output_path: str, step: str,
+                            file_name: str = 'Twitter-network-in-step') -> None:
+    """
+    Draw the graph with node states and edge weights, and save it as an image. Here we'll use
+    a specific layout: `kamada_kawai_layout`.
+
+    :param graph: The NetworkX graph to draw
+    :param output_path: The directory where the image will be saved
+    :param step: The current step of the evolution (used in the filename)
+    :param file_name: Base name for the output file
+    """
+    pos = nx.kamada_kawai_layout(graph)
+    node_colors = [graph.nodes[i]['state'] for i in graph.nodes]
+    edge_weights = [graph.edges[i, j]['weight'] for i, j in graph.edges]
+
+    plt.figure(figsize=(12, 12))  # Increase the figure size
+
+    nx.draw(graph, pos,
+            cmap=plt.get_cmap('cool'), vmin=0, vmax=1, with_labels=False,  # Remove labels
+            node_color=node_colors, node_size=50,  # Adjust node size
+            edge_color=edge_weights, edge_cmap=plt.get_cmap('binary'),
+            edge_vmin=0, edge_vmax=1, alpha=0.5)  # Adjust edge transparency
+
+    plt.savefig(f"{output_path}/{file_name}-{step}.png")
+    plt.close()
+
+# --- EXTRA PLOTS
 def plot_node_evolution(network_state, node, output_path):
     """
     Plot the evolution of the state of a selected node over time.
@@ -111,6 +214,33 @@ def plot_node_evolution(network_state, node, output_path):
     plt.close()
 
 # ------------------------------------------- CREATE GRAPH ----------------------------------------------------------- #
+def create_zahary_club_graph():
+    """
+    :return:
+    """
+    # Load the Karate Club graph
+    network = nx.karate_club_graph()
+    # I find a mistake in the `networkx` <<< !!!
+    network.nodes[8]['club'] = 'Officer'
+
+    # Initialize node states
+    for node in network.nodes:
+        if node == 0:
+            network.nodes[node]['state'] = 1.0  # Mr. Hi
+            network.nodes[node]['affirmation'] = 'far-right'  # Mr. Hi
+        elif node == 33:
+            network.nodes[node]['state'] = 0.0  # John A.
+            network.nodes[node]['affirmation'] = 'far-left'  # John A.
+        else:
+            network.nodes[node]['state'] = 0.5  # Everyone else
+            network.nodes[node]['affirmation'] = None
+
+    # deal with weights
+    for i, j in network.edges:
+        network.edges[i, j]['weight'] = network.edges[i, j]['weight'] / 10
+
+    return network
+
 def create_normal_weighted_graph(members, radical_members, mean=0.5, std_dev=0.1):
     """
     Create a Barabási-Albert graph with custom edge weights and initialize the network with political views.
@@ -147,10 +277,10 @@ def create_normal_weighted_graph(members, radical_members, mean=0.5, std_dev=0.1
         if node in radical_nodes:
             if choose_radical_left[radical_nodes.index(node)] == 0:
                 network.nodes[node]['affirmation'] = 'far-left'
-                network.nodes[node]['state'] = 0
+                network.nodes[node]['state'] = 0.0
             else:
                 network.nodes[node]['affirmation'] = 'far-right'
-                network.nodes[node]['state'] = 1
+                network.nodes[node]['state'] = 1.0
         else:
             # Neutral members have no political affirmation and a neutral state
             network.nodes[node]['affirmation'] = None
@@ -161,3 +291,132 @@ def create_normal_weighted_graph(members, radical_members, mean=0.5, std_dev=0.1
         network.edges[i, j]['weight'] = weights_list[edge]
 
     return network
+
+def create_constant_weighted_graph(members, radical_members):
+    """
+    Create a Barabási-Albert graph with custom edge weights and initialize the network with political views.
+
+    :param members: Number of members (nodes) in the network.
+    :param radical_members: Number of radical members (nodes) to be marked as 'far-left' or 'far-right'.
+    :return: A NetworkX graph with initialized node attributes and edge weights.
+    """
+    # --- Create a Barabási-Albert network
+    network = nx.barabasi_albert_graph(members, radical_members)
+
+    # Get the number of edges in the network
+    num_edges = network.number_of_edges()
+
+    # --- Constant the strength of connections (edge weights) between members
+    weights_list = np.array([0.5] * num_edges)
+
+    # --- Determine the political affiliation of radical members
+    # Create a list indicating the radical left (0) and radical right (1) members
+    choose_radical_left = [0, 1] * (radical_members // 2)
+    np.random.shuffle(choose_radical_left)
+
+    # --- Identify the most influential nodes based on degree (number of connections)
+    degrees = network.degree()
+    sorted_degrees = sorted(degrees, key=lambda x: x[1], reverse=True)
+
+    # Select the most influential nodes and set them as radicals
+    radical_nodes = [node for node, degree in sorted_degrees[:radical_members]]
+
+    # --- Update the network with political views and states
+    for i, node in enumerate(network.nodes):
+        if node in radical_nodes:
+            if choose_radical_left[radical_nodes.index(node)] == 0:
+                network.nodes[node]['affirmation'] = 'far-left'
+                network.nodes[node]['state'] = 0.0
+            else:
+                network.nodes[node]['affirmation'] = 'far-right'
+                network.nodes[node]['state'] = 1.0
+        else:
+            # Neutral members have no political affirmation and a neutral state
+            network.nodes[node]['affirmation'] = None
+            network.nodes[node]['state'] = 0.5
+
+    # --- Initialize edge weights
+    for edge, (i, j) in enumerate(network.edges):
+        network.edges[i, j]['weight'] = weights_list[edge]
+
+    return network
+
+# ------------------------------------------- HISTOGRAMS ------------------------------------------------------------- #
+# connected to version of the graph from previous section
+def histogram_normal_weighted_graph(network, mean_val=0.5, std_dev_val=0.1, output_path='.', file_name='histogram'):
+    """
+    Draw the histogram.
+
+    :param network: The NetworkX graph to draw
+    :param mean_val:
+    :param std_dev_val:
+    :param output_path: The directory where the image will be saved
+    :param file_name:
+    """
+    # Extract the weights from the network
+    networkTwitter = network.return_network()
+    weights = [data['weight'] for _, _, data in networkTwitter.edges(data=True)]
+
+    # Plot
+    plt.figure(figsize=(8, 6))
+    count, bins, ignored = plt.hist(weights, bins=30, density=True, alpha=0.75, color='b')
+
+    # Calculate the PDF of the normal distribution
+    xmin, xmax = plt.xlim()
+    x = np.linspace(xmin, xmax, 100)
+    p = norm.pdf(x, mean_val, std_dev_val)
+
+    # Plot the PDF
+    plt.plot(x, p, 'r', linewidth=2)
+    title = "Fit results: mean = %.2f,  std_dev = %.2f" % (mean_val, std_dev_val)
+    plt.title(title)
+    plt.xlabel('weights')
+    plt.ylabel('Density')
+    plt.savefig(f"{output_path}/{file_name}.png")
+    plt.close()
+
+def histogram_weighted_graph(network, output_path='.', file_name='histogram'):
+    """
+    Draw the histogram.
+
+    :param network: The NetworkX graph to draw
+    :param output_path: The directory where the image will be saved
+    :param file_name:
+    """
+    # Extract the weights from the network
+    networkTwitter = network.return_network()
+    weights = [data['weight'] for _, _, data in networkTwitter.edges(data=True)]
+
+    # Plot
+    plt.figure(figsize=(8, 6))
+    count, bins, ignored = plt.hist(weights, bins=30, density=True, alpha=0.75, color='b')
+
+    title = "Fit results"
+    plt.title(title)
+    plt.xlabel('weights')
+    plt.ylabel('Density')
+    plt.savefig(f"{output_path}/{file_name}.png")
+    plt.close()
+
+def histogram_states_graph(network, output_path='.', file_name='histogram'):
+    """
+    Draw the histogram of states.
+
+    :param network: The NetworkX graph to draw
+    :param output_path: The directory where the image will be saved
+    :param file_name:
+    """
+    # Extract the weights from the network
+    networkTwitter = network.return_network()
+    states = [data['state'] for _, data in networkTwitter.nodes(data=True)]
+
+    # Plot
+    plt.figure(figsize=(8, 6))
+    count, bins, ignored = plt.hist(states, bins=30, density=True, alpha=0.75, color='b')
+
+    title = "Fit results"
+    plt.title(title)
+    plt.xlabel('states')
+    plt.ylabel('Density')
+    plt.savefig(f"{output_path}/{file_name}.png")
+    plt.close()
