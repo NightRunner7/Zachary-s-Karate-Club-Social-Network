@@ -50,7 +50,7 @@ elif name_init_graph == 'Zahary':
 # --- USER
 # basic setting
 makePlot = True
-run = 2
+run = 1
 output_main = "."
 connection_strength_arr = np.array([])
 time_arr = np.array([])
@@ -58,11 +58,11 @@ time_arr = np.array([])
 # settings of dynamic evolution: CLASS
 val_D = 5
 val_beta = 10
-val_dt = 0.01
+val_dt = 0.0001
 
 # settings of dynamic evolution: EVOLUTION
-timeSteps = 5500
-timeStepsDraw = 100
+timeSteps = 550000
+timeStepsDraw = 10000
 
 # --- AUTOMATIC
 # Set main directory
@@ -75,7 +75,7 @@ elif name_init_graph == 'AlbertConst':
     output_main = f"./{name_init_graph}-N-{members}-Nrad-{radical_members}-" \
                   f"-D-{val_D:.1f}-beta-{val_beta:.1f}-dt-{val_dt}-Run-{run}"
 elif name_init_graph == 'Zahary':
-    output_main = f"./{name_init_graph}-" \
+    output_main = f"./{name_init_graph}" \
                   f"-D-{val_D:.1f}-beta-{val_beta:.1f}-dt-{val_dt}-Run-{run}"
 
 # Make directory
