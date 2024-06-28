@@ -19,12 +19,21 @@ Last Modified:
 """
 import os
 import glob
-import matplotlib.pyplot as plt
-import matplotlib as mpl
+import numpy as np
 import networkx as nx
+import matplotlib as mpl
+import matplotlib.pyplot as plt
 from PIL import Image
 
+# ------------------------------------------- DEAL WITH MATRICES ----------------------------------------------------- #
+def matprint(mat, fmt="g"):
+    col_maxes = [max([len(("{:"+fmt+"}").format(x)) for x in col]) for col in mat.T]
+    for x in mat:
+        for i, y in enumerate(x):
+            print(("{:"+str(col_maxes[i])+fmt+"}").format(y), end="  ")
+        print("")
 
+# ------------------------------------------- MAKE STH --------------------------------------------------------------- #
 def make_directory(path_name):
     """
     Create a directory with the given name if it doesn't already exist.
@@ -100,3 +109,55 @@ def plot_node_evolution(network_state, node, output_path):
     # Save the plot
     plt.savefig(f"{output_path}/node_{node:02d}_evolution.png")
     plt.close()
+
+# ------------------------------------------- CREATE GRAPH ----------------------------------------------------------- #
+def create_normal_weighted_graph(members, radical_members, mean=0.5, std_dev=0.1):
+    """
+    Create a Barabási-Albert graph with custom edge weights and initialize the network with political views.
+
+    :param members: Number of members (nodes) in the network.
+    :param radical_members: Number of radical members (nodes) to be marked as 'far-left' or 'far-right'.
+    :param mean: Mean value for the normal distribution used to randomize edge weights.
+    :param std_dev: Standard deviation for the normal distribution used to randomize edge weights.
+    :return: A NetworkX graph with initialized node attributes and edge weights.
+    """
+    # --- Create a Barabási-Albert network
+    network = nx.barabasi_albert_graph(members, radical_members)
+
+    # Get the number of edges in the network
+    num_edges = network.number_of_edges()
+
+    # --- Randomize the strength of connections (edge weights) between members
+    weights_list = np.random.normal(mean, std_dev, num_edges)
+
+    # --- Determine the political affiliation of radical members
+    # Create a list indicating the radical left (0) and radical right (1) members
+    choose_radical_left = [0, 1] * (radical_members // 2)
+    np.random.shuffle(choose_radical_left)
+
+    # --- Identify the most influential nodes based on degree (number of connections)
+    degrees = network.degree()
+    sorted_degrees = sorted(degrees, key=lambda x: x[1], reverse=True)
+
+    # Select the most influential nodes and set them as radicals
+    radical_nodes = [node for node, degree in sorted_degrees[:radical_members]]
+
+    # --- Update the network with political views and states
+    for i, node in enumerate(network.nodes):
+        if node in radical_nodes:
+            if choose_radical_left[radical_nodes.index(node)] == 0:
+                network.nodes[node]['affirmation'] = 'far-left'
+                network.nodes[node]['state'] = 0
+            else:
+                network.nodes[node]['affirmation'] = 'far-right'
+                network.nodes[node]['state'] = 1
+        else:
+            # Neutral members have no political affirmation and a neutral state
+            network.nodes[node]['affirmation'] = None
+            network.nodes[node]['state'] = 0.5
+
+    # --- Initialize edge weights
+    for edge, (i, j) in enumerate(network.edges):
+        network.edges[i, j]['weight'] = weights_list[edge]
+
+    return network
