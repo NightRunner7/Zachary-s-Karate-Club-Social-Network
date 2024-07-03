@@ -2,338 +2,731 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08eb17eb-c191-49cd-9659-7daba0da1ee2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Zaharys-karate-club.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Zaharys-karate-club.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/connection_strength_over_time.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/connection_strength_over_time.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-0000.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-0000.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-0100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-0100.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-0200.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-0200.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-0300.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-0300.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-0400.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-0400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-0500.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-0500.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-0600.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-0600.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-0700.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-0700.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-0800.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-0800.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-0900.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-0900.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-1000.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-1000.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-1100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-1100.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-1200.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-1200.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-1300.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-1300.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-1400.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-1400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-1500.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-1500.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-1600.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-1600.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-1700.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-1700.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-1800.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-1800.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-1900.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-1900.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-2000.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-2000.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-2100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-2100.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-2200.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-2200.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-2300.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-2300.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-2400.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-2400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-2500.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-2500.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-2600.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-2600.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-2700.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-2700.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-2800.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-2800.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-2900.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-2900.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-3000.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-3000.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-3100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-3100.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-3200.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-3200.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-3300.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-3300.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-3400.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-3400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-3500.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-3500.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-3600.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-3600.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-3700.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-3700.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-3800.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-3800.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-3900.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-3900.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-4000.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-4000.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-4100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-4100.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-4200.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-4200.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-4300.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-4300.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-4400.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-4400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-4500.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-4500.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-4600.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-4600.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-4700.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-4700.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-4800.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-4800.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-4900.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-4900.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-5000.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-5000.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-5100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-5100.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-5200.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-5200.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-5300.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-5300.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-5400.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Zahary-evolution-in-step-5400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_0100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_0100.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_0200.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_0200.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_0300.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_0300.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_0400.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_0400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_0500.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_0500.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_0600.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_0600.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_0700.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_0700.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_0800.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_0800.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_0900.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_0900.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_1000.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_1000.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_1100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_1100.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_1200.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_1200.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_1300.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_1300.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_1400.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_1400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_1500.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_1500.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_1600.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_1600.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_1700.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_1700.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_1800.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_1800.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_1900.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_1900.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_2000.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_2000.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_2100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_2100.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_2200.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_2200.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_2300.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_2300.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_2400.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_2400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_2500.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_2500.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_2600.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_2600.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_2700.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_2700.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_2800.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_2800.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_2900.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_2900.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_3000.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_3000.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_3100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_3100.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_3200.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_3200.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_3300.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_3300.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_3400.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_3400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_3500.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_3500.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_3600.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_3600.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_3700.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_3700.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_3800.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_3800.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_3900.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_3900.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_4000.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_4000.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_4100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_4100.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_4200.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_4200.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_4300.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_4300.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_4400.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_4400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_4500.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_4500.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_4600.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_4600.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_4700.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_4700.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_4800.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_4800.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_4900.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_4900.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_5000.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_5000.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_5100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_5100.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_5200.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_5200.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_5300.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_5300.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_5400.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_5400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_0000.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_0000.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_0100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_0100.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_0200.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_0200.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_0300.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_0300.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_0400.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_0400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_0500.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_0500.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_0600.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_0600.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_0700.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_0700.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_0800.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_0800.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_0900.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_0900.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_1000.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_1000.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_1100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_1100.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_1200.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_1200.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_1300.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_1300.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_1400.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_1400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_1500.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_1500.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_1600.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_1600.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_1700.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_1700.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_1800.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_1800.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_1900.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_1900.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_2000.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_2000.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_2100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_2100.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_2200.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_2200.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_2300.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_2300.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_2400.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_2400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_2500.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_2500.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_2600.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_2600.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_2700.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_2700.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_2800.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_2800.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_2900.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_2900.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_3000.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_3000.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_3100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_3100.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_3200.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_3200.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_3300.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_3300.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_3400.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_3400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_3500.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_3500.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_3600.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_3600.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_3700.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_3700.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_3800.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_3800.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_3900.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_3900.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_4000.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_4000.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_4100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_4100.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_4200.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_4200.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_4300.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_4300.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_4400.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_4400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_4500.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_4500.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_4600.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_4600.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_4700.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_4700.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_4800.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_4800.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_4900.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_4900.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_5000.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_5000.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_5100.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_5100.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_5200.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_5200.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_5300.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_5300.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_5400.png" beforeDir="false" afterPath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_5400.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/connection_strength_over_time.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-0000.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-0100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-0200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-0300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-0400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-0500.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-0600.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-0700.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-0800.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-0900.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-1000.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-1100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-1200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-1300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-1400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-1500.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-1600.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-1700.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-1800.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-1900.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-2000.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-2100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-2200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-2300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-2400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-2500.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-2600.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-2700.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-2800.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-2900.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-3000.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-3100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-3200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-3300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-3400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-3500.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-3600.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-3700.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-3800.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-3900.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-4000.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-4100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-4200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-4300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-4400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-4500.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-4600.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-4700.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-4800.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-4900.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-5000.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-5100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-5200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-5300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionGraph/Zahary-evolution-in-step-5400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_0000.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_0100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_0200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_0300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_0400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_0500.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_0600.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_0700.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_0800.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_0900.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_1000.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_1100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_1200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_1300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_1400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_1500.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_1600.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_1700.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_1800.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_1900.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_2000.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_2100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_2200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_2300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_2400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_2500.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_2600.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_2700.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_2800.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_2900.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_3000.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_3100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_3200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_3300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_3400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_3500.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_3600.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_3700.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_3800.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_3900.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_4000.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_4100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_4200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_4300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_4400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_4500.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_4600.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_4700.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_4800.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_4900.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_5000.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_5100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_5200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_5300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoState/histogram_at_step_5400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_0000.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_0100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_0200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_0300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_0400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_0500.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_0600.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_0700.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_0800.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_0900.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_1000.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_1100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_1200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_1300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_1400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_1500.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_1600.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_1700.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_1800.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_1900.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_2000.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_2100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_2200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_2300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_2400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_2500.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_2600.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_2700.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_2800.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_2900.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_3000.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_3100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_3200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_3300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_3400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_3500.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_3600.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_3700.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_3800.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_3900.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_4000.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_4100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_4200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_4300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_4400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_4500.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_4600.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_4700.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_4800.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_4900.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_5000.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_5100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_5200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_5300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zahary--D-5.0-beta-10.0-dt-0.01-Run-2/evolutionHistoWeights/histogram_at_step_5400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/connection_strength_over_time.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-0000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-10000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-100000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-110000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-120000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-130000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-140000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-150000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-160000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-170000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-180000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-190000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-20000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-200000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-210000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-220000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-230000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-240000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-250000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-260000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-270000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-280000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-290000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-30000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-300000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-310000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-320000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-330000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-340000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-350000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-360000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-370000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-380000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-390000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-40000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-400000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-410000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-420000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-430000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-440000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-450000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-460000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-470000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-480000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-490000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-50000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-500000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-510000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-520000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-530000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-540000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-60000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-70000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-80000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionGraph/Twitter-network-in-step-90000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_0000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_10000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_100000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_110000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_120000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_130000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_140000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_150000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_160000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_170000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_180000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_190000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_20000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_200000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_210000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_220000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_230000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_240000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_250000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_260000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_270000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_280000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_290000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_30000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_300000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_310000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_320000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_330000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_340000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_350000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_360000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_370000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_380000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_390000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_40000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_400000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_410000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_420000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_430000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_440000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_450000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_460000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_470000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_480000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_490000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_50000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_500000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_510000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_520000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_530000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_540000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_60000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_70000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_80000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoState/histogram_at_step_90000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_0000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_10000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_100000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_110000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_120000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_130000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_140000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_150000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_160000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_170000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_180000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_190000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_20000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_200000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_210000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_220000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_230000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_240000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_250000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_260000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_270000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_280000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_290000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_30000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_300000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_310000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_320000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_330000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_340000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_350000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_360000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_370000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_380000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_390000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_40000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_400000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_410000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_420000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_430000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_440000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_450000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_460000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_470000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_480000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_490000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_50000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_500000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_510000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_520000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_530000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_540000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_60000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_70000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_80000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.0001-Run-1/evolutionHistoWeights/histogram_at_step_90000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/connection_strength_over_time.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-0000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-1000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-10000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-11000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-12000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-13000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-14000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-15000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-16000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-17000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-18000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-19000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-2000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-20000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-21000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-22000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-23000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-24000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-25000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-26000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-27000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-28000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-29000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-3000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-30000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-31000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-32000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-33000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-34000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-35000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-36000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-37000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-38000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-39000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-4000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-40000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-41000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-42000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-43000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-44000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-45000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-46000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-47000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-48000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-49000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-5000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-50000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-51000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-52000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-53000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-54000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-6000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-7000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-8000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionGraph/Twitter-network-in-step-9000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_0000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_1000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_10000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_11000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_12000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_13000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_14000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_15000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_16000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_17000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_18000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_19000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_2000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_20000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_21000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_22000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_23000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_24000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_25000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_26000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_27000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_28000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_29000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_3000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_30000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_31000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_32000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_33000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_34000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_35000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_36000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_37000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_38000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_39000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_4000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_40000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_41000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_42000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_43000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_44000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_45000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_46000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_47000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_48000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_49000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_5000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_50000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_51000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_52000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_53000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_54000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_6000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_7000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_8000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoState/histogram_at_step_9000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_0000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_1000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_10000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_11000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_12000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_13000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_14000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_15000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_16000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_17000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_18000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_19000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_2000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_20000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_21000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_22000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_23000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_24000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_25000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_26000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_27000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_28000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_29000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_3000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_30000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_31000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_32000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_33000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_34000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_35000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_36000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_37000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_38000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_39000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_4000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_40000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_41000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_42000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_43000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_44000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_45000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_46000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_47000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_48000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_49000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_5000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_50000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_51000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_52000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_53000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_54000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_6000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_7000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_8000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.001-Run-1/evolutionHistoWeights/histogram_at_step_9000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/connection_strength_over_time.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-0000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-0100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-0200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-0300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-0400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-0500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-0600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-0700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-0800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-0900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-1000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-1100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-1200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-1300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-1400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-1500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-1600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-1700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-1800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-1900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-2000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-2100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-2200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-2300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-2400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-2500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-2600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-2700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-2800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-2900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-3000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-3100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-3200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-3300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-3400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-3500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-3600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-3700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-3800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-3900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-4000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-4100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-4200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-4300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-4400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-4500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-4600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-4700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-4800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-4900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-5000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-5100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-5200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-5300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionGraph/Twitter-network-in-step-5400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_0000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_0100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_0200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_0300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_0400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_0500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_0600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_0700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_0800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_0900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_1000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_1100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_1200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_1300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_1400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_1500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_1600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_1700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_1800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_1900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_2000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_2100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_2200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_2300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_2400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_2500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_2600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_2700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_2800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_2900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_3000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_3100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_3200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_3300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_3400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_3500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_3600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_3700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_3800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_3900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_4000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_4100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_4200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_4300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_4400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_4500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_4600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_4700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_4800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_4900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_5000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_5100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_5200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_5300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoState/histogram_at_step_5400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_0000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_0100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_0200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_0300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_0400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_0500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_0600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_0700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_0800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_0900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_1000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_1100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_1200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_1300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_1400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_1500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_1600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_1700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_1800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_1900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_2000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_2100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_2200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_2300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_2400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_2500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_2600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_2700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_2800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_2900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_3000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_3100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_3200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_3300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_3400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_3500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_3600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_3700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_3800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_3900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_4000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_4100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_4200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_4300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_4400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_4500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_4600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_4700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_4800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_4900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_5000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_5100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_5200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_5300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertConst-N-1000-Nrad-2--D-5.0-beta-10.0-dt-0.01-Run-1/evolutionHistoWeights/histogram_at_step_5400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/connection_strength_over_time.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-0000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-0100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-0200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-0300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-0400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-0500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-0600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-0700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-0800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-0900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-1000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-1100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-1200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-1300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-1400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-1500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-1600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-1700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-1800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-1900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-2000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-2100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-2200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-2300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-2400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-2500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-2600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-2700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-2800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-2900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-3000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-3100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-3200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-3300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-3400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-3500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-3600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-3700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-3800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-3900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-4000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-4100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-4200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-4300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-4400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-4500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-4600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-4700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-4800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-4900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-5000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-5100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-5200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-5300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionGraph/Twitter-network-in-step-5400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_0000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_0100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_0200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_0300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_0400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_0500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_0600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_0700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_0800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_0900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_1000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_1100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_1200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_1300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_1400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_1500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_1600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_1700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_1800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_1900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_2000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_2100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_2200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_2300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_2400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_2500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_2600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_2700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_2800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_2900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_3000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_3100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_3200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_3300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_3400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_3500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_3600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_3700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_3800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_3900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_4000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_4100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_4200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_4300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_4400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_4500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_4600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_4700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_4800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_4900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_5000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_5100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_5200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_5300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-5/evolutionHisto/histogram_at_step_5400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/connection_strength_over_time.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/draw_function.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-0000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-0100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-0200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-0300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-0400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-0500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-0600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-0700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-0800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-0900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-1000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-1100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-1200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-1300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-1400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-1500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-1600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-1700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-1800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-1900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-2000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-2100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-2200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-2300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-2400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-2500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-2600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-2700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-2800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-2900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-3000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-3100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-3200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-3300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-3400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-3500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-3600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-3700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-3800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-3900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-4000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-4100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-4200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-4300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-4400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-4500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-4600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-4700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-4800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-4900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-5000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-5100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-5200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-5300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionGraph/Twitter-network-in-step-5400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_0000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_0100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_0200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_0300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_0400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_0500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_0600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_0700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_0800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_0900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_1000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_1100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_1200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_1300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_1400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_1500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_1600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_1700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_1800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_1900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_2000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_2100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_2200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_2300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_2400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_2500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_2600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_2700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_2800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_2900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_3000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_3100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_3200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_3300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_3400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_3500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_3600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_3700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_3800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_3900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_4000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_4100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_4200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_4300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_4400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_4500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_4600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_4700.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_4800.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_4900.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_5000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_5100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_5200.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_5300.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbertNormal-N-1000-Nrad-2-Mean-0.5-dev-0.1-D-5.0-beta-10.0-dt-0.01-Run-6/evolutionHisto/histogram_at_step_5400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/auxiliaryFunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/auxiliaryFunctions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/classicalNetworkDrawTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/classicalNetworkDrawTest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/twitterEvolution.py" beforeDir="false" afterPath="$PROJECT_DIR$/twitterEvolution.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -354,18 +747,23 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2iKbl2wQSnJBevB30KY2DQgJKpd" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "editor.preferences.completion"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

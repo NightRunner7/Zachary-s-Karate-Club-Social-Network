@@ -2,18 +2,20 @@ import numpy as np
 import matplotlib.pyplot as plt
 # --- IMPORT FROM FILES
 import auxiliaryFunctions as auxFun
+import initialGraph as iniGra
 from TwitterRadicalizationModel import TwitterRadicalizationModel
 
 # ----- SETTINGS OF INITIAL GRAPH
 # Select initial graph, Name pattern: Initial graph type + weight distribution type
-name_init_graph = 'AlbertConst'
+name_init_graph = 'AlbertNormal'
 
 # Configuration dictionary for different network types
 network_config = {}
 if name_init_graph == 'AlbertNormal':
     # set value
     members = 1000
-    radical_members = 2
+    popular_members = 80
+    radical_members = 80
     mean_val = 0.5
     std_dev_val = 0.1
     # set dictionary
@@ -23,9 +25,11 @@ if name_init_graph == 'AlbertNormal':
         'radical_members': radical_members,
         'mean': mean_val,
         'std_dev': std_dev_val,
-        'network': auxFun.create_normal_weighted_graph(members, radical_members,
-                                                       mean=mean_val, std_dev=std_dev_val),
-        'parameters': [members, radical_members, mean_val, std_dev_val]
+        'network': iniGra.create_normal_weighted_graph_v2(members, radical_members, popular_members,
+                                                          mean=mean_val, std_dev=std_dev_val),
+        # 'network': iniGra.create_normal_weighted_graph(members, radical_members, popular_members,
+        #                                                mean=mean_val, std_dev=std_dev_val),
+        'parameters': [members, radical_members, popular_members, mean_val, std_dev_val]
     }
 elif name_init_graph == 'AlbertConst':
     # set value
@@ -36,14 +40,28 @@ elif name_init_graph == 'AlbertConst':
         'name': 'AlbertConst',
         'members': members,
         'radical_members': radical_members,
-        'network': auxFun.create_constant_weighted_graph(members, radical_members),
+        'network': iniGra.create_constant_weighted_graph(members, radical_members),
         'parameters': [members, radical_members]
     }
 elif name_init_graph == 'Zahary':
     # set dictionary
     network_config = {
         'name': 'AlbertConst',
-        'network': auxFun.create_zahary_club_graph()
+        'network': iniGra.create_zahary_club_graph()
+    }
+elif name_init_graph == 'ErdosBasic':
+    # set value
+    members = 1000
+    radical_members = 100
+    probability = 0.007
+    # set dictionary
+    network_config = {
+        'name': 'ErdosBasic',
+        'members': members,
+        'radical_members': radical_members,
+        'probability': probability,
+        'network': iniGra.create_erdos_basic_graph(members, radical_members, probability),
+        'parameters': [members, radical_members, probability]
     }
 
 # ----- SETTING OF SIMULATION
@@ -58,24 +76,30 @@ time_arr = np.array([])
 # settings of dynamic evolution: CLASS
 val_D = 5
 val_beta = 10
-val_dt = 0.0001
+val_dt = 0.001
 
 # settings of dynamic evolution: EVOLUTION
-timeSteps = 550000
-timeStepsDraw = 10000
+time = 60
+timeSteps = int((time / val_dt) * (5 / val_D) * (10 / val_beta))
+timeStepsDraw = int((1 / val_dt) * (5 / val_D) * (10 / val_beta))
 
 # --- AUTOMATIC
 # Set main directory
 if name_init_graph == 'AlbertNormal':
-    members, radical_members, mean_val, std_dev_val = network_config['parameters']
-    output_main = f"./{name_init_graph}-N-{members}-Nrad-{radical_members}-Mean-{mean_val:.1f}-dev-{std_dev_val:.1f}" \
+    members, radical_members, popular_members, mean_val, std_dev_val = network_config['parameters']
+    output_main = f"./{name_init_graph}-N-{members}-Nrad-{radical_members}-Npop-{popular_members}" \
+                  f"-Mean-{mean_val:.1f}-dev-{std_dev_val:.1f}" \
                   f"-D-{val_D:.1f}-beta-{val_beta:.1f}-dt-{val_dt}-Run-{run}"
 elif name_init_graph == 'AlbertConst':
     members, radical_members = network_config['parameters']
-    output_main = f"./{name_init_graph}-N-{members}-Nrad-{radical_members}-" \
+    output_main = f"./{name_init_graph}N-{members}-Nrad-{radical_members}" \
                   f"-D-{val_D:.1f}-beta-{val_beta:.1f}-dt-{val_dt}-Run-{run}"
 elif name_init_graph == 'Zahary':
     output_main = f"./{name_init_graph}" \
+                  f"-D-{val_D:.1f}-beta-{val_beta:.1f}-dt-{val_dt}-Run-{run}"
+elif name_init_graph == 'ErdosBasic':
+    members, radical_members, probability = network_config['parameters']
+    output_main = f"./{name_init_graph}-N-{members}-Nrad-{radical_members}-p-{probability}" \
                   f"-D-{val_D:.1f}-beta-{val_beta:.1f}-dt-{val_dt}-Run-{run}"
 
 # Make directory
@@ -102,7 +126,7 @@ for step in range(0, timeSteps):
         print("I m doing step:", step)
         network = TwitterModel.return_network()
         # auxFun.draw_graph_kamada_kawai(network, output_evolutionGraph, stepStr)
-        auxFun.draw_graph_spectral(network, output_evolutionGraph, stepStr)
+        # auxFun.draw_graph_spectral(network, output_evolutionGraph, stepStr)
         # auxFun.draw_graph_spectral_with_communities(network, output_evolutionGraph, stepStr)
         # auxFun.draw_graph(network, output_evolutionGraph, stepStr)
 
@@ -113,17 +137,17 @@ for step in range(0, timeSteps):
         if name_init_graph == 'AlbertNormal':
             mean_val = network_config['mean']
             std_dev_val = network_config['std_dev']
-            auxFun.histogram_normal_weighted_graph(TwitterModel,
+            iniGra.histogram_normal_weighted_graph(TwitterModel,
                                                    mean_val=mean_val, std_dev_val=std_dev_val,
                                                    output_path=output_evolutionHistoWeights, file_name=name)
         else:
-            auxFun.histogram_weighted_graph(TwitterModel,
+            iniGra.histogram_weighted_graph(TwitterModel,
                                             output_path=output_evolutionHistoWeights, file_name=name)
 
     # --- draw a histogram states of Twitter Network
     if makePlot and step % timeStepsDraw == 0:
         name = f'histogram_at_step_{stepStr}'
-        auxFun.histogram_states_graph(TwitterModel,
+        iniGra.histogram_states_graph(TwitterModel,
                                       output_path=output_evolutionHistoState, file_name=name)
 
     # --- strength of connection update data
