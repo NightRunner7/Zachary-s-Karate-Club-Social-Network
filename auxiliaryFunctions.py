@@ -19,14 +19,12 @@ Last Modified:
 """
 import os
 import glob
-import itertools
 import numpy as np
 import networkx as nx
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 from PIL import Image
 from scipy.stats import norm
-from networkx.algorithms.community import girvan_newman
 
 # ------------------------------------------- DEAL WITH MATRICES ----------------------------------------------------- #
 def matprint(mat, fmt="g"):
@@ -117,46 +115,6 @@ def draw_graph_spectral(graph: nx.Graph,
     plt.savefig(f"{output_path}/{file_name}-{step}.png")
     plt.close()
 
-def draw_graph_spectral_with_communities(graph: nx.Graph,
-                                         output_path: str, step: str,
-                                         file_name: str = 'Twitter-network-in-step') -> None:
-    """
-    Draw the graph with node states and edge weights, highlighting communities, and save it as an image.
-    Here we'll use a specific layout: `spectral_layout`. NOT WORKING !!!
-
-    :param graph: The NetworkX graph to draw
-    :param output_path: The directory where the image will be saved
-    :param step: The current step of the evolution (used in the filename)
-    :param file_name: Base name for the output file
-    """
-    pos = nx.spectral_layout(graph)
-    node_colors = [graph.nodes[i]['state'] for i in graph.nodes]
-    edge_weights = [graph.edges[i, j]['weight'] for i, j in graph.edges]
-
-    # Detect communities using Girvan-Newman algorithm
-    communities_generator = girvan_newman(graph)
-    top_level_communities = next(communities_generator)
-    next_level_communities = next(communities_generator)
-    communities = sorted(map(sorted, next_level_communities))
-
-    # Assign colors based on communities
-    community_map = {}
-    for community_index, community in enumerate(communities):
-        for node in community:
-            community_map[node] = community_index
-
-    node_colors = [community_map[node] for node in graph.nodes]
-
-    plt.figure(figsize=(12, 12))
-
-    nx.draw(graph, pos,
-            cmap=plt.get_cmap('cool'), vmin=0, vmax=len(communities), with_labels=False,
-            node_color=node_colors, node_size=50,
-            edge_color=edge_weights, edge_cmap=plt.get_cmap('binary'), edge_vmin=0, edge_vmax=1, alpha=0.5)
-
-    plt.savefig(f"{output_path}/{file_name}-{step}.png")
-    plt.close()
-
 # --- KAMADA KAWAI LAYOUT
 def draw_graph_kamada_kawai(graph: nx.Graph,
                             output_path: str, step: str,
@@ -211,4 +169,79 @@ def plot_node_evolution(network_state, node, output_path):
 
     # Save the plot
     plt.savefig(f"{output_path}/node_{node:02d}_evolution.png")
+    plt.close()
+
+# ------------------------------------------- HISTOGRAMS ------------------------------------------------------------- #
+def histogram_weights(network, plot_fit=False, mean_val=0.5, std_dev_val=0.1, output_path='.', file_name='histogram'):
+    """
+    Draw the histogram of weights from a NetworkX graph. Optionally fit a normal distribution.
+
+    :param network: The NetworkX graph to draw.
+    :param plot_fit: Boolean to decide whether to plot normal distribution fit.
+    :param mean_val: Mean value for the normal distribution used to randomize states.
+    :param std_dev_val: Standard deviation for the normal distribution used to randomize states.
+    :param output_path: The directory where the image will be saved.
+    :param file_name: Base name for the output file.
+    """
+    # Extract the weights from the network
+    network_data = network.return_network()
+    weights = [data['weight'] for _, _, data in network_data.edges(data=True)]
+
+    # Plot histogram
+    plt.figure(figsize=(8, 6))
+    _, bins, _ = plt.hist(weights, bins=30, density=True, alpha=0.75, color='b')
+
+    if plot_fit:
+        # Calculate the PDF of the normal distribution
+        xmin, xmax = plt.xlim()
+        x = np.linspace(xmin, xmax, 100)
+        p = norm.pdf(x, mean_val, std_dev_val)
+
+        # Plot the PDF
+        plt.plot(x, p, 'r', linewidth=2)
+        title = "Fit results: mean = %.2f, std_dev = %.2f" % (mean_val, std_dev_val)
+    else:
+        title = "Histogram of Weights"
+
+    plt.title(title)
+    plt.xlabel('weights')
+    plt.ylabel('Density')
+    plt.savefig(f"{output_path}/{file_name}.png")
+    plt.close()
+
+def histogram_states(network, plot_fit=False, mean_val=0.5, std_dev_val=0.1, output_path='.', file_name='histogram'):
+    """
+    Draw the histogram of states from a NetworkX graph. Optionally fit a normal distribution.
+
+    :param network: The NetworkX graph to draw.
+    :param plot_fit: Boolean to decide whether to plot normal distribution fit.
+    :param mean_val: Mean value for the normal distribution used to randomize states.
+    :param std_dev_val: Standard deviation for the normal distribution used to randomize states.
+    :param output_path: The directory where the image will be saved.
+    :param file_name: Base name for the output file.
+    """
+    # Extract the states from the network
+    network_data = network.return_network()
+    states = [data['state'] for _, data in network_data.nodes(data=True)]
+
+    # Plot histogram
+    plt.figure(figsize=(8, 6))
+    _, bins, _ = plt.hist(states, bins=30, density=True, alpha=0.75, color='b')
+
+    if plot_fit:
+        # Calculate the PDF of the normal distribution
+        xmin, xmax = plt.xlim()
+        x = np.linspace(xmin, xmax, 100)
+        p = norm.pdf(x, mean_val, std_dev_val)
+
+        # Plot the PDF
+        plt.plot(x, p, 'r', linewidth=2)
+        title = "Fit results: mean = %.2f, std_dev = %.2f" % (mean_val, std_dev_val)
+    else:
+        title = "Histogram of States"
+
+    plt.title(title)
+    plt.xlabel('states')
+    plt.ylabel('Density')
+    plt.savefig(f"{output_path}/{file_name}.png")
     plt.close()
