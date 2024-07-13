@@ -3,7 +3,7 @@ from scipy.stats import norm
 import networkx as nx
 import matplotlib.pyplot as plt
 # --- IMPORT FROM FILES
-import initialGraph as iniGra
+from initialGraph.barabas_with_normal_weights import create_graph
 
 node_2 = 10
 print(node_2)
@@ -66,14 +66,13 @@ plt.show()
 
 # ################### SETTING OF SIMULATION
 # settings of network
-members = 500
+members = 2000
 radical_members = 4
-mean_val = 0.5
-std_dev_val = 0.2
+mean_val = 0.8
+std_dev_val = 0.1
 
 # create network which we're going to check
-network = iniGra.create_normal_weighted_graph(members, radical_members, radical_members,mean=mean_val, std_dev=std_dev_val)
-
+network = create_graph(members, radical_members, radical_members, mean=mean_val, std_dev=std_dev_val)
 
 # --- PLOTTING THE HISTOGRAM
 # Extract the weights from the network

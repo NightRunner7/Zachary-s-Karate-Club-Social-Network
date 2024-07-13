@@ -184,8 +184,7 @@ def histogram_weights(network, plot_fit=False, mean_val=0.5, std_dev_val=0.1, ou
     :param file_name: Base name for the output file.
     """
     # Extract the weights from the network
-    network_data = network.return_network()
-    weights = [data['weight'] for _, _, data in network_data.edges(data=True)]
+    weights = [data['weight'] for _, _, data in network.edges(data=True)]
 
     # Plot histogram
     plt.figure(figsize=(8, 6))
@@ -221,8 +220,7 @@ def histogram_states(network, plot_fit=False, mean_val=0.5, std_dev_val=0.1, out
     :param file_name: Base name for the output file.
     """
     # Extract the states from the network
-    network_data = network.return_network()
-    states = [data['state'] for _, data in network_data.nodes(data=True)]
+    states = [data['state'] for _, data in network.nodes(data=True)]
 
     # Plot histogram
     plt.figure(figsize=(8, 6))
@@ -244,4 +242,35 @@ def histogram_states(network, plot_fit=False, mean_val=0.5, std_dev_val=0.1, out
     plt.xlabel('states')
     plt.ylabel('Density')
     plt.savefig(f"{output_path}/{file_name}.png")
+    plt.close()
+
+def histogram_degrees(network, output_path='.', file_name='histogram'):
+    """
+    Draw the histogram of degrees from a NetworkX graph.
+
+    :param network: The NetworkX graph to draw.
+    :param output_path: The directory where the image will be saved.
+    :param file_name: Base name for the output file.
+    """
+    # Get the degree sequence sorted in descending order
+    degree_sequence = sorted((d for n, d in network.degree()), reverse=True)
+
+    # Create a new figure with a specified size
+    plt.figure(figsize=(8, 6))
+
+    # Generate the histogram data where 'np.unique' returns unique degrees and their counts
+    degrees, counts = np.unique(degree_sequence, return_counts=True)
+
+    # Create a bar plot
+    plt.bar(degrees, counts)
+
+    # Set the title and labels
+    plt.title("Degree Histogram")
+    plt.xlabel("Degree")
+    plt.ylabel("# of Nodes")
+
+    # Save the figure to the specified path
+    plt.savefig(f"{output_path}/{file_name}.png")
+
+    # Close the plot to free up memory
     plt.close()

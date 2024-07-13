@@ -2,35 +2,30 @@ import numpy as np
 import networkx as nx
 
 # ------------------------------------------- HELPFULLY FUNCTION ----------------------------------------------------- #
-def normalize_array(arr):
+def create_name(members, radical_members, probability, mean, std_dev):
     """
-    Normalize the input array to have values in the range [0, 1].
+    Constructs a unique name string based on network attributes including member counts and distribution parameters.
 
-    :param arr: Input array to be normalized.
-    :return: Normalized array with values in the range [0, 1].
+    :param members: Number of members (nodes) in the network.
+    :param radical_members: Number of radical members (nodes) to be marked as 'far-left' or 'far-right'.
+    :param probability: Probability for edge creation.
+    :param mean: Mean value for the normal distribution used to randomize edge weights.
+    :param std_dev: Standard deviation for the normal distribution used to randomize edge weights.
+    :return: A formatted string that encapsulates significant attributes of the network, suitable for identification or
+             labeling.
     """
-    min_val = np.min(arr)
-    max_val = np.max(arr)
-
-    # Normalize the array
-    nor_value = (arr - min_val) / (max_val - min_val)
-
-    # Replace any zero values with 1e-5
-    nor_value[nor_value == 0] = 1e-5
-
-    # Replace any 1 values with 1 - 1e-5
-    nor_value[nor_value == 1] = 1 - 1e-5
-
-    return nor_value
+    return f"Albert-N{members}-Nrad{radical_members}-P{probability}-Mean{mean}-StdDev{std_dev}"
 
 # ------------------------------------------- CREATE GRAPH ----------------------------------------------------------- #
-def create_erdos_basic_graph(members, radical_members, probability):
+def create_erdos_basic_graph(members, radical_members, probability, mean=0.5, std_dev=0.1):
     """
     Create an Erdos Renyi graph with custom edge weights and initialize the network with political views.
 
     :param members: Number of members (nodes) in the network.
     :param radical_members: Number of radical members (nodes) to be marked as 'far-left' or 'far-right'.
-    :param probability:
+    :param probability: Probability for edge creation.
+    :param mean: Mean value for the normal distribution used to randomize edge weights.
+    :param std_dev: Standard deviation for the normal distribution used to randomize edge weights.
     :return: A NetworkX graph with initialized node attributes and edge weights.
     """
     # --- Create a Erdos Renyi network
@@ -41,10 +36,10 @@ def create_erdos_basic_graph(members, radical_members, probability):
 
     # --- Randomize the strength of connections (edge weights) between members
     # weights_list = np.array([0.5] * num_edges)
-    weights_list = np.random.normal(0.5, 0.1, num_edges)
+    weights_list = np.random.normal(mean, std_dev, num_edges)
 
     # Apply normalization to ensure weights are in range [0, 1]
-    weights_list_nor = normalize_array(weights_list)
+    weights_list_nor = np.clip(weights_list, 0, 1)
 
     # --- Determine the political affiliation of radical members
     # Create a list indicating the radical left (0) and radical right (1) members
