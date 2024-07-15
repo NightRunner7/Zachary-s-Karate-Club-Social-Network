@@ -10,12 +10,12 @@ from TwitterRadicalizationModel import TwitterRadicalizationModel
 from initialGraph.watts_NS_UW import create_graph, create_name
 # grap parameters
 members = 1000
-radical_members = 2
-k = 4
+radical_members = 40
+k = 10
 probability = 0.0
 # Weights distribution, set zero if they not normal distributed
 mean = 0.5
-std_dev = 0.2
+std_dev = 0.05
 # flags
 plot_fit_weight = False
 plot_fit_states = True
@@ -28,7 +28,7 @@ name = create_name(members, radical_members, k, probability, mean, std_dev)
 # --- SETTING OF SIMULATION: USER
 # basic setting
 makePlot = True
-makeUpdateData = False
+makeUpdateData = True
 run = 1
 main_dir = "./ResultsToSegregation"
 
@@ -38,7 +38,7 @@ val_beta = 10
 val_dt = 0.001
 
 # settings of dynamic evolution: EVOLUTION
-time = 700  # 80
+time = 100  # 80
 timeSteps = int((time / val_dt) * (5 / val_D) * (10 / val_beta))
 timeStepsDraw = int((1 / val_dt) * (5 / val_D) * (10 / val_beta))
 timeStepsUpdateData = int((1 / val_dt) * (5 / val_D) * (10 / val_beta))
