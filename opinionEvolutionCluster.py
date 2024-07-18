@@ -54,15 +54,15 @@ def main(radical_members, k, probability, val_D, run, time):
     network_dynamics['average_clustering'] = np.array([])
 
     # Make directory
-    output_saveGraph = f"{output_main}/saveGraph"
-    output_evolutionGraph = f"{output_main}/evolutionGraph"
+    # output_saveGraph = f"{output_main}/saveGraph"
+    # output_evolutionGraph = f"{output_main}/evolutionGraph"
     output_evolutionHistoWeights = f"{output_main}/evolutionHistoWeights"
     output_evolutionHistoState = f"{output_main}/evolutionHistoState"
 
     if makePlot:
         auxFun.make_directory(output_main)
-        auxFun.make_directory(output_saveGraph)
-        auxFun.make_directory(output_evolutionGraph)
+        # auxFun.make_directory(output_saveGraph)
+        # auxFun.make_directory(output_evolutionGraph)
         auxFun.make_directory(output_evolutionHistoWeights)
         auxFun.make_directory(output_evolutionHistoState)
 
