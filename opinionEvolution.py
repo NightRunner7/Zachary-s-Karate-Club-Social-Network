@@ -10,9 +10,9 @@ from TwitterRadicalizationModel import TwitterRadicalizationModel
 from initialGraph.watts_NS_UW import create_graph, create_name
 # grap parameters
 members = 1000
-radical_members = 40
-k = 10
-probability = 0.0
+radical_members = 160
+k = 40
+probability = 0.01
 # Weights distribution, set zero if they not normal distributed
 mean = 0.5
 std_dev = 0.05
@@ -28,8 +28,8 @@ name = create_name(members, radical_members, k, probability, mean, std_dev)
 # --- SETTING OF SIMULATION: USER
 # basic setting
 makePlot = True
-makeUpdateData = True
-run = 1
+makeUpdateData = False
+run = 7
 main_dir = "./ResultsToSegregation"
 
 # settings of dynamic evolution: CLASS
@@ -59,20 +59,24 @@ network_dynamics['average_path_length'] = np.array([])
 network_dynamics['average_clustering'] = np.array([])
 
 # Make directory
+output_saveGraph = f"{output_main}/saveGraph"
 output_evolutionGraph = f"{output_main}/evolutionGraph"
 output_evolutionHistoWeights = f"{output_main}/evolutionHistoWeights"
 output_evolutionHistoState = f"{output_main}/evolutionHistoState"
-output_evolutionHistoDegree = f"{output_main}/evolutionHistoDegree"
 
 if makePlot:
     auxFun.make_directory(output_main)
+    auxFun.make_directory(output_saveGraph)
     auxFun.make_directory(output_evolutionGraph)
     auxFun.make_directory(output_evolutionHistoWeights)
     auxFun.make_directory(output_evolutionHistoState)
-    auxFun.make_directory(output_evolutionHistoDegree)
 
 # --- CREATE MODEL
 TwitterModel = TwitterRadicalizationModel(init_network, D=val_D, beta=val_beta, dt=val_dt)
+
+# init positions
+network = TwitterModel.return_network()
+initial_positions = nx.spring_layout(network)  # You can adjust this with different parameters
 
 # ---------------------------------- EVOLVE NETWORK ------------------------------------------------------------------ #
 for step in range(0, timeSteps):
@@ -82,11 +86,17 @@ for step in range(0, timeSteps):
 
     if makePlot and step % timeStepsDraw == 0:
         print("I m doing step:", step)
-        # --- draw a network of Twitter Network
         network = TwitterModel.return_network()
-        # auxFun.draw_graph_kamada_kawai(network, output_evolutionGraph, timeStr)
-        # auxFun.draw_graph_spectral(network, output_evolutionGraph, stepStr)
-        # auxFun.draw_graph(network, output_evolutionGraph, stepStr)
+
+        # --- save network in file
+        auxFun.save_network(network,
+                            output_path=output_saveGraph,
+                            step=timeStr, file_name="network_at")
+
+        # --- draw a network of Twitter Network
+        auxFun.draw_graph_spring(network, initial_positions,
+                                 output_path=output_evolutionGraph,
+                                 step=timeStr, file_name="network_at")
 
         # --- draw a histogram weights of Twitter Network
         # name = f'histogram_at_step_{stepStr}'
@@ -99,10 +109,6 @@ for step in range(0, timeSteps):
         auxFun.histogram_states(network,
                                 plot_fit=plot_fit_states, mean_val=mean, std_dev_val=std_dev,
                                 output_path=output_evolutionHistoState, file_name=name)
-
-        # --- draw a histogram degrees of Twitter Network
-        auxFun.histogram_degrees(network,
-                                 output_path=output_evolutionHistoDegree, file_name=name)
 
 
     if makeUpdateData and step % timeStepsUpdateData == 0:
@@ -125,10 +131,10 @@ for step in range(0, timeSteps):
         network_dynamics['average_clustering'] = np.append(network_dynamics['average_clustering'], average_clustering)
 
         # --- eigenvector centrality matrix update data
-        # network = TwitterModel.return_network()
-        # centrality = nx.eigenvector_centrality_numpy(network, weight='weight')
-        # # Store centrality values in the matrix
-        # network_dynamics['eigVec_central_mat'][:, int(time)] = [centrality[node] for node in network.nodes()]
+        network = TwitterModel.return_network()
+        centrality = nx.eigenvector_centrality_numpy(network, weight='weight')
+        # Store centrality values in the matrix
+        network_dynamics['eigVec_central_mat'][:, int(time)] = [centrality[node] for node in network.nodes()]
 
         # --- Calculate closeness centrality update data
         centrality = nx.closeness_centrality(network, distance='weight')
@@ -160,13 +166,13 @@ plt.close()
 
 if makeUpdateData:
     # --- PLOTTING THE HEATMAP: EIGENVECTOR CENTRALITY
-    # plt.figure(figsize=(10, 8))
-    # sns.heatmap(network_dynamics['eigVec_central_mat'], cmap="viridis")
-    # plt.title("Eigenvector Centrality Evolution Over Time")
-    # plt.xlabel("Time Step")
-    # plt.ylabel("Node Index")
-    # plt.savefig(f"{output_main}/eigenvector_centrality_over_time.png")
-    # plt.close()
+    plt.figure(figsize=(10, 8))
+    sns.heatmap(network_dynamics['eigVec_central_mat'], cmap="viridis")
+    plt.title("Eigenvector Centrality Evolution Over Time")
+    plt.xlabel("Time Step")
+    plt.ylabel("Node Index")
+    plt.savefig(f"{output_main}/eigenvector_centrality_over_time.png")
+    plt.close()
 
     # --- PLOTTING THE HEATMAP: CLOSENESS CENTRALITY
     plt.figure(figsize=(10, 8))

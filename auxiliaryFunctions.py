@@ -19,6 +19,7 @@ Last Modified:
 """
 import os
 import glob
+import pickle
 import numpy as np
 import networkx as nx
 import matplotlib as mpl
@@ -62,6 +63,24 @@ def make_gif(frame_folder, name):
     else:
         print(f"No PNG images found in {frame_folder}")
 
+# ------------------------------------------- DEAL WITH NETWORKS ----------------------------------------------------- #
+def save_network(graph: nx.Graph,
+                 output_path: str, step: str,
+                 file_name: str = 'network_at_step') -> None:
+    """
+    Draw the graph with node states and edge weights, and save it as an image.
+
+    :param graph: The NetworkX graph to draw
+    :param output_path: The directory where the network will be saved
+    :param step: The current step of the evolution (used in the filename)
+    :param file_name: Base name for the output file
+    """
+    full_name = f'{output_path}/{file_name}_{step}'
+    # Save the graph to a file
+    with open(f'{full_name}.pkl', 'wb') as f:
+        pickle.dump(graph, f)
+
+
 # ------------------------------------------- PLOTS ------------------------------------------------------------------ #
 # --- DRAW SPRING
 def draw_graph(graph: nx.Graph,
@@ -73,7 +92,7 @@ def draw_graph(graph: nx.Graph,
     :param graph: The NetworkX graph to draw
     :param output_path: The directory where the image will be saved
     :param step: The current step of the evolution (used in the filename)
-    :param file_name:
+    :param file_name: Base name for the output file
     """
     node_colors = [graph.nodes[i]['state'] for i in graph.nodes]
     edge_weights = [graph.edges[i, j]['weight'] for i, j in graph.edges]
@@ -85,6 +104,39 @@ def draw_graph(graph: nx.Graph,
                    edge_color=edge_weights)
 
     plt.savefig(f"{output_path}/{file_name}-{step}.png")
+    plt.close()
+
+# --- SPRING GRAPH
+def draw_graph_spring(graph: nx.Graph, positions,
+                      output_path: str, step: str,
+                      file_name: str = 'Twitter-network-in-step') -> None:
+    """
+    Draw the graph with node states and edge weights, and save it as an image.
+
+    :param graph: The NetworkX graph to draw
+    :param output_path: The directory where the image will be saved
+    :param step: The current step of the evolution (used in the filename)
+    :param file_name: Base name for the output file
+    """
+    node_colors = [graph.nodes[i]['state'] for i in graph.nodes]
+    edge_weights = [graph.edges[i, j]['weight'] for i, j in graph.edges]
+
+    plt.figure(figsize=(12, 12))  # Increase the figure size
+    plt.xlim(-1, 1)
+    plt.ylim(-1, 1)
+
+    # nx.draw_spring(graph,
+    #                cmap=mpl.colormaps['cool'], vmin=0, vmax=1,
+    #                node_color=node_colors, node_size=10,
+    #                edge_cmap=mpl.colormaps['binary'], edge_vmin=0, edge_vmax=1,
+    #                edge_color=edge_weights)
+
+    nx.draw(graph, pos=positions, cmap=plt.get_cmap('cool'), vmin=0, vmax=1,
+            node_color=node_colors, node_size=10,
+            edge_cmap=plt.get_cmap('binary'), edge_vmin=0, edge_vmax=1,
+            edge_color=edge_weights, width=0.4)
+
+    plt.savefig(f"{output_path}/{file_name}_{step}.png")
     plt.close()
 
 # --- SPECTRAL LAYOUT
