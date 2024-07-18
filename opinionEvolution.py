@@ -29,7 +29,7 @@ name = create_name(members, radical_members, k, probability, mean, std_dev)
 # basic setting
 makePlot = True
 makeUpdateData = False
-run = 7
+run = 1
 main_dir = "./OutputResults"
 
 # settings of dynamic evolution: CLASS

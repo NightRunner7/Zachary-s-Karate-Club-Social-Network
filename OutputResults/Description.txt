@@ -1,0 +1,1 @@
+In this folder will contains results from the running simulations.
