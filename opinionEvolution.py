@@ -30,7 +30,7 @@ name = create_name(members, radical_members, k, probability, mean, std_dev)
 makePlot = True
 makeUpdateData = False
 run = 7
-main_dir = "./ResultsToSegregation"
+main_dir = "./OutputResults"
 
 # settings of dynamic evolution: CLASS
 val_D = 5

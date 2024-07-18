@@ -27,7 +27,7 @@ def main(radical_members, k, probability, val_D, run, time):
     # basic setting
     makePlot = True
     makeUpdateData = True
-    main_dir = "./ResultsToSegregation"
+    main_dir = "./OutputResults"
 
     # settings of dynamic evolution: CLASS
     val_beta = 10
