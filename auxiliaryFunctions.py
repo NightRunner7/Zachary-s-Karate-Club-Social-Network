@@ -80,6 +80,88 @@ def save_network(graph: nx.Graph,
     with open(f'{full_name}.pkl', 'wb') as f:
         pickle.dump(graph, f)
 
+# ------------------------------------------- DEAL WITH PHASES ----------------------------------------------------- #
+def count_affirmations(network):
+    """
+    Count nodes with 'far-left' and 'far-right' affirmations in a network.
+
+    :param network: A NetworkX graph with nodes that may have 'affirmation' attributes.
+    :return: A tuple containing counts (count_far_left, count_far_right)
+    """
+    count_far_left = 0
+    count_far_right = 0
+
+    # Iterate over all nodes and their data in the network
+    for node, data in network.nodes(data=True):
+        affirmation = data.get('affirmation')  # Safely get the 'affirmation' attribute
+
+        # Check and update counts based on the affirmation
+        if affirmation == 'far-left':
+            count_far_left += 1
+        elif affirmation == 'far-right':
+            count_far_right += 1
+
+    return count_far_left, count_far_right
+
+def find_the_phase(network, epsilon=0.05, neutral_width=0.4, division_threshold=0.2, wall_threshold=0.2):
+    """
+    Determines the phase of the system based on the distribution of state values at the end of an evolutionary
+    process.
+
+    Args:
+        network (NetworkX graph): TA NetworkX graph with nodes that may have 'affirmation' attributes.
+        epsilon (float): The tolerance used to classify left and right members as radicals.
+        neutral_width (float): The width of the neutral zone centered at 0.5, within which members are considered
+            neutral.
+        division_threshold (float): The threshold ratio of radical change needed to declare a division phase.
+        wall_threshold (float): The threshold ratio of neutral members needed to declare a wall phase.
+
+    Returns:
+        float: A numeric code representing different phases of the system:
+            4.0 - 'nonrecognition'
+            3.0 - 'domination'
+            1.0 to 2.0 - 'division' (variable based on the degree of radical change)
+            0.0 to 1.0 - 'wall' (variable, inversely related to the degree of neutrality)
+    """
+    # --- SETTING PARAMETERS OF NETWORK
+    # Choose between internal state vector or an external one based on `out_of_class`
+    s_vec = np.array([state for _, state in network.nodes(data='state', default='Not Available')])
+    # Determine initial counts of radical members, considering external or internal data source
+    N_left_init, N_right_init = count_affirmations(network)
+
+    # Total number of members in the network
+    N = len(network.nodes)
+    # Total initial radical members
+    N_rad = N_left_init + N_right_init
+
+    # --- COUNTING NECESSARY MEMBERS IN DIFFERENT GROUPS
+    # Count members within specific state ranges at the end of the evolution
+    N_left_end = np.sum(s_vec <= epsilon)
+    N_right_end = np.sum(s_vec >= 1.0 - epsilon)
+    N_neutral_end = np.sum((s_vec > 0.5 - neutral_width / 2) & (s_vec < 0.5 + neutral_width / 2))
+
+    # Calculate the change in the number of radical members from initial to final
+    delta_N_rad = (N_left_end + N_right_end) - (N_left_init + N_right_init)
+
+    # Population not initially identified as radical
+    remaining_non_radical = N - N_rad
+
+    print("N_left_end:", N_left_end, "N_right_end:", N_right_end, "N_neutral_end:", N_neutral_end)
+    print("N_left_init:", N_left_init, "N_right_init:", N_right_init)
+    print("remaining_non_radical:", remaining_non_radical, "N:", N, "N_rad:", N_rad)
+
+    # --- TAKE CARE ABOUT PHASES
+    # Determine the phase based on conditions involving changes in radical and neutral members
+    if N_left_end == N - N_right_init or N_right_end == N - N_left_init:
+        phase = 3.0  # Domination phase indicates complete shift to one radical side
+    elif (delta_N_rad / remaining_non_radical) >= division_threshold:
+        phase = 1.0 + (delta_N_rad / remaining_non_radical)  # Division phase indicates significant radicalization
+    elif (N_neutral_end / remaining_non_radical) >= wall_threshold:
+        phase = 1.0 - (N_neutral_end / remaining_non_radical)  # Wall phase indicates a significant neutral buffer
+    else:
+        phase = 4.0  # Nonrecognition phase indicates no significant change or pattern
+
+    return phase
 
 # ------------------------------------------- PLOTS ------------------------------------------------------------------ #
 # --- DRAW SPRING

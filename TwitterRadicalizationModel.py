@@ -7,17 +7,20 @@ class TwitterRadicalizationModel:
         """
         Initialize the model with given parameters and set up the initial network.
 
-        :param network:
-        :param D: Diffusion coefficient
-        :param beta: Coupling parameter
-        :param dt: Time step
+        :param network: A NetworkX graph with nodes that may have 'affirmation' attributes.
+        :param D: Diffusion coefficient.
+        :param beta: Coupling parameter.
+        :param dt: Time step.
         """
         self.D = D
         self.beta = beta
         self.dt = dt
 
-        # Load the Karate Club graph
+        # Load the graph
         self.network = network
+        self.N = len(self.network.nodes)  # number of nodes (members in the graph)
+        self.N_left_init, self.N_right_init = self.count_affirmations()  # number of left and right radical members
+        self.N_rad = self.N_left_init + self.N_right_init  # number of radical members
 
         # Initialize node states
         self.s_vec = np.array([data['state'] for _, data in self.network.nodes(data=True)])
@@ -27,6 +30,43 @@ class TwitterRadicalizationModel:
 
         # Save the initial state
         self.networkState = {node: np.array([state]) for node, state in enumerate(self.s_vec)}
+
+    # ----------------------------------------- BASE METHODS --------------------------------------------------------- #
+    def count_affirmations(self, out_of_class=False, network=None):
+        """
+        Count nodes with 'far-left' and 'far-right' affirmations in a network.
+
+        This method supports both an internally stored network or an externally provided one.
+        Use the `out_of_class` parameter to specify which network to use: set it to True to use
+        `network` parameter or False to use the network stored within the class.
+
+        :param out_of_class: A boolean flag to specify whether to use the network passed to the method.
+                             If False, uses the class's internal network.
+        :param network: Optional; a NetworkX graph with nodes that may have 'affirmation' attributes.
+                        Required if `out_of_class` is True.
+        :return: A tuple containing counts (count_far_left, count_far_right)
+        """
+        count_far_left = 0
+        count_far_right = 0
+
+        # Determine which network to use based on the out_of_class flag
+        target_network = network if out_of_class else self.network
+
+        # Check if the network is properly provided
+        if target_network is None:
+            raise ValueError("No network provided for the operation.")
+
+        # Iterate over all nodes and their data in the network
+        for node, data in target_network.nodes(data=True):
+            affirmation = data.get('affirmation')  # Safely get the 'affirmation' attribute
+
+            # Check and update counts based on the affirmation
+            if affirmation == 'far-left':
+                count_far_left += 1
+            elif affirmation == 'far-right':
+                count_far_right += 1
+
+        return count_far_left, count_far_right
 
     # ----------------------------------------- INTERACTIONS --------------------------------------------------------- #
     def f(self):
@@ -95,6 +135,67 @@ class TwitterRadicalizationModel:
         division_strength = sum_weights - r_weights - l_weights
 
         return division_strength
+
+    # ----------------------------------------- DEAL WITH PHASES ----------------------------------------------------- #
+    def find_the_phase(self, epsilon=0.05, neutral_width=0.4, division_threshold=0.2, wall_threshold=0.2,
+                       out_of_class=False, network=None):
+        """
+        Determines the phase of the system based on the distribution of state values at the end of an evolutionary
+        process.
+
+        Args:
+            epsilon (float): The tolerance used to classify left and right members as radicals.
+            neutral_width (float): The width of the neutral zone centered at 0.5, within which members are considered
+                neutral.
+            division_threshold (float): The threshold ratio of radical change needed to declare a division phase.
+            wall_threshold (float): The threshold ratio of neutral members needed to declare a wall phase.
+            out_of_class (bool): Flag to determine whether to use an external network passed as an argument.
+            network (NetworkX graph): The external network to analyze if out_of_class is True.
+
+        Returns:
+            float: A numeric code representing different phases of the system:
+                4.0 - 'nonrecognition'
+                3.0 - 'domination'
+                1.0 to 2.0 - 'division' (variable based on the degree of radical change)
+                0.0 to 1.0 - 'wall' (variable, inversely related to the degree of neutrality)
+        """
+        # --- SETTING PARAMETERS OF NETWORK
+        # Choose between internal state vector or an external one based on `out_of_class`
+        s_vec = np.array([state for _, state in network.nodes(data='state', default='Not Available')]) if out_of_class \
+            else self.s_vec
+        # Determine initial counts of radical members, considering external or internal data source
+        N_left_init, N_right_init = self.count_affirmations(out_of_class=True, network=network) if out_of_class \
+            else (self.N_left_init, self.N_right_init)
+
+        # Total number of members in the network
+        N = len(network.nodes) if out_of_class else self.N
+        # Total initial radical members
+        N_rad = N_left_init + N_right_init
+
+        # --- COUNTING NECESSARY MEMBERS IN DIFFERENT GROUPS
+        # Count members within specific state ranges at the end of the evolution
+        N_left_end = np.sum(s_vec <= epsilon)
+        N_right_end = np.sum(s_vec >= 1.0 - epsilon)
+        N_neutral_end = np.sum((s_vec > 0.5 - neutral_width / 2) & (s_vec < 0.5 + neutral_width / 2))
+
+        # Calculate the change in the number of radical members from initial to final
+        delta_N_rad = (N_left_end + N_right_end) - (N_left_init + N_right_init)
+
+        # Population not initially identified as radical
+        remaining_non_radical = N - N_rad
+
+        # --- TAKE CARE ABOUT PHASES
+        # Determine the phase based on conditions involving changes in radical and neutral members
+        if N_left_end == N - N_right_init or N_right_end == N - N_left_init:
+            phase = 3.0  # Domination phase indicates complete shift to one radical side
+        elif (delta_N_rad / remaining_non_radical) >= division_threshold:
+            phase = 1.0 + (delta_N_rad / remaining_non_radical)  # Division phase indicates significant radicalization
+        elif (N_neutral_end / remaining_non_radical) >= wall_threshold:
+            phase = 1.0 - (N_neutral_end / remaining_non_radical)  # Wall phase indicates a significant neutral buffer
+        else:
+            phase = 4.0  # Nonrecognition phase indicates no significant change or pattern
+
+        return phase
 
     # ----------------------------------------- DEAL WITH EVOLUTION -------------------------------------------------- #
     def evolve_with_update_networkState(self):
