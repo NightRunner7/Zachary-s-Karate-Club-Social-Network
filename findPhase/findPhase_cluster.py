@@ -44,7 +44,7 @@ def save_data_to_file(k_arr, phase_arr, str_parameters, directory="OutputPhase")
 def main(radical_members, probability, val_D, run, time):
     # grap parameters
     members = 1000
-    half_k = np.arange(1, 2, 1, dtype=int)
+    half_k = np.arange(1, 151, 1, dtype=int)
     k_arr = 2 * half_k
     # Weights distribution, set zero if they not normal distributed
     mean = 0.5
