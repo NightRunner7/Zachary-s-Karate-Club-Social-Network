@@ -44,8 +44,6 @@ start_time = time.time()  # Start timing the simulation for performance measurem
 for step in range(timeSteps):
     # Periodically check and report the network's phase status.
     if step % timeStepsDraw == 0:
-        print("I'm doing step:", step)
-
         previous_phase_val = phase_val  # Store previous phase value to detect state changes.
 
         # Calculate the current phase of the network based on defined thresholds and network state.
@@ -55,7 +53,7 @@ for step in range(timeSteps):
             division_threshold=0.2,
             wall_threshold=0.2
         )
-        print("Phase value:", phase_val)
+        print("I'm doing step:", step, "Phase value:", phase_val)
 
         # Monitor the occurrence of specific phases to determine when the simulation can be terminated early.
         if phase_val == 2.0:
@@ -79,6 +77,7 @@ for step in range(timeSteps):
     TwitterModel.evolve()
 
 # Note the end time and calculate the total duration of the simulation.
+print("-------------------------------------------------------------------------------------------------------")
 end_time = time.time()  # Capture the end time
 print(f"Execution time: {end_time - start_time} seconds")
 

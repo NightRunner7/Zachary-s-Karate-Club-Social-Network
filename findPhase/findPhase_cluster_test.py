@@ -9,45 +9,52 @@ from TwitterRadicalizationModel import TwitterRadicalizationModel
 from initialGraph.watts_NS_UW import create_graph, return_name
 
 # ---------------------------------------- HELPFUL FUNCTION ---------------------------------------------------------- #
-def save_data_to_file(k_arr, phase_arr, str_parameters, directory="OutputPhase"):
+def save_data_to_file(k_arr, phase_arr, str_nrad, directory_name, directory_localization="./OutputPhase"):
     """
     Saves two lists into a text file with a custom format and name, using tab delimiters for readability and
-    easy parsing. Files are saved in a specified directory.
+    easy parsing. The first column will contain values from k_arr and the second column from phase_arr.
+    Files are saved in a specified directory.
 
     Args:
         k_arr (list or array): A list of numbers.
         phase_arr (list or array): Another list of numbers.
-        str_parameters (str): A value used to customize the file name.
-        directory (str): The directory where the file will be saved. Defaults to 'output'.
+        str_nrad (str): A value used to customize the file name.
+        directory_name (str): The name of the directory where the file will be saved.
+        directory_localization (str): The base directory path. Defaults to './OutputPhase'.
     """
     # Ensure the directory exists; create if it doesn't
-    os.makedirs(directory, exist_ok=True)
+    full_directory_path = os.path.join(directory_localization, directory_name)
+    os.makedirs(full_directory_path, exist_ok=True)
 
     # Format the filename with the specified directory
-    filename = os.path.join(directory, f"phasePoints_{str_parameters}.txt")
+    filename = os.path.join(full_directory_path, f"phasePoints_{str_nrad}.txt")
 
     # Open the file to write
     with open(filename, 'w') as file:
-        # Writing k_arr values
-        file.write("k_arr:\t")  # Start with a label and a tab
-        file.write("\t".join(map(str, k_arr)))  # Join list elements with tabs
-        file.write("\n")  # New line for the next array
+        # Write headers
+        file.write("k_arr\tphase_arr\n")
 
-        # Writing phase_arr values
-        file.write("phase_arr:\t")  # Start with a label and a tab
-        file.write("\t".join(map(str, phase_arr)))  # Join list elements with tabs
+        # Determine the maximum length of the lists
+        max_length = max(len(k_arr), len(phase_arr))
+
+        # Write data row by row
+        for i in range(max_length):
+            k_val = k_arr[i] if i < len(k_arr) else ""
+            phase_val = phase_arr[i] if i < len(phase_arr) else ""
+            file.write(f"{k_val}\t{phase_val}\n")
 
     print(f"Data successfully saved in {filename}")
 
 # ---------------------------------------- MAIN FUNCTION ------------------------------------------------------------- #
-radical_members = 60
-probability = 0.03
+radical_members = 162
+probability = 0.02
 val_D = 5.0
 run = 1
 time = 200
+
 # grap parameters
 members = 1000
-half_k = np.arange(1, 3, 1, dtype=int)
+half_k = np.arange(25, 27, 1, dtype=int)
 k_arr = 2 * half_k
 # Weights distribution, set zero if they not normal distributed
 mean = 0.5
@@ -67,10 +74,12 @@ timeStepsToCheck = int((1 / val_dt) * (5 / val_D) * (10 / val_beta))
 counter_of_domination_state = 0
 counter_of_fullDivision_state = 0
 counter_of_same_state = 0
+time_moment = 0
 phase_val = 0.0
 phase_arr = np.array([])
 base_name = return_name()
-str_parameters = f"{base_name}-N{members}-Nrad{radical_members}-p{probability}-mean{mean}-std{std_dev}-Run{run}"
+directory_name = f"{base_name}-N{members}-p{probability}-mean{mean}-std{std_dev}-Run{run}"
+str_nrad = f"{radical_members}"
 
 for k_val in k_arr:
     # --- CREATE MODEL
@@ -84,7 +93,7 @@ for k_val in k_arr:
     for step in range(timeSteps):
         # Periodically check and report the network's phase status.
         if step % timeStepsToCheck == 0:
-
+            time_moment = step * val_dt
             previous_phase_val = phase_val  # Store previous phase value to detect state changes.
 
             # Calculate the current phase of the network based on defined thresholds and network state.
@@ -122,9 +131,9 @@ for k_val in k_arr:
         division_threshold=0.2,
         wall_threshold=0.2
     )
-    print("phase_val in the end of simulation:", phase_val)
+    print("phase_val in the end of simulation:", phase_val, "time of ending simulation:", time_moment)
 
     phase_arr = np.append(phase_arr, phase_val)
 
 # save our data
-save_data_to_file(k_arr, phase_arr, str_parameters=str_parameters, directory="OutputPhase")
+save_data_to_file(k_arr, phase_arr, str_nrad, directory_name, directory_localization="./OutputPhase")
