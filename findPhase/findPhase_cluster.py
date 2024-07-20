@@ -136,7 +136,7 @@ def main(radical_members, probability, val_D, run, time):
               "time of ending simulation:", time_moment)
 
         phase_arr = np.append(phase_arr, phase_val)
-        time_moment_arr = np.array(time_moment_arr, time_moment)
+        time_moment_arr = np.append(time_moment_arr, time_moment)
 
     # save our data
     save_data_to_file(k_arr, phase_arr, time_moment_arr, str_nrad, directory_name,
