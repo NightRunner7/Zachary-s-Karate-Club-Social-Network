@@ -10,15 +10,16 @@ from TwitterRadicalizationModel import TwitterRadicalizationModel
 from initialGraph.watts_NS_UW import create_graph, return_name
 
 # ---------------------------------------- HELPFUL FUNCTION ---------------------------------------------------------- #
-def save_data_to_file(k_arr, phase_arr, str_nrad, directory_name, directory_localization="./OutputPhase"):
+def save_data_to_file(k_arr, phase_arr, time_arr, str_nrad, directory_name, directory_localization="./OutputPhase"):
     """
     Saves two lists into a text file with a custom format and name, using tab delimiters for readability and
     easy parsing. The first column will contain values from k_arr and the second column from phase_arr.
     Files are saved in a specified directory.
 
     Args:
-        k_arr (list or array): A list of numbers.
-        phase_arr (list or array): Another list of numbers.
+        k_arr (list or np.ndarray): A list of numbers.
+        phase_arr (list or np.ndarray): Another list of numbers.
+        time_arr (list or np.ndarray): Another list of numbers.
         str_nrad (str): A value used to customize the file name.
         directory_name (str): The name of the directory where the file will be saved.
         directory_localization (str): The base directory path. Defaults to './OutputPhase'.
@@ -33,16 +34,17 @@ def save_data_to_file(k_arr, phase_arr, str_nrad, directory_name, directory_loca
     # Open the file to write
     with open(filename, 'w') as file:
         # Write headers
-        file.write("k_arr\tphase_arr\n")
+        file.write("k_arr\ttime_arr\tphase_arr\n")
 
         # Determine the maximum length of the lists
-        max_length = max(len(k_arr), len(phase_arr))
+        max_length = max(len(k_arr), len(phase_arr), len(time_arr))
 
         # Write data row by row
         for i in range(max_length):
             k_val = k_arr[i] if i < len(k_arr) else ""
+            time_val = time_arr[i] if i < len(phase_arr) else ""
             phase_val = phase_arr[i] if i < len(phase_arr) else ""
-            file.write(f"{k_val}\t{phase_val}\n")
+            file.write(f"{k_val}\t{time_val}\t{phase_val}\n")
 
     print(f"Data successfully saved in {filename}")
 
@@ -66,18 +68,21 @@ def main(radical_members, probability, val_D, run, time):
     timeStepsToCheck = int((1 / val_dt) * (5 / val_D) * (10 / val_beta))
 
     # --- SETTING OF SIMULATION: AUTOMATIC
-    # basic setting
-    counter_of_domination_state = 0
-    counter_of_fullDivision_state = 0
-    counter_of_same_state = 0
-    time_moment = 0
-    phase_val = 0.0
+    # collect data and path/name
     phase_arr = np.array([])
+    time_moment_arr = np.array([])
     base_name = return_name()
     directory_name = f"{base_name}-N{members}-p{probability}-mean{mean}-std{std_dev}-Run{run}"
     str_nrad = f"{radical_members}"
 
     for k_val in k_arr:
+        # set counters which have been reset in each connectivity (k) step
+        counter_of_domination_state = 0
+        counter_of_fullDivision_state = 0
+        counter_of_same_state = 0
+        time_moment = 0.0
+        phase_val = 0.0
+
         # --- CREATE MODEL
         # create network
         init_network = create_graph(members, radical_members, k_val, probability,
@@ -115,7 +120,7 @@ def main(radical_members, probability, val_D, run, time):
                 # Terminate early if certain conditions are met, indicating no further significant evolution.
                 if counter_of_fullDivision_state > 1 or counter_of_domination_state > 1:
                     break  # Stop if a phase has occurred multiple times, suggesting dominance or division stability.
-                if counter_of_same_state == 10:
+                if counter_of_same_state == 20:
                     break  # Stop if the same phase persists across multiple checks, suggesting stabilization.
 
             # Perform an evolution step in the model.
@@ -131,9 +136,11 @@ def main(radical_members, probability, val_D, run, time):
               "time of ending simulation:", time_moment)
 
         phase_arr = np.append(phase_arr, phase_val)
+        time_moment_arr = np.array(time_moment_arr, time_moment)
 
     # save our data
-    save_data_to_file(k_arr, phase_arr, str_nrad, directory_name, directory_localization="./OutputPhase")
+    save_data_to_file(k_arr, phase_arr, time_moment_arr, str_nrad, directory_name,
+                      directory_localization="./OutputPhase")
 
 # ---------------------------------------- RUN VIA TERMINAL ---------------------------------------------------------- #
 if __name__ == "__main__":
