@@ -12,16 +12,18 @@ class TwitterRadicalizationModel:
         :param beta: Coupling parameter.
         :param dt: Time step.
         """
+        # --- Evolution graph coefficients
         self.D = D
         self.beta = beta
         self.dt = dt
 
-        # Load the graph
+        # --- Load the initial graph
         self.network = network
         self.N = len(self.network.nodes)  # number of nodes (members in the graph)
         self.N_left_init, self.N_right_init = self.count_affirmations()  # number of left and right radical members
         self.N_rad = self.N_left_init + self.N_right_init  # number of radical members
 
+        # --- Initialize necessary matrices to describe evolution of states and weight
         # Initialize node states
         self.s_vec = np.array([data['state'] for _, data in self.network.nodes(data=True)])
 
@@ -30,6 +32,22 @@ class TwitterRadicalizationModel:
 
         # Save the initial state
         self.networkState = {node: np.array([state]) for node, state in enumerate(self.s_vec)}
+
+        # --- Defaults settings of calculate phases, which distinguishable behaviour of whole network
+        # set constants
+        self.epsilon = 0.05
+        self.neutral_width = 0.4
+        self.division_threshold = 0.2
+        self.wall_threshold = 0.2
+        # set counters, which stop simulations (we achieve stabilize phase)
+        self.counter_of_domination_phase = 0  # we reach `dominant` phase
+        self.counter_of_fullDivision_phase = 0  # we reach `full division` phase
+        self.counter_of_same_phase = 0  # how many times we have reached exactly same phase
+        self.upperLimit_of_same_phase = 10  # how many times we can reach exactly same phase before stop simulation
+        self.lowerTime_of_same_phase = 50  # the first steps can lead to same phase, we have take that into account
+        # set as: 'nonrecognition' phase
+        self.previous_phase = 4.0
+        self.present_phase = 4.0
 
     # ----------------------------------------- BASE METHODS --------------------------------------------------------- #
     def count_affirmations(self, out_of_class=False, network=None):
@@ -67,6 +85,54 @@ class TwitterRadicalizationModel:
                 count_far_right += 1
 
         return count_far_left, count_far_right
+
+    def change_setting_of_finding_phases(self, dictionary):
+        """
+        Updates the settings used for determining the phases of a system within a class instance.
+        This method accepts a dictionary with keys corresponding to different configurable properties
+        of the phase detection process. Depending on the key provided, it updates the class attributes
+        associated with that key.
+
+        The function supports the modification of various thresholds and counters related to the phase
+        detection mechanism of a system, allowing dynamic adjustment based on runtime analysis or external
+        inputs.
+
+        Args:
+            dictionary (Dict[str, int or float]): A dictionary containing key-value pairs where the keys
+            are the names of the attributes to be updated, and the values are the new settings for these attributes.
+
+        Possible keys include:
+            - "epsilon": Sets the tolerance level used to define boundaries for phases.
+            - "neutral_width": Sets the width of the neutral zone centered around a baseline value.
+            - "division_threshold": Sets the threshold for determining a division phase.
+            - "wall_threshold": Sets the threshold for determining a wall phase.
+            - "counter_of_domination_phase": Sets the counter for domination phase occurrences.
+            - "counter_of_fullDivision_phase": Sets the counter for full division phase occurrences.
+            - "counter_of_same_phase": Sets the counter for detecting repeated occurrences of the same phase.
+            - "upperLimit_of_same_phase": Sets the upper limit for the counter of the same phase to stop simulation.
+            - "lowerTime_of_same_phase": Sets the lower time limit for considering the duration of the same phase occurrence.
+
+        Returns:
+            None: This method does not return a value but updates the instance attributes directly.
+        """
+        if "epsilon" in dictionary:
+            self.epsilon = dictionary["epsilon"]
+        elif "neutral_width" in dictionary:
+            self.neutral_width = dictionary["neutral_width"]
+        elif "division_threshold" in dictionary:
+            self.division_threshold = dictionary["division_threshold"]
+        elif "wall_threshold" in dictionary:
+            self.wall_threshold = dictionary["wall_threshold"]
+        elif "counter_of_domination_phase" in dictionary:
+            self.counter_of_domination_phase = dictionary["counter_of_domination_phase"]
+        elif "counter_of_fullDivision_phase" in dictionary:
+            self.counter_of_fullDivision_phase = dictionary["counter_of_fullDivision_phase"]
+        elif "counter_of_same_phase" in dictionary:
+            self.counter_of_same_phase = dictionary["counter_of_same_phase"]
+        elif "upperLimit_of_same_phase" in dictionary:
+            self.upperLimit_of_same_phase = dictionary["upperLimit_of_same_phase"]
+        elif "lowerTime_of_same_phase" in dictionary:
+            self.lowerTime_of_same_phase = dictionary["lowerTime_of_same_phase"]
 
     # ----------------------------------------- INTERACTIONS --------------------------------------------------------- #
     def f(self):
@@ -197,6 +263,54 @@ class TwitterRadicalizationModel:
 
         return phase
 
+    def stop_simulation_criteria(self, time):
+        """
+        Evaluates if the simulation should be terminated based on the stability of observed phases.
+        The function checks if specific phases indicating stability or stabilization have been met repeatedly,
+        suggesting no further significant evolution is expected.
+
+        Args:
+            time (float): The current simulation time, used to ensure certain criteria are only evaluated
+                          after a minimum time threshold to prevent premature termination.
+
+        Returns:
+            bool: True if the simulation meets the criteria for termination, False otherwise.
+        """
+        # --- Find previous and present phases
+        self.previous_phase = self.present_phase
+        self.present_phase = self.find_the_phase(
+            epsilon=0.05,
+            neutral_width=0.4,
+            division_threshold=0.2,
+            wall_threshold=0.2
+        )
+
+        # --- STABLE PHASE
+        # Check for repeated occurrences of fully stable phases (division or domination)
+        if self.present_phase in (2.0, 3.0):
+            if self.present_phase == 2.0:
+                self.counter_of_fullDivision_phase += 1
+            elif self.present_phase == 3.0:
+                self.counter_of_domination_phase += 1
+
+            if self.counter_of_fullDivision_phase > 2 or self.counter_of_domination_phase > 2:
+                return True  # Terminate if repeated stable phases are observed.
+
+        # --- QUASI-STABLE PHASE
+        # Reset the counter for quasi-stable phases if phase changes
+        if self.previous_phase != self.present_phase:
+            self.counter_of_same_phase = 0
+        else:
+            # Increment counter if the phase remains the same and is within a specific range
+            if 1.0 < self.present_phase < 2.0:
+                self.counter_of_same_phase += 1
+
+        # Terminate if a quasi-stable phase persists beyond the set threshold and time
+        if self.counter_of_same_phase >= self.upperLimit_of_same_phase and time > self.lowerTime_of_same_phase:
+            return True
+
+        return False
+
     # ----------------------------------------- DEAL WITH EVOLUTION -------------------------------------------------- #
     def evolve_with_update_networkState(self):
         """Perform one evolution step: update weights and then update states."""
@@ -230,3 +344,7 @@ class TwitterRadicalizationModel:
     def return_network_evolution_state(self):
         """Return dictionary containing the evolution of the states of the nodes."""
         return self.networkState
+
+    def return_phase_value(self):
+        """Return present value of the phase"""
+        return self.present_phase

@@ -3,6 +3,10 @@ import numpy as np
 import networkx as nx
 
 # ------------------------------------------- HELPFULLY FUNCTION ----------------------------------------------------- #
+def return_name():
+    """Return the basic name, which indicates the initial graph which you have been chosen"""
+    return f"Watts-ConS-UW"
+
 def create_name(members, radical_members, k, probability):
     """
     Constructs a unique name string based on network attributes including member counts and distribution parameters.

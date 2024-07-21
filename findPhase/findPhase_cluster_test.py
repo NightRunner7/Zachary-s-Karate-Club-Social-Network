@@ -2,65 +2,32 @@ import os
 import sys
 import numpy as np
 # --- IMPORT FROM FILES
+from assistantFunctions import save_phase_scan_over_connectivity
 # Add the parent directory to the Python module search path
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(parent_dir)
 from TwitterRadicalizationModel import TwitterRadicalizationModel
 from initialGraph.watts_NS_UW import create_graph, return_name
 
-# ---------------------------------------- HELPFUL FUNCTION ---------------------------------------------------------- #
-def save_data_to_file(k_arr, phase_arr, time_arr, str_nrad, directory_name, directory_localization="./OutputPhase"):
-    """
-    Saves two lists into a text file with a custom format and name, using tab delimiters for readability and
-    easy parsing. The first column will contain values from k_arr and the second column from phase_arr.
-    Files are saved in a specified directory.
-
-    Args:
-        k_arr (list or np.ndarray): A list of numbers.
-        phase_arr (list or np.ndarray): Another list of numbers.
-        time_arr (list or np.ndarray): Another list of numbers.
-        str_nrad (str): A value used to customize the file name.
-        directory_name (str): The name of the directory where the file will be saved.
-        directory_localization (str): The base directory path. Defaults to './OutputPhase'.
-    """
-    # Ensure the directory exists; create if it doesn't
-    full_directory_path = os.path.join(directory_localization, directory_name)
-    os.makedirs(full_directory_path, exist_ok=True)
-
-    # Format the filename with the specified directory
-    filename = os.path.join(full_directory_path, f"phasePoints_{str_nrad}.txt")
-
-    # Open the file to write
-    with open(filename, 'w') as file:
-        # Write headers
-        file.write("k_arr\ttime_arr\tphase_arr\n")
-
-        # Determine the maximum length of the lists
-        max_length = max(len(k_arr), len(phase_arr))
-
-        # Write data row by row
-        for i in range(max_length):
-            k_val = k_arr[i] if i < len(k_arr) else ""
-            time_val = time_arr[i] if i < len(phase_arr) else ""
-            phase_val = phase_arr[i] if i < len(phase_arr) else ""
-            file.write(f"{k_val}\t{time_val}\t{phase_val}\n")
-
-    print(f"Data successfully saved in {filename}")
 
 # ---------------------------------------- MAIN FUNCTION ------------------------------------------------------------- #
+# --- FIXED PARAMETERS:
 radical_members = 162
 probability = 0.02
 val_D = 5.0
 run = 1
 time = 200
 
-# grap parameters
+# --- SETTINGS OF INITIAL GRAPH: USER
 members = 1000
 half_k = np.arange(25, 27, 1, dtype=int)
 k_arr = 2 * half_k
 # Weights distribution, set zero if they not normal distributed
 mean = 0.5
 std_dev = 0.05
+# necessary strings
+base_name = return_name()
+str_nrad = f"{radical_members}"
 
 # --- SETTING OF SIMULATION: USER
 # settings of dynamic evolution: CLASS
@@ -75,71 +42,36 @@ timeStepsToCheck = int((1 / val_dt) * (5 / val_D) * (10 / val_beta))
 # collect data and path/name
 phase_arr = np.array([])
 time_moment_arr = np.array([])
-base_name = return_name()
 directory_name = f"{base_name}-N{members}-p{probability}-mean{mean}-std{std_dev}-Run{run}"
-str_nrad = f"{radical_members}"
 
+# --- SCAN OVER CONNECTIVITY
 for k_val in k_arr:
-    # set counters which have been reset in each connectivity (k) step
-    counter_of_domination_state = 0
-    counter_of_fullDivision_state = 0
-    counter_of_same_state = 0
-    time_moment = 0
-    phase_val = 0.0
+    # set time of reaching stable phase, which have been reset in each connectivity (k) step
+    time_moment = 0.0
 
     # --- CREATE MODEL
-    # create network
     init_network = create_graph(members, radical_members, k_val, probability,
                                 set_affiliation_choice=False, mean=mean, std_dev=std_dev)
-
     TwitterModel = TwitterRadicalizationModel(init_network, D=val_D, beta=val_beta, dt=val_dt)
 
-    # ---------------------------------- EVOLVE NETWORK ---------------------------------------------------------- #
+    # --- EVOLVE NETWORK
     for step in range(timeSteps):
-        # Periodically check and report the network's phase status.
+        # Periodically check the network's phase status: stop simulation if achieve stable phase.
         if step % timeStepsToCheck == 0:
             time_moment = step * val_dt
-            previous_phase_val = phase_val  # Store previous phase value to detect state changes.
-
-            # Calculate the current phase of the network based on defined thresholds and network state.
-            phase_val = TwitterModel.find_the_phase(
-                epsilon=0.05,
-                neutral_width=0.4,
-                division_threshold=0.2,
-                wall_threshold=0.2
-            )
-
-            # Monitor the occurrence of specific phases to determine when the simulation can be terminated early.
-            if phase_val == 2.0:
-                counter_of_fullDivision_state += 1  # Count occurrences of the full division phase.
-            if phase_val == 3.0:
-                counter_of_domination_state += 1  # Count occurrences of the domination phase.
-
-            # Check if the phase has remained the same over multiple checks to infer stabilization.
-            if previous_phase_val == phase_val and phase_val > 1.0:
-                counter_of_same_state += 1
-            else:
-                counter_of_same_state = 0  # Reset counter if the phase changes.
-
-            # Terminate early if certain conditions are met, indicating no further significant evolution.
-            if counter_of_fullDivision_state > 1 or counter_of_domination_state > 1:
-                break  # Stop if a phase has occurred multiple times, suggesting dominance or division stability.
-            if counter_of_same_state == 20:
-                break  # Stop if the same phase persists across multiple checks, suggesting stabilization.
+            stop_simulation_flag = TwitterModel.stop_simulation_criteria(time_moment)
+            if stop_simulation_flag:
+                break
 
         # Perform an evolution step in the model.
         TwitterModel.evolve()
 
-    phase_val = TwitterModel.find_the_phase(
-        epsilon=0.05,
-        neutral_width=0.4,
-        division_threshold=0.2,
-        wall_threshold=0.2
-    )
-    print("phase_val in the end of simulation:", phase_val, "time of ending simulation:", time_moment)
-
+    # --- STORE DATA
+    phase_val = TwitterModel.return_phase_value()
     phase_arr = np.append(phase_arr, phase_val)
     time_moment_arr = np.append(time_moment_arr, time_moment)
+    print("phase_val in the end of simulation:", phase_val, "time of ending simulation:", time_moment)
 
 # save our data
-save_data_to_file(k_arr, phase_arr, time_moment_arr, str_nrad, directory_name, directory_localization="./OutputPhase")
+save_phase_scan_over_connectivity(k_arr, phase_arr, time_moment_arr,
+                                  str_nrad, directory_name, directory_localization="./OutputPhase")
