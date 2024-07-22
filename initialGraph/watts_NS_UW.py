@@ -1,117 +1,95 @@
-import random
 import numpy as np
 import networkx as nx
-
-# ------------------------------------------- HELPFULLY FUNCTION ----------------------------------------------------- #
+from .assistantFunctions import setup_node_states_and_affiliations
+# ------------------------------------------- RETURN NAME ------------------------------------------------------------ #
 def return_name():
     """Return the basic name, which indicates the initial graph which you have been chosen"""
     return f"Watts-NS-UW"
 
-def create_name(members, radical_members, k, probability, mean, std_dev):
+def create_name(members=None, radical_members=None, k=None, probability=None, mean=None, std_dev=None, sim_config=None):
     """
-    Constructs a unique name string based on network attributes including member counts and distribution parameters.
+    Constructs a unique name string for a network configuration based on either direct network attributes
+    or a configuration dictionary. This function allows for flexibility depending on how data is passed to it.
 
-    :param members: Number of members (nodes) in the network.
-    :param radical_members: Number of radical members (nodes) to be marked as 'far-left' or 'far-right'.
-    :param k: Each node is joined with its k nearest neighbors in a ring topology.
-    :param probability: The probability of rewiring each edge.
-    :param mean: Mean value for the normal distribution used to randomize edge weights.
-    :param std_dev: Standard deviation for the normal distribution used to randomize edge weights.
-    :return: A formatted string that encapsulates significant attributes of the network, suitable for identification or
-             labeling.
-    """
-    return f"Watts-NS-UW-N{members}-Nrad{radical_members}-k{k}-p{probability}-mean{mean}-std{std_dev}"
-
-def divide_odds_and_evens(numbers):
-    """
-    Divide a list of numbers into two separate lists based on odd and even indexes.
-
-    Parameters:
-    numbers (list of int): A list of integers to be divided into odd and even numbers.
+    Args:
+        members (int, optional): Number of members (nodes) in the network.
+        radical_members (int, optional): Number of radical members (nodes).
+        k (int, optional): Number of nearest neighbors each node is connected to in a ring topology.
+        probability (float, optional): Probability of rewiring each edge.
+        mean (float, optional): Mean value of the normal distribution for edge weights.
+        std_dev (float, optional): Standard deviation of the normal distribution for edge weights.
+        sim_config (dict, optional): Configuration dictionary containing all the above parameters. If provided,
+                                     it overrides individual parameters.
 
     Returns:
-    tuple of two lists (list of int, list of int):
-        - First list contains all odd numbers from the input.
-        - Second list contains all even numbers from the input.
+        str: A formatted string that encapsulates significant attributes of the network, suitable for identification or
+             labeling.
+
+    Examples:
+        Using direct parameters:
+            name = create_name(100, 10, 5, 0.1, 0.5, 0.1)
+        Using a configuration dictionary:
+            config = {'members': 100, 'radical_members': 10, 'k': 5, 'p': 0.1, 'mean': 0.5, 'std_dev': 0.1}
+            name = create_name(sim_config=config)
     """
-    odd_numbers = []  # List to hold odd indexes
-    even_numbers = []  # List to hold even indexes
+    # Check if sim_config is provided, if so, override other parameters
+    if sim_config:
+        members = sim_config.get('members', members)
+        radical_members = sim_config.get('radical_members', radical_members)
+        k = sim_config.get('k', k)
+        probability = sim_config.get('p', probability)
+        mean = sim_config.get('mean', mean)
+        std_dev = sim_config.get('std_dev', std_dev)
 
-    # Iterate through each number in the input list
-    for index in range(0, len(numbers)):
-        if index % 2 == 0:
-            even_numbers.append(numbers[index])  # Add even number to the even_numbers list
-        else:
-            odd_numbers.append(numbers[index])  # Add odd number to the odd_numbers list
-
-    return odd_numbers, even_numbers  # Return both lists as a tuple
+    return f"Watts-NS-UW-N{members}-Nrad{radical_members}-k{k}-p{probability}-mean{mean}-std{std_dev}"
 
 # ------------------------------------------- CREATE GRAPH ----------------------------------------------------------- #
-def create_graph(members, radical_members, k, probability, mean=0.5, std_dev=0.05, set_affiliation_choice=True):
+def create_graph(members=None, radical_members=None, k=None, probability=None,
+                 mean=0.5, std_dev=0.05,
+                 set_affiliation_choice=True,
+                 sim_config=None):
     """
-    Create a Watts-Strogatz graph with custom edge weights and initialize the network with political views.
+    Generates a Watts-Strogatz small-world network graph with specified properties and initializes node states and
+    affiliations based on political views. This function allows for dynamic graph generation with custom edge weights
+    and node attributes based on provided or configured parameters.
 
-    :param members: Number of members (nodes) in the network.
-    :param radical_members: Number of radical members (nodes) to be marked as 'far-left' or 'far-right'.
-    :param k: Each node is joined with its k nearest neighbors in a ring topology.
-    :param probability: The probability of rewiring each edge.
-    :param mean: Mean value for the normal distribution used to randomize edge weights.
-    :param std_dev: Standard deviation for the normal distribution used to randomize edge weights.
-    :param set_affiliation_choice: Flag to differentiate two different ways of selecting radicals.
-    :return: A NetworkX graph with initialized node attributes and edge weights.
+    Args:
+        members (int): Number of members (nodes) in the network.
+        radical_members (int): Number of radical members (nodes) to be marked as 'far-left' or 'far-right'.
+        k (int): Each node is joined with its k nearest neighbors in a ring topology.
+        probability (float): The probability of rewiring each edge.
+        mean (float): Mean value for the normal distribution used to randomize edge weights.
+        std_dev (float): Standard deviation for the normal distribution used to randomize edge weights.
+        set_affiliation_choice (bool): Flag to differentiate two different ways of selecting radicals.
+        sim_config (dict, optional): Configuration dictionary for simulation parameters. If provided, it overrides
+                                     individual parameters.
+
+    Returns:
+        networkx.Graph: A configured graph with nodes and edges initialized according to the simulation parameters.
+
+    Notes:
+        - 'set_affiliation_choice': If True, affiliations are randomly assigned based on probabilities.
+          If False, affiliations are deterministically assigned to specific nodes.
+        - The function uses the numpy and random libraries for random number generation and array manipulations,
+          and the networkx library for creating and managing the graph.
     """
-    # --- Probability of being radical
-    prob_radical_left = (radical_members / members) / 2
-    prob_radical_right = (radical_members / members) / 2
-    prob_unaffiliated = 1 - prob_radical_left - prob_radical_right
+    # Apply configuration from sim_config if provided
+    if sim_config:
+        members = sim_config.get('members', members)
+        radical_members = sim_config.get('radical_members', radical_members)
+        k = sim_config.get('k', k)
+        probability = sim_config.get('p', probability)
+        mean = sim_config.get('mean', mean)
+        std_dev = sim_config.get('std_dev', std_dev)
 
-    # --- Create a Watts-Strogatz small-world network
+    # Initialize the graph using the Watts-Strogatz model
     network = nx.watts_strogatz_graph(members, k, probability)
 
-    # --- Randomize the value of states (nodes)
-    non_radical = network.number_of_nodes() - radical_members
-    state_list = np.random.normal(mean, std_dev, non_radical)
-    state_list_nor = np.clip(state_list, 0, 1)  # Apply normalization to ensure states are in range [0, 1]
+    # Setup node states and affiliations
+    setup_node_states_and_affiliations(network, members, radical_members, mean, std_dev, set_affiliation_choice)
 
-    # --- Assign initial states and affiliations
-    counter = 0
-    if set_affiliation_choice:
-        for node in network.nodes():
-            # Randomly assign affiliations with a higher chance of being unaffiliated
-            affiliation = np.random.choice(['far-left', 'far-right', None], p=[prob_radical_left,
-                                                                               prob_radical_right,
-                                                                               prob_unaffiliated])
-            network.nodes[node]['affirmation'] = affiliation
-
-            # Set initial state based on the political affiliation
-            if affiliation == 'far-left':
-                network.nodes[node]['state'] = 0.0  # Far-left affiliation starts at state 0
-            elif affiliation == 'far-right':
-                network.nodes[node]['state'] = 1.0  # Far-right affiliation starts at state 1
-            else:
-                network.nodes[node]['state'] = state_list_nor[counter]
-                counter += 1
-    else:
-        all_members = range(members)
-        # Select radical_members unique random numbers from the all_members
-        radical_nodes = random.sample(all_members, radical_members)
-        left_nodes, right_nodes = divide_odds_and_evens(radical_nodes)
-
-        for node in network.nodes():
-            # Set initial state based on the political affiliation
-            if node in left_nodes:
-                network.nodes[node]['affirmation'] = 'far-left'
-                network.nodes[node]['state'] = 0.0  # Far-left affiliation starts at state 0
-            elif node in right_nodes:
-                network.nodes[node]['affirmation'] = 'far-right'
-                network.nodes[node]['state'] = 1.0  # Far-right affiliation starts at state 1
-            else:
-                network.nodes[node]['affirmation'] = None
-                network.nodes[node]['state'] = state_list_nor[counter]
-                counter += 1
-
-    # --- Initialize edge weights
-    for edge, (i, j) in enumerate(network.edges):
-        network.edges[i, j]['weight'] = np.random.uniform(0.25, 0.75)  # Unaffiliated edges with random weights
+    # Initialize random edge weights within a specific range
+    for i, j in network.edges:
+        network.edges[i, j]['weight'] = np.random.uniform(0.25, 0.75)
 
     return network
