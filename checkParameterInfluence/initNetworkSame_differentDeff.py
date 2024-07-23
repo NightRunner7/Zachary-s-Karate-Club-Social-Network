@@ -51,12 +51,12 @@ main_dir = f"{name}-D{diffusion:.1f}"
 
 # --- SCAN OVER RUNS
 for run in range(0, number_runs):
-    # --- PREPARE RUN
-    # what parameters change in these runs
+    # --- PREPARE RUN: WHAT PARAMETERS CHANGE IN THESE RUNS
     val_Deff = Deff_arr[run]
     sim_config = cfg.set_network_evolution_parameters(sim_config, val_Deff, diffusion=diffusion)
     output_main = f"{main_dir}/Deff{sim_config['Deff']:.3f}"
 
+    # --- PREPARE RUN: BASIC SETTINGS
     # basic setting
     network_dynamics = dict()
     # for all time steps

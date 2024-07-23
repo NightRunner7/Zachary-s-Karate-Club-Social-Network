@@ -6,10 +6,19 @@ def return_name():
     """Return the basic name, which indicates the initial graph which you have been chosen"""
     return f"Watts-NS-UW"
 
-def create_name(members=None, radical_members=None, k=None, probability=None, mean=None, std_dev=None, sim_config=None):
+def create_name(members=None,
+                radical_members=None,
+                k=None,
+                probability=None,
+                mean=None,
+                std_dev=None,
+                D=None,
+                Deff = None,
+                run_number=None,
+                sim_config=None):
     """
-    Constructs a unique name string for a network configuration based on either direct network attributes
-    or a configuration dictionary. This function allows for flexibility depending on how data is passed to it.
+    Constructs a unique name string for a network configuration based on provided attributes.
+    Only includes parameters that are explicitly set (not None).
 
     Args:
         members (int, optional): Number of members (nodes) in the network.
@@ -18,6 +27,9 @@ def create_name(members=None, radical_members=None, k=None, probability=None, me
         probability (float, optional): Probability of rewiring each edge.
         mean (float, optional): Mean value of the normal distribution for edge weights.
         std_dev (float, optional): Standard deviation of the normal distribution for edge weights.
+        D (float, optional): Diffusion rate.
+        Deff (float, optional): Effective diffusion rate.
+        run_number (int, optional): Number of run with exactly same parameters.
         sim_config (dict, optional): Configuration dictionary containing all the above parameters. If provided,
                                      it overrides individual parameters.
 
@@ -40,8 +52,31 @@ def create_name(members=None, radical_members=None, k=None, probability=None, me
         probability = sim_config.get('p', probability)
         mean = sim_config.get('mean', mean)
         std_dev = sim_config.get('std_dev', std_dev)
+        D = sim_config.get('D', D)
+        Deff = sim_config.get('Deff', Deff)
+        run_number = sim_config.get('run_number', run_number)
 
-    return f"Watts-NS-UW-N{members}-Nrad{radical_members}-k{k}-p{probability}-mean{mean}-std{std_dev}"
+    parts = []
+    if members is not None:
+        parts.append(f"N{members}")
+    if radical_members is not None:
+        parts.append(f"Nrad{radical_members}")
+    if k is not None:
+        parts.append(f"k{k}")
+    if probability is not None:
+        parts.append(f"p{probability}")
+    if mean is not None:
+        parts.append(f"mean{mean}")
+    if std_dev is not None:
+        parts.append(f"std{std_dev}")
+    if D is not None:
+        parts.append(f"D{D}")
+    if Deff is not None:
+        parts.append(f"Deff{Deff}")
+    if run_number is not None:
+        parts.append(f"run{run_number}")
+
+    return "Watts-NS-UW-" + "-".join(parts)
 
 # ------------------------------------------- CREATE GRAPH ----------------------------------------------------------- #
 def create_graph(members=None, radical_members=None, k=None, probability=None,
