@@ -43,11 +43,11 @@ class TwitterRadicalizationModel:
         self.counter_of_domination_phase = 0  # we reach `dominant` phase
         self.counter_of_fullDivision_phase = 0  # we reach `full division` phase
         self.counter_of_same_phase = 0  # how many times we have reached exactly same phase
-        self.upperLimit_of_same_phase = 10  # how many times we can reach exactly same phase before stop simulation
+        self.upperLimit_of_same_phase = 20  # how many times we can reach exactly same phase before stop simulation
         self.lowerTime_of_same_phase = 50  # the first steps can lead to same phase, we have take that into account
         # set as: 'nonrecognition' phase
-        self.previous_phase = 4.0
-        self.present_phase = 4.0
+        self.previous_phase = np.nan
+        self.present_phase = np.nan
 
     # ----------------------------------------- BASE METHODS --------------------------------------------------------- #
     def count_affirmations(self, out_of_class=False, network=None):
@@ -220,7 +220,7 @@ class TwitterRadicalizationModel:
 
         Returns:
             float: A numeric code representing different phases of the system:
-                4.0 - 'nonrecognition'
+                np.nan - 'nonrecognition'
                 3.0 - 'domination'
                 1.0 to 2.0 - 'division' (variable based on the degree of radical change)
                 0.0 to 1.0 - 'wall' (variable, inversely related to the degree of neutrality)
@@ -259,7 +259,7 @@ class TwitterRadicalizationModel:
         elif (N_neutral_end / remaining_non_radical) >= wall_threshold:
             phase = 1.0 - (N_neutral_end / remaining_non_radical)  # Wall phase indicates a significant neutral buffer
         else:
-            phase = 4.0  # Nonrecognition phase indicates no significant change or pattern
+            phase = np.nan  # Nonrecognition phase indicates no significant change or pattern
 
         return phase
 
