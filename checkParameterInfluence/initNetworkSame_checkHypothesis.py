@@ -148,7 +148,7 @@ for run in range(0, number_runs):
     # --- STRENGTH CONNECTION PLOT
     plt.figure(figsize=(10, 6))
     plt.plot(network_dynamics['time_step_arr'], network_dynamics['phase_arr'],
-             marker='o', linestyle='-', color='b', label='Connection Strength')
+             marker='o', linestyle='-', color='b', label='Phase value')
     plt.title('Phase value Over Time')
     plt.xlabel('Time step')
     plt.ylabel('Phase value ')

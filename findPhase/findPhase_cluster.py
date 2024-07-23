@@ -64,7 +64,7 @@ def main(radical_members, probability, val_D, val_Deff, run, time):
         TwitterModel = TwitterRadicalizationModel(init_network,
                                                   D=sim_config['D'],
                                                   beta=sim_config['beta'],
-                                                  dt=sim_config['dt'])  # COPY NEEDED !!!
+                                                  dt=sim_config['dt'])
 
         # --- EVOLVE NETWORK
         for step in range(sim_config['timeSteps']):

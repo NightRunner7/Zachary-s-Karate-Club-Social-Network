@@ -90,9 +90,9 @@ def adjust_time_for_diffusion(sim_config,
                               diffusion,
                               base_dt=0.005,
                               base_time_end=200,
-                              check_interval=100,
-                              draw_interval=100,
-                              update_interval=100):
+                              check_interval=200,
+                              draw_interval=200,
+                              update_interval=200):
     """
     Scales time-related simulation parameters based on the diffusion rate, ensuring time steps and durations
     are adjusted to reflect changes in state propagation speeds due to diffusion. This adjustment helps maintain
@@ -145,9 +145,9 @@ def adjust_time_for_diffusion_vol2(sim_config,
                                    diffusion,
                                    base_dt=0.005,
                                    base_time_end=200,
-                                   check_interval=100,
-                                   draw_interval=100,
-                                   update_interval=100):
+                                   check_interval=200,
+                                   draw_interval=200,
+                                   update_interval=200):
     """
     Adjusts time-related simulation parameters based on the diffusion rate, focusing on testing the hypothesis
     that network evolution shows universal characteristics when scaled by the effective diffusion rate (Deff = D/β).
