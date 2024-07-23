@@ -30,7 +30,7 @@ def main(radical_members, probability, val_D, val_Deff, run, time):
     }
 
     # set the range of connectivity
-    half_k = np.arange(25, 27, 1, dtype=int)
+    half_k = np.arange(1, 150, 1, dtype=int)
     k_arr = 2 * half_k
 
     # --- FIXED PARAMETERS: AUTOMATIC
