@@ -13,7 +13,8 @@ def create_name(members=None,
                 mean=None,
                 std_dev=None,
                 D=None,
-                Deff = None,
+                Deff=None,
+                dt=None,
                 run_number=None,
                 sim_config=None):
     """
@@ -30,6 +31,7 @@ def create_name(members=None,
         D (float, optional): Diffusion rate.
         Deff (float, optional): Effective diffusion rate.
         run_number (int, optional): Number of run with exactly same parameters.
+        dt (double, optional): time step.
         sim_config (dict, optional): Configuration dictionary containing all the above parameters. If provided,
                                      it overrides individual parameters.
 
@@ -54,6 +56,7 @@ def create_name(members=None,
         std_dev = sim_config.get('std_dev', std_dev)
         D = sim_config.get('D', D)
         Deff = sim_config.get('Deff', Deff)
+        dt = sim_config.get('dt', dt)
         run_number = sim_config.get('run_number', run_number)
 
     parts = []
@@ -73,6 +76,8 @@ def create_name(members=None,
         parts.append(f"D{D}")
     if Deff is not None:
         parts.append(f"Deff{Deff}")
+    if dt is not None:
+        parts.append(f"dt{dt}")
     if run_number is not None:
         parts.append(f"run{run_number}")
 

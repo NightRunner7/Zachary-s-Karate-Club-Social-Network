@@ -48,6 +48,8 @@ class TwitterRadicalizationModel:
         # set as: 'nonrecognition' phase
         self.previous_phase = np.nan
         self.present_phase = np.nan
+        # set flag for stable graf evolution
+        self.stable_evolution = True
 
     # ----------------------------------------- BASE METHODS --------------------------------------------------------- #
     def count_affirmations(self, out_of_class=False, network=None):
@@ -276,6 +278,22 @@ class TwitterRadicalizationModel:
         Returns:
             bool: True if the simulation meets the criteria for termination, False otherwise.
         """
+        # ### FIRST CRITERIA: even one state is bigger than `1.0` or less than `0.0`
+        # Sometimes, if `dt` is not small enough then some states become out of the range: [0, 1]
+        if np.any(self.s_vec > 1.0):
+            print("At least one state is bigger than `1.0`. Evolution is not stable anymore.")
+            print("Take smaller `dt` to obtain correct graf evolution.")
+            self.stable_evolution = False
+            self.present_phase = np.nan  # set as: 'nonrecognition' phase
+            return True  # Terminate if repeated stable phases are observed.
+        elif np.any(self.s_vec < 0.0):
+            print("At least one state is smaller than `0.0`. Evolution is not stable anymore.")
+            print("Take smaller `dt` to obtain correct graf evolution.")
+            self.stable_evolution = False
+            self.present_phase = np.nan  # set as: 'nonrecognition' phase
+            return True  # Terminate if repeated stable phases are observed.
+
+        # ### SECOND CRITERIA: identify stable or quasi stable phase
         # --- Find previous and present phases
         self.previous_phase = self.present_phase
         self.present_phase = self.find_the_phase(
@@ -348,3 +366,7 @@ class TwitterRadicalizationModel:
     def return_phase_value(self):
         """Return present value of the phase"""
         return self.present_phase
+
+    def return_stable_evolution(self):
+        """Return flags, which differentiate stable and non-stable evolution of the network"""
+        return self.stable_evolution

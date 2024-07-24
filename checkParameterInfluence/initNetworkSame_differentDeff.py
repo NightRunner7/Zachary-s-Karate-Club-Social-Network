@@ -29,8 +29,20 @@ sim_config = {
     'mean': 0.5,
     'std_dev': 0.05
     }
+
+# Manage time settings
+time_end = 200
+dt = 0.001
+number_of_plots_and_checks = 200
+
 # create network and name
-init_network = create_graph(set_affiliation_choice=False, sim_config=sim_config)
+sim_config = cfg.adjust_time_for_diffusion(sim_config,
+                                           sim_config['D'],
+                                           base_time_end=time_end,
+                                           base_dt=dt,
+                                           check_interval=number_of_plots_and_checks,
+                                           draw_interval=number_of_plots_and_checks,
+                                           update_interval=number_of_plots_and_checks)
 name = create_name(sim_config=sim_config)
 
 # --- SETTING OF SIMULATION: USER

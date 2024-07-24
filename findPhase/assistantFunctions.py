@@ -2,7 +2,7 @@ import os
 import numpy as np
 
 # ----------------------------------- DEAL WITH DATA ----------------------------------------------------------------- #
-def save_phase_scan_over_connectivity(k_arr, phase_arr, time_arr,
+def save_phase_scan_over_connectivity(k_arr, phase_arr, time_arr, stable_evolution_arr,
                                       str_nrad, directory_name, directory_localization="./OutputPhase"):
     """
     Saves two lists into a text file with a custom format and name, using tab delimiters for readability and
@@ -13,6 +13,7 @@ def save_phase_scan_over_connectivity(k_arr, phase_arr, time_arr,
         k_arr (list or np.ndarray): A list containing fixed connectivity of the graph.
         phase_arr (list or np.ndarray): A list of last phase value of specific simulation.
         time_arr (list or np.ndarray): A list of time moment reaching the stable or quasi-stable phase.
+        stable_evolution_arr (list or np.ndarray): Flag, to differentiate stable to non-stable network evolution.
         str_nrad (str): A value used to customize the file name.
         directory_name (str): The name of the directory where the file will be saved.
         directory_localization (str): The base directory path. Defaults to './OutputPhase'.
@@ -30,17 +31,18 @@ def save_phase_scan_over_connectivity(k_arr, phase_arr, time_arr,
     # Open the file to write
     with open(filename, 'w') as file:
         # Write headers
-        file.write("k\ttime\tphase\n")
+        file.write("k\ttime\tphase\tstable evolution\n")
 
         # Determine the maximum length of the lists
-        max_length = max(len(k_arr), len(phase_arr), len(time_arr))
+        max_length = max(len(k_arr), len(phase_arr), len(time_arr), len(stable_evolution_arr))
 
         # Write data row by row
         for i in range(max_length):
             k_val = k_arr[i] if i < len(k_arr) else ""
             time_val = time_arr[i] if i < len(time_arr) else ""
             phase_val = phase_arr[i] if i < len(phase_arr) else ""
-            file.write(f"{k_val}\t{time_val}\t{phase_val}\n")
+            stable_evolution = stable_evolution_arr[i] if i < len(stable_evolution_arr) else ""
+            file.write(f"{k_val}\t{time_val}\t{phase_val}\t{stable_evolution}\n")
 
     print(f"Data successfully saved in {filename}")
 

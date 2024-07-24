@@ -35,7 +35,7 @@ def main(radical_members, k, probability, val_D, val_Deff, run, time):
         'D': val_D,
         'Deff': val_Deff,
         # Other
-        'run': run
+        'run_number': run
     }
     # Flags
     plot_fit_weight = False
@@ -49,7 +49,7 @@ def main(radical_members, k, probability, val_D, val_Deff, run, time):
 
     # Manage time settings
     time_end = time
-    dt = 0.005
+    dt = 0.001
     number_of_plots_and_checks = time
 
     # --- FIXED PARAMETERS: AUTOMATIC

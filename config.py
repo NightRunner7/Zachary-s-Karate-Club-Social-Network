@@ -88,7 +88,7 @@ def set_network_evolution_parameters(sim_config, effective_diffusion, diffusion=
     return sim_config
 def adjust_time_for_diffusion(sim_config,
                               diffusion,
-                              base_dt=0.005,
+                              base_dt=0.001,
                               base_time_end=200,
                               check_interval=200,
                               draw_interval=200,
@@ -123,7 +123,7 @@ def adjust_time_for_diffusion(sim_config,
         - The file `initNetworkSame_checkHypothesis.py` shows teh universal graph evolution with same values of
           effective diffusion (Deff).
         - The file `initNetwork_dt.py` shows the maximal value of `dt`, which gives us stable evolution of the
-          network. It seems a good choice is in range [0.001, 0.005].
+          network. It seems a good choice is: `0.001 >= dt`.
     """
     scale_factor = 5 / diffusion
     adjusted_dt = base_dt * scale_factor
@@ -143,7 +143,7 @@ def adjust_time_for_diffusion(sim_config,
 
 def adjust_time_for_diffusion_vol2(sim_config,
                                    diffusion,
-                                   base_dt=0.005,
+                                   base_dt=0.001,
                                    base_time_end=200,
                                    check_interval=200,
                                    draw_interval=200,
@@ -179,7 +179,7 @@ def adjust_time_for_diffusion_vol2(sim_config,
           of the network is analyzed under different scenarios to validate the universality of Deff in determining
           network dynamics.
         - The file `initNetwork_dt.py` shows the maximal value of `dt`, which gives us stable evolution of the
-          network. It seems a good choice is in range [0.001, 0.005].
+          network. It seems a good choice is: `0.001 >= dt`.
     """
     # Calculate scale factor based on the diffusion rate
     scale_factor = 5 / diffusion

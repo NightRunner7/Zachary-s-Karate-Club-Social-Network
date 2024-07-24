@@ -29,6 +29,12 @@ sim_config = {
     'mean': 0.5,
     'std_dev': 0.05
     }
+
+# Manage time settings
+time_end = 200
+dt = 0.005
+number_of_plots_and_checks = 200
+
 # create network and name
 init_network = create_graph(set_affiliation_choice=False, sim_config=sim_config)
 name = create_name(sim_config=sim_config)
@@ -49,7 +55,13 @@ main_dir = f"{name}-Deff{sim_config['Deff']:.1f}-D{sim_config['D']:.1f}"
 # --- SCAN OVER RUNS
 for run in range(0, number_runs):
     # --- PREPARE RUN: WHAT PARAMETERS CHANGE IN THESE RUNS
-    sim_config = cfg.adjust_time_for_diffusion(sim_config, sim_config['D'], base_time_end=100, base_dt=dt_list[run])
+    sim_config = cfg.adjust_time_for_diffusion(sim_config,
+                                               sim_config['D'],
+                                               base_time_end=time_end,
+                                               base_dt=dt,
+                                               check_interval=number_of_plots_and_checks,
+                                               draw_interval=number_of_plots_and_checks,
+                                               update_interval=number_of_plots_and_checks)
     output_main = f"{main_dir}/dt{sim_config['dt']:.3f}"
 
     # --- PREPARE RUN: BASIC SETTINGS
