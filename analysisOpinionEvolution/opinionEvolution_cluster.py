@@ -142,6 +142,12 @@ def main(radical_members, k, probability, val_D, val_Deff, run, time):
                                     mean_val=sim_config['mean'], std_dev_val=sim_config['std_dev'],
                                     output_path=output_evolutionHistoState, file_name=name)
 
+        if step % sim_config['timeStepsToCheck'] == 0:
+            # Periodically check the network's phase status: stop simulation if network evolution is non-stable.
+            stop_simulation_flag = TwitterModel.stop_simulation_basic_criteria()
+            if stop_simulation_flag:
+                break
+
         if makeUpdateData and step % sim_config['timeStepsUpdateData'] == 0:
             # --- time list
             network_dynamics['time_dyn'] = np.append(network_dynamics['time_dyn'], time)

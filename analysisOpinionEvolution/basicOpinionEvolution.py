@@ -114,8 +114,8 @@ for step in range(sim_config['timeSteps']):
                                 mean_val=sim_config['mean'], std_dev_val=sim_config['std_dev'],
                                 output_path=output_evolutionHistoState, file_name=name)
 
-    # Periodically check the network's phase status: stop simulation if achieve stable phase.
     if step % sim_config['timeStepsToCheck'] == 0:
+        # Periodically check the network's phase status, stop simulation if: achieve stable phase, non-stable network.
         time_moment = step * sim_config['dt']
         stop_simulation_flag = TwitterModel.stop_simulation_criteria(time_moment)
         if stop_simulation_flag:

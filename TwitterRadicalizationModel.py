@@ -204,7 +204,7 @@ class TwitterRadicalizationModel:
 
         return division_strength
 
-    # ----------------------------------------- DEAL WITH PHASES ----------------------------------------------------- #
+    # ----------------------------------------- DEAL WITH PHASES AND STOP EVOLUTION ---------------------------------- #
     def find_the_phase(self, epsilon=0.05, neutral_width=0.4, division_threshold=0.2, wall_threshold=0.2,
                        out_of_class=False, network=None):
         """
@@ -328,6 +328,31 @@ class TwitterRadicalizationModel:
             return True
 
         return False
+
+    def stop_simulation_basic_criteria(self):
+        """
+        Evaluates if the simulation should be terminated based on the stability of tne network evolution.
+        The function checks if any node (member) `state` get out from the range [0,1]. If it does, it means
+        our network evolution is unstable. This also indicates we have to set lower value of time step (`dt`)
+        next time, if we're looking for network evolution for specific values of parameters.
+
+        Returns:
+            bool: True if the simulation meets the criteria for termination, False otherwise.
+        """
+        # ### FIRST CRITERIA: even one state is bigger than `1.0` or less than `0.0`
+        # Sometimes, if `dt` is not small enough then some states become out of the range: [0, 1]
+        if np.any(self.s_vec > 1.0):
+            print("At least one state is bigger than `1.0`. Evolution is not stable anymore.")
+            print("Take smaller `dt` to obtain correct graf evolution.")
+            self.stable_evolution = False
+            self.present_phase = np.nan  # set as: 'nonrecognition' phase
+            return True  # Terminate if repeated stable phases are observed.
+        elif np.any(self.s_vec < 0.0):
+            print("At least one state is smaller than `0.0`. Evolution is not stable anymore.")
+            print("Take smaller `dt` to obtain correct graf evolution.")
+            self.stable_evolution = False
+            self.present_phase = np.nan  # set as: 'nonrecognition' phase
+            return True  # Terminate if repeated stable phases are observed.
 
     # ----------------------------------------- DEAL WITH EVOLUTION -------------------------------------------------- #
     def evolve_with_update_networkState(self):

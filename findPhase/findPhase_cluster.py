@@ -79,7 +79,8 @@ def main(radical_members, probability, val_D, val_Deff, run, time):
 
         # --- EVOLVE NETWORK
         for step in range(sim_config['timeSteps']):
-            # Periodically check the network's phase status: stop simulation if achieve stable phase.
+            # Periodically check the network's phase status, stop simulation if: achieve stable phase,
+            # non-stable network.
             if step % sim_config['timeStepsToCheck'] == 0:
                 time_moment = step * sim_config['dt']
                 stop_simulation_flag = TwitterModel.stop_simulation_criteria(time_moment)
@@ -95,7 +96,7 @@ def main(radical_members, probability, val_D, val_Deff, run, time):
         stable_evolution = TwitterModel.return_stable_evolution()
         stable_evolution_arr = np.append(stable_evolution_arr, stable_evolution)
         time_moment_arr = np.append(time_moment_arr, time_moment)
-        print("phase_val in the end of simulation:", phase_val, "time of ending simulation:", time_moment)
+        print("time of simulation:", time_moment, "phase_val in the end of simulation:", phase_val)
 
     # save our data
     save_phase_scan_over_connectivity(k_arr, phase_arr, time_moment_arr, stable_evolution_arr,
