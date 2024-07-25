@@ -93,7 +93,7 @@ def main(radical_members, probability, val_D, val_Deff, run, time):
     params = [(radical_members, k, probability, val_D, val_Deff, run, time) for k in k_arr]
 
     with Pool(processes=2) as pool:  # Utilize as many cores as are beneficial
-        results_list = pool.map(simulate_phase_point, params)
+        results_list = pool.starmap(simulate_phase_point, params)
 
     # Prepare arrays to store results
     time_moment_arr = np.array([result[0] for result in results_list])
