@@ -88,11 +88,11 @@ def main(radical_members, probability, val_D, val_Deff, run, time):
                                  run_number=run)
 
     # Set the range of connectivity
-    # k_arr = np.arange(2, 302, 2)
-    k_arr = np.arange(30, 34, 2)
+    k_arr = np.arange(2, 302, 2)
+    # k_arr = np.arange(30, 34, 2)
     params = [(radical_members, k, probability, val_D, val_Deff, run, time) for k in k_arr]
 
-    with Pool(processes=2) as pool:  # Utilize as many cores as are beneficial
+    with Pool(processes=20) as pool:  # Utilize as many cores as are beneficial
         results_list = pool.starmap(simulate_phase_point, params)
 
     # Prepare arrays to store results
