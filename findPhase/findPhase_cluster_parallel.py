@@ -1,4 +1,5 @@
 import os
+import gc
 import sys
 import argparse
 import numpy as np
@@ -36,24 +37,23 @@ def simulate_phase_point(radical_members, k, probability, val_D, val_Deff, run, 
     # Manage time settings
     time_end = time
     dt = 0.001
-    number_of_plots_and_checks = time
     time_moment = 0.0  # set time of reaching stable phase
 
-    # --- FIXED PARAMETERS: AUTOMATIC
-    # set beta parameter
-    sim_config = cfg.set_network_evolution_parameters(sim_config, sim_config['Deff'], diffusion=sim_config['D'])
+    # --- INITIALIZE MODEL
+    sim_config = cfg.set_network_evolution_parameters(sim_config,
+                                                      sim_config['Deff'],
+                                                      diffusion=sim_config['D'])
 
-    # set time step and ending time
     sim_config = cfg.adjust_time_for_diffusion(sim_config,
                                                sim_config['D'],
                                                base_time_end=time_end,
                                                base_dt=dt,
-                                               check_interval=number_of_plots_and_checks,
-                                               draw_interval=number_of_plots_and_checks,
-                                               update_interval=number_of_plots_and_checks)
+                                               check_interval=time_end,
+                                               draw_interval=time_end,
+                                               update_interval=time_end)
 
-    # --- CREATE MODEL
-    init_network = create_graph(set_affiliation_choice=False, sim_config=sim_config)
+    init_network = create_graph(set_affiliation_choice=False,
+                                sim_config=sim_config)
 
     TwitterModel = TwitterRadicalizationModel(init_network,
                                               D=sim_config['D'],
@@ -72,9 +72,11 @@ def simulate_phase_point(radical_members, k, probability, val_D, val_Deff, run, 
         # Perform an evolution step in the model.
         TwitterModel.evolve()
 
-    # --- STORE DATA
+    # --- CLEANUP AND DATA COLLECTION
     phase = TwitterModel.return_phase_value()
     stable_evolution = TwitterModel.return_stable_evolution()
+    del init_network, TwitterModel
+    gc.collect()
 
     return [time_moment, phase, stable_evolution]
 
