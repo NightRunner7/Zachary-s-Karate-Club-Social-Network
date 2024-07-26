@@ -81,7 +81,7 @@ def simulate_phase_point(radical_members, k, probability, val_D, val_Deff, run, 
     return [time_moment, phase, stable_evolution]
 
 # ---------------------------------------- MAIN FUNCTION ------------------------------------------------------------- #
-def main(radical_members, probability, val_D, val_Deff, run, time):
+def main(radical_members, probability, val_D, val_Deff, run, time, num_processes):
     # Collect data and path/name
     str_nrad = f"{radical_members}"
     directory_name = create_name(members=1000, probability=probability,
@@ -94,7 +94,7 @@ def main(radical_members, probability, val_D, val_Deff, run, time):
     # k_arr = np.arange(30, 34, 2)
     params = [(radical_members, k, probability, val_D, val_Deff, run, time) for k in k_arr]
 
-    with Pool(processes=20) as pool:  # Utilize as many cores as are beneficial
+    with Pool(processes=num_processes) as pool:  # Utilize as many cores as are beneficial
         results_list = pool.starmap(simulate_phase_point, params)
 
     # Prepare arrays to store results
@@ -115,6 +115,7 @@ if __name__ == "__main__":
     parser.add_argument("--val_Deff", type=float, required=True)
     parser.add_argument("--run", type=int, required=True)
     parser.add_argument("--time", type=int, required=True)
+    parser.add_argument("--num_processes", type=int, default=20, help="Number of processes to use in the Pool")
 
     args = parser.parse_args()
-    main(args.radical_members, args.probability, args.val_D, args.val_Deff, args.run, args.time)
+    main(args.radical_members, args.probability, args.val_D, args.val_Deff, args.run, args.time, args.num_processes)
