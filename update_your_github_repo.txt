@@ -1,0 +1,19 @@
+# Update repository on cluster by typin: (in terminal in source directory)
+git status
+git pull origin main
+
+# --- IF YOU ENCONTER TO PROBLEMS
+# Navigate to the project directory
+cd path/to/your/repository
+
+# Fetch the latest changes from the main branch
+git fetch --all
+
+# Reset the local files to match the remote repository exactly
+git reset --hard origin/main
+
+# Optionally clean out any untracked files or directories
+git clean -fdx
+
+# Now, run your computations or simulations
+python your_script.py
