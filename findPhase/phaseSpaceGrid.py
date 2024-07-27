@@ -1,3 +1,4 @@
+import re
 import numpy as np
 from assistantFunctions import compile_phase_data, compile_phase_data_vol2
 import matplotlib.pyplot as plt
@@ -6,13 +7,24 @@ import matplotlib.pyplot as plt
 savePlot = True
 
 # --- Read the data from directory
-localization_main = "./ResultsPhase/Watts-NS-UW-N1000-p0.02-mean0.5-std0.05-Run1"
+localization_main = "./ResultsPhase/Watts-NS-UW-N1000-p0.02-mean0.5-std0.05-D5.0-Deff0.5-run1"
 localization_files = f"{localization_main}/phasePoints"
-val_p = 0.02
-val_Deff = 0.5
-val_D = 5.0
 
-phase_matrix = compile_phase_data_vol2(localization=localization_files, half_max_nrad=250)
+# Regular expressions to find specific patterns
+pattern_p = r"p(\d+\.\d+)"
+pattern_Deff = r"Deff(\d+\.\d+)"
+pattern_D = r"D(?!eff)(\d+\.\d+)"
+
+# Extracting values using the patterns
+val_p = float(re.search(pattern_p, localization_main).group(1))
+val_Deff = float(re.search(pattern_Deff, localization_main).group(1))
+val_D = float(re.search(pattern_D, localization_main).group(1))
+
+# Extract data from .txt file
+phase_matrix, time_matrix = compile_phase_data_vol2(localization=localization_files, half_max_nrad=250)
+# phase_matrix, time_matrix, stable_evolution_matrix = compile_phase_data(localization=localization_files,
+#                                                                         half_max_nrad=250)
+
 Nrow = len(phase_matrix)
 Ncol = len(phase_matrix[0, :])
 print("Nrow:", Nrow, "Ncol:", Ncol)
@@ -60,7 +72,7 @@ cbar.ax.text(5.8, 1.0, 'No recognition', transform=cbar.ax.transAxes, va='top', 
 # label
 plt.xlabel('Connectivity (k / 2)')
 plt.ylabel('Number of Radicals (Nrad / 2)')
-plt.title('Phase Transition Behavior Grid: p = 0.02')
+plt.title(f'Phase Space Grid: p={val_p}, Deff={val_Deff}, D={val_D}', fontsize=18)
 
 # Adjust ticks on the x and y-axis to display every 10 units
 ax.set_xticks([i for i, k in enumerate(full_k_range) if k % 10 == 0])
@@ -110,6 +122,138 @@ ax.grid(True, which='both', linestyle='--', linewidth=0.5, color='grey')
 
 if savePlot:
     plt.savefig(f"{localization_main}/phase_space_grid_segmented.png")
+    plt.close()
+else:
+    plt.show()
+
+# --------------------------------------- IMSHOW GRID: TIME FOR WALL ------------------------------------------------- #
+time_wall_matrix = np.where(phase_matrix <= 1.0, time_matrix, np.nan)
+cmap = plt.get_cmap('viridis')
+
+# Plotting using imshow
+fig = plt.figure(figsize=(12, 10))
+ax = fig.add_subplot(111)
+cax = ax.imshow(time_wall_matrix, interpolation='nearest', cmap=cmap, aspect='auto', origin='lower')
+cax.set_clim(vmin=0, vmax=200.0)
+cbar = fig.colorbar(cax, orientation='vertical')
+
+# Adding custom text annotations within the colorbar
+cbar.ax.text(3, 0.4, 'Time of Simulation', transform=cbar.ax.transAxes,  rotation=90,
+             va='bottom', ha='right', fontsize=15, color='black')
+
+# label
+plt.xlabel('Connectivity (k / 2)')
+plt.ylabel('Number of Radicals (Nrad / 2)')
+plt.title(f'Simulation duration for `Wall` phases : p={val_p}, Deff={val_Deff}, D={val_D}', fontsize=18)
+
+# Adjust ticks on the x and y-axis to display every 10 units
+ax.set_xticks([i for i, k in enumerate(full_k_range) if k % 10 == 0])
+ax.set_xticklabels([k for k in full_k_range if k % 10 == 0])
+
+ax.set_yticks([i for i, n in enumerate(full_nrad_range) if n % 10 == 0])
+ax.set_yticklabels([n for n in full_nrad_range if n % 10 == 0])
+
+if savePlot:
+    plt.savefig(f"{localization_main}/time_duration_wall_phases.png")
+    plt.close()
+else:
+    plt.show()
+
+# --------------------------------------- IMSHOW GRID: TIME FOR DIVISION --------------------------------------------- #
+time_division_matrix = np.where((1.0 < phase_matrix) & (phase_matrix < 2.0), time_matrix, np.nan)
+cmap = plt.get_cmap('viridis')
+
+# Plotting using imshow
+fig = plt.figure(figsize=(12, 10))
+ax = fig.add_subplot(111)
+cax = ax.imshow(time_division_matrix, interpolation='nearest', cmap=cmap, aspect='auto', origin='lower')
+cax.set_clim(vmin=0, vmax=200.0)
+cbar = fig.colorbar(cax, orientation='vertical')
+
+# Adding custom text annotations within the colorbar
+cbar.ax.text(3, 0.4, 'Time of Simulation', transform=cbar.ax.transAxes,  rotation=90,
+             va='bottom', ha='right', fontsize=15, color='black')
+
+# label
+plt.xlabel('Connectivity (k / 2)')
+plt.ylabel('Number of Radicals (Nrad / 2)')
+plt.title(f'Simulation duration for `Division` phases : p={val_p}, Deff={val_Deff}, D={val_D}', fontsize=18)
+
+# Adjust ticks on the x and y-axis to display every 10 units
+ax.set_xticks([i for i, k in enumerate(full_k_range) if k % 10 == 0])
+ax.set_xticklabels([k for k in full_k_range if k % 10 == 0])
+
+ax.set_yticks([i for i, n in enumerate(full_nrad_range) if n % 10 == 0])
+ax.set_yticklabels([n for n in full_nrad_range if n % 10 == 0])
+
+if savePlot:
+    plt.savefig(f"{localization_main}/time_duration_division_phases.png")
+    plt.close()
+else:
+    plt.show()
+
+# --------------------------------------- IMSHOW GRID: TIME FOR FULL DIVISION ---------------------------------------- #
+time_fullDivision_matrix = np.where(phase_matrix == 2.0, time_matrix, np.nan)
+cmap = plt.get_cmap('viridis')
+
+# Plotting using imshow
+fig = plt.figure(figsize=(12, 10))
+ax = fig.add_subplot(111)
+cax = ax.imshow(time_fullDivision_matrix, interpolation='nearest', cmap=cmap, aspect='auto', origin='lower')
+cax.set_clim(vmin=0, vmax=200.0)
+cbar = fig.colorbar(cax, orientation='vertical')
+
+# Adding custom text annotations within the colorbar
+cbar.ax.text(3, 0.4, 'Time of Simulation', transform=cbar.ax.transAxes,  rotation=90,
+             va='bottom', ha='right', fontsize=15, color='black')
+
+# label
+plt.xlabel('Connectivity (k / 2)')
+plt.ylabel('Number of Radicals (Nrad / 2)')
+plt.title(f'Simulation duration for `Full Division` phases : p={val_p}, Deff={val_Deff}, D={val_D}', fontsize=18)
+
+# Adjust ticks on the x and y-axis to display every 10 units
+ax.set_xticks([i for i, k in enumerate(full_k_range) if k % 10 == 0])
+ax.set_xticklabels([k for k in full_k_range if k % 10 == 0])
+
+ax.set_yticks([i for i, n in enumerate(full_nrad_range) if n % 10 == 0])
+ax.set_yticklabels([n for n in full_nrad_range if n % 10 == 0])
+
+if savePlot:
+    plt.savefig(f"{localization_main}/time_duration_fullDivision_phases.png")
+    plt.close()
+else:
+    plt.show()
+
+# --------------------------------------- IMSHOW GRID: TIME FOR DOMINANCE -------------------------------------------- #
+time_fullDivision_matrix = np.where(phase_matrix == 3.0, time_matrix, np.nan)
+cmap = plt.get_cmap('viridis')
+
+# Plotting using imshow
+fig = plt.figure(figsize=(12, 10))
+ax = fig.add_subplot(111)
+cax = ax.imshow(time_fullDivision_matrix, interpolation='nearest', cmap=cmap, aspect='auto', origin='lower')
+cax.set_clim(vmin=0, vmax=200.0)
+cbar = fig.colorbar(cax, orientation='vertical')
+
+# Adding custom text annotations within the colorbar
+cbar.ax.text(3, 0.4, 'Time of Simulation', transform=cbar.ax.transAxes,  rotation=90,
+             va='bottom', ha='right', fontsize=15, color='black')
+
+# label
+plt.xlabel('Connectivity (k / 2)')
+plt.ylabel('Number of Radicals (Nrad / 2)')
+plt.title(f'Simulation duration for `Dominance` phases : p={val_p}, Deff={val_Deff}, D={val_D}', fontsize=18)
+
+# Adjust ticks on the x and y-axis to display every 10 units
+ax.set_xticks([i for i, k in enumerate(full_k_range) if k % 10 == 0])
+ax.set_xticklabels([k for k in full_k_range if k % 10 == 0])
+
+ax.set_yticks([i for i, n in enumerate(full_nrad_range) if n % 10 == 0])
+ax.set_yticklabels([n for n in full_nrad_range if n % 10 == 0])
+
+if savePlot:
+    plt.savefig(f"{localization_main}/time_duration_dominance_phases.png")
     plt.close()
 else:
     plt.show()

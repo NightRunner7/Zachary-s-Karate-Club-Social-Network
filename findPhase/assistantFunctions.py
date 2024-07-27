@@ -104,7 +104,7 @@ def compile_phase_data(localization="./OutputPhase", half_max_nrad=250):
 
     for file in files:
         nrad = int(file[len('phasePoints_'):-len('.txt')])
-        k_arr, time_arr, phase_arr = load_phase_scan_data(file, localization)
+        k_arr, time_arr, phase_arr, stable_evolution_arr = load_phase_scan_data(file, localization)
 
         # all values of k and Nrad are even, so we have to divide those values by 2
         nrad = int(nrad / 2)
@@ -112,23 +112,28 @@ def compile_phase_data(localization="./OutputPhase", half_max_nrad=250):
 
         if k_arr:
             max_k = max(max_k, max(k_arr))  # Update max_k if necessary
-            phase_data[nrad] = (k_arr, phase_arr)
+            phase_data[nrad] = (k_arr, phase_arr, time_arr, stable_evolution_arr)
 
     # Initialize the matrix
     phase_matrix = np.full((max_nrad, max_k), np.nan)  # Adjust indices for 0-based
+    time_matrix = np.full((max_nrad, max_k), np.nan)  # Adjust indices for 0-based
+    stable_evolution_matrix = np.full((max_nrad, max_k), np.nan)  # Adjust indices for 0-based
+
 
     # Fill the matrix
-    for nrad, (k_arr, phase_arr) in phase_data.items():
-        for k, phase in zip(k_arr, phase_arr):
+    for nrad, (k_arr, phase_arr, time_arr, stable_evolution_arr) in phase_data.items():
+        for k, phase, time, stable in zip(k_arr, phase_arr, time_arr, stable_evolution_arr):
             if k is not None and phase is not None:
                 phase_matrix[nrad - 1, int(k) - 1] = phase
+                time_matrix[nrad - 1, int(k) - 1] = time
+                stable_evolution_matrix[nrad - 1, int(k) - 1] = stable
 
-    return phase_matrix
+    return phase_matrix, time_matrix, stable_evolution_matrix
 
 def compile_phase_data_vol2(localization="./OutputPhase", half_max_nrad=250):
     """
-    Compiles data from multiple files into a 2D matrix where rows correspond to Nrad (extracted from filenames)
-    and columns correspond to k-values found in each file.
+    Old version of the function. Compiles data from multiple files into a 2D matrix where rows correspond to Nrad
+    (extracted from filenames) and columns correspond to k-values found in each file.
 
     Args:
         localization (str): The directory path where the files are located. Defaults to './OutputPhase'.
@@ -154,18 +159,21 @@ def compile_phase_data_vol2(localization="./OutputPhase", half_max_nrad=250):
 
         if k_arr:
             max_k = max(max_k, max(k_arr))  # Update max_k if necessary
-            phase_data[nrad] = (k_arr, phase_arr)
+            phase_data[nrad] = (k_arr, phase_arr, time_arr)
 
     # Initialize the matrix
     phase_matrix = np.full((max_nrad, max_k), np.nan)  # Adjust indices for 0-based
+    time_matrix = np.full((max_nrad, max_k), np.nan)  # Adjust indices for 0-based
 
     # Fill the matrix
-    for nrad, (k_arr, phase_arr) in phase_data.items():
-        for k, phase in zip(k_arr, phase_arr):
+    for nrad, (k_arr, phase_arr, time_arr) in phase_data.items():
+        for k, phase, time in zip(k_arr, phase_arr, time_arr):
             if k is not None and phase is not None:
                 if phase == 4.0:
                     phase_matrix[nrad - 1, int(k) - 1] = np.nan
+                    time_matrix[nrad - 1, int(k) - 1] = time
                 else:
                     phase_matrix[nrad - 1, int(k) - 1] = phase
+                    time_matrix[nrad - 1, int(k) - 1] = time
 
-    return phase_matrix
+    return phase_matrix, time_matrix
