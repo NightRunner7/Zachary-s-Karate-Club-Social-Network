@@ -1,14 +1,14 @@
 import re
 import numpy as np
-from assistantFunctions import compile_phase_data, compile_phase_data_vol2
+from assistantFunctions import compile_phase_data
 import matplotlib.pyplot as plt
 
 # --- Flags
 savePlot = True
 
 # --- Read the data from directory
-localization_main = "./ResultsPhase/Watts-NS-UW-N1000-p0.02-mean0.5-std0.05-D5.0-Deff0.5-run1"
-localization_files = f"{localization_main}/phasePoints"
+localization_main = "./ResultsPhase/Watts-NS-UW-N1000-p0.05-mean0.5-std0.05-D5.0-Deff0.5-run1"
+localization_files = f"{localization_main}/phaseSpace"
 
 # Regular expressions to find specific patterns
 pattern_p = r"p(\d+\.\d+)"
@@ -21,9 +21,8 @@ val_Deff = float(re.search(pattern_Deff, localization_main).group(1))
 val_D = float(re.search(pattern_D, localization_main).group(1))
 
 # Extract data from .txt file
-phase_matrix, time_matrix = compile_phase_data_vol2(localization=localization_files, half_max_nrad=250)
-# phase_matrix, time_matrix, stable_evolution_matrix = compile_phase_data(localization=localization_files,
-#                                                                         half_max_nrad=250)
+phase_matrix, time_matrix, stable_evolution_matrix = compile_phase_data(localization=localization_files,
+                                                                        half_max_nrad=250)
 
 Nrow = len(phase_matrix)
 Ncol = len(phase_matrix[0, :])
@@ -32,10 +31,14 @@ print("Nrow:", Nrow, "Ncol:", Ncol)
 # --- Make sure how many rows, cluster didn't calculate
 for row in range(len(phase_matrix)):
     phase_row = phase_matrix[row, :]
+    stable_row = stable_evolution_matrix[row, :]
 
     # Check if all elements in the row are NaN
     if np.all(np.isnan(phase_row)):
         print(f"In row: {row}, cluster did not complete calculations.")
+
+    if np.any(stable_row, where=False):
+        print(f"In row: {row}, we recognise instability evolution.")
 
 # --- Creating the grid, which stars
 full_k_range = np.arange(1, Ncol + 1, 1)
