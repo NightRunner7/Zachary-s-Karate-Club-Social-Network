@@ -75,7 +75,9 @@ def load_phase_scan_data(file_name, localization="./OutputPhase"):
                     k_values.append(float(parts[0]) if parts[0] else None)
                     time_values.append(float(parts[1]) if parts[1] else None)
                     phase_values.append(float(parts[2]) if parts[2] else None)
-                    stable_evo_values.append(bool(parts[3]) if parts[3] else None)
+                    # Convert 'True'/'False' to 1/0
+                    stable_evo_values.append(1 if parts[3] == 'True' else 0)
+                    # stable_evo_values.append(int(parts[3]) if parts[3] else None)
     except FileNotFoundError:
         print(f"File not found: {file_path}")
         return [], [], [], []

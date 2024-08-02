@@ -216,7 +216,7 @@ def draw_graph_spring(graph: nx.Graph, positions,
     nx.draw(graph, pos=positions, cmap=plt.get_cmap('cool'), vmin=0, vmax=1,
             node_color=node_colors, node_size=10,
             edge_cmap=plt.get_cmap('binary'), edge_vmin=0, edge_vmax=1,
-            edge_color=edge_weights, width=0.4)
+            edge_color=edge_weights, width=0.1)
 
     plt.savefig(f"{output_path}/{file_name}_{step}.png")
     plt.close()

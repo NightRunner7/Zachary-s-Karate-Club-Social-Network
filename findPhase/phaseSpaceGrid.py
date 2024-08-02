@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 savePlot = True
 
 # --- Read the data from directory
-localization_main = "./ResultsPhase/Watts-NS-UW-N1000-p0.05-mean0.5-std0.05-D5.0-Deff0.5-run1"
+localization_main = "./ResultsPhase/Watts-NS-UW-N1000-p0.02-mean0.5-std0.05-D5.0-Deff5.0-run1"
 localization_files = f"{localization_main}/phaseSpace"
 
 # Regular expressions to find specific patterns
@@ -37,8 +37,10 @@ for row in range(len(phase_matrix)):
     if np.all(np.isnan(phase_row)):
         print(f"In row: {row}, cluster did not complete calculations.")
 
-    if np.any(stable_row, where=False):
-        print(f"In row: {row}, we recognise instability evolution.")
+# Check for any False values
+    if np.any(stable_row==False):
+        # Print a specific message if needed
+        print(f"In row: {row}, we recognize instability evolution.")
 
 # --- Creating the grid, which stars
 full_k_range = np.arange(1, Ncol + 1, 1)
@@ -57,7 +59,7 @@ for i, nrad in enumerate(full_nrad_range):
 # --------------------------------------- IMSHOW GRID: HOT ----------------------------------------------------------- #
 # Define the colormap and color boundaries
 cmap = plt.get_cmap('hot')
-bounds = [0, 1, 2, 3.0, 4.0]
+bounds = [0.0, 1.0, 2.0, 3.0, 4.0]
 
 # Plotting using imshow
 fig = plt.figure(figsize=(12, 10))

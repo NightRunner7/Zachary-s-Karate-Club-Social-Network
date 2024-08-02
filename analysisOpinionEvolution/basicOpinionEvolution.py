@@ -20,8 +20,8 @@ sim_config = {
     # Base parameters
     'members': 1000,
     'radical_members': 340,
-    'k': 150,
-    'p': 0.05,
+    'k': 60,
+    'p': 0.0,
     # Weights distribution, set zero if they not normal distributed
     'mean': 0.5,
     'std_dev': 0.05,
@@ -29,12 +29,11 @@ sim_config = {
     'D': 5.0,
     'Deff': 0.5,
     # Other
-    'run_number': 1
+    'run_number': 2
     }
 # Flags
 plot_fit_weight = False
 plot_fit_states = True
-plot_phase_log_scale = True
 makePlot = True
 
 # Localization of output
@@ -116,6 +115,9 @@ for step in range(sim_config['timeSteps']):
 
     if step % sim_config['timeStepsToCheck'] == 0:
         # Periodically check the network's phase status, stop simulation if: achieve stable phase, non-stable network.
+        # phase_val = TwitterModel.return_phase_value()
+        # print("Phase val:", phase_val)
+
         time_moment = step * sim_config['dt']
         stop_simulation_flag = TwitterModel.stop_simulation_criteria(time_moment)
         if stop_simulation_flag:
@@ -134,8 +136,11 @@ for step in range(sim_config['timeSteps']):
     # do evolution step
     TwitterModel.evolve()
 
-# --- STRENGTH CONNECTION PLOT
-plot_connection_strength(network_dynamics, output_main, log_scale=plot_phase_log_scale)
+# --- STRENGTH CONNECTION PLOT: LOG
+plot_connection_strength(network_dynamics, output_main, log_scale=True)
+
+# --- STRENGTH CONNECTION PLOT: BASE
+plot_connection_strength(network_dynamics, output_main, log_scale=False)
 
 # --- PHASE EVOLUTION PLOT
 plot_phase_value_over_time(network_dynamics, output_main)

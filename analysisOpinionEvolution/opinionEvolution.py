@@ -22,9 +22,9 @@ from initialGraph.watts_NS_UW import create_graph, create_name
 sim_config = {
     # Base parameters
     'members': 1000,
-    'radical_members': 30,
-    'k': 6,
-    'p': 0.02,
+    'radical_members': 6,
+    'k': 12,
+    'p': 0.002,
     # Weights distribution, set zero if they not normal distributed
     'mean': 0.5,
     'std_dev': 0.05,
@@ -37,7 +37,6 @@ sim_config = {
 # Flags
 plot_fit_weight = False
 plot_fit_states = True
-plot_phase_log_scale = True
 makePlot = True
 makeUpdateData = True
 
@@ -45,9 +44,9 @@ makeUpdateData = True
 main_dir = "OutputResults"
 
 # Manage time settings
-time_end = 50
+time_end = 200
 dt = 0.001
-number_of_plots_and_checks = 50
+number_of_plots_and_checks = 200
 
 # --- FIXED PARAMETERS: AUTOMATIC
 # set beta parameter
@@ -185,8 +184,11 @@ for step in range(sim_config['timeSteps']):
     # do evolution step
     TwitterModel.evolve()
 
-# --- STRENGTH CONNECTION PLOT
-plot_connection_strength(network_dynamics, output_main, log_scale=plot_phase_log_scale)
+# --- STRENGTH CONNECTION PLOT: LOG
+plot_connection_strength(network_dynamics, output_main, log_scale=True)
+
+# --- STRENGTH CONNECTION PLOT: BASE
+plot_connection_strength(network_dynamics, output_main, log_scale=False)
 
 # --- PHASE EVOLUTION PLOT
 plot_phase_value_over_time(network_dynamics, output_main)

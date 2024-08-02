@@ -32,7 +32,10 @@ def plot_connection_strength(network_dynamics, output_main, log_scale=False):
     if log_scale:
         plt.yscale('log')
         plt.ylabel('Connection Strength (log scale)', fontsize=12)
-
-    # Save and close the plot
-    plt.savefig(f"{output_main}/connection_strength_over_time.png")
-    plt.close()
+        # Save and close the plot
+        plt.savefig(f"{output_main}/log_connection_strength_over_time.png")
+        plt.close()
+    else:
+        # Save and close the plot
+        plt.savefig(f"{output_main}/connection_strength_over_time.png")
+        plt.close()
