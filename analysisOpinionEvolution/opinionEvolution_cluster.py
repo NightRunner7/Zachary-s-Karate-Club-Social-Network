@@ -40,7 +40,6 @@ def main(radical_members, k, probability, val_D, val_Deff, run, time):
     # Flags
     plot_fit_weight = False
     plot_fit_states = True
-    plot_phase_log_scale = True
     makePlot = True
     makeUpdateData = True
 
@@ -144,7 +143,8 @@ def main(radical_members, k, probability, val_D, val_Deff, run, time):
 
         if step % sim_config['timeStepsToCheck'] == 0:
             # Periodically check the network's phase status: stop simulation if network evolution is non-stable.
-            stop_simulation_flag = TwitterModel.stop_simulation_basic_criteria()
+            # stop_simulation_flag = TwitterModel.stop_simulation_basic_criteria()
+            stop_simulation_flag = TwitterModel.stop_simulation_criteria(time)
             if stop_simulation_flag:
                 break
 
@@ -188,8 +188,11 @@ def main(radical_members, k, probability, val_D, val_Deff, run, time):
         # do evolution step
         TwitterModel.evolve()
 
-    # --- STRENGTH CONNECTION PLOT
-    plot_connection_strength(network_dynamics, output_main, log_scale=plot_phase_log_scale)
+    # --- STRENGTH CONNECTION PLOT: LOG
+    plot_connection_strength(network_dynamics, output_main, log_scale=True)
+
+    # --- STRENGTH CONNECTION PLOT: BASE
+    plot_connection_strength(network_dynamics, output_main, log_scale=False)
 
     # --- PHASE EVOLUTION PLOT
     plot_phase_value_over_time(network_dynamics, output_main)
