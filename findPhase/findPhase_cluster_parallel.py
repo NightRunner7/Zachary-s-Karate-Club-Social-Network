@@ -41,8 +41,7 @@ def simulate_phase_point(radical_members, k, probability, val_D, val_Deff, run, 
 
     # --- INITIALIZE MODEL
     sim_config = set_network_evolution_parameters(sim_config=sim_config,
-                                                  effective_diffusion=sim_config['Deff']
-                                                  )
+                                                  effective_diffusion=sim_config['Deff'])
 
     sim_config = adjust_time_for_diffusion(sim_config=sim_config,
                                            base_time_end=time_end,
@@ -55,7 +54,7 @@ def simulate_phase_point(radical_members, k, probability, val_D, val_Deff, run, 
                                 sim_config=sim_config)
 
     TwitterModel = NetworkEvolutionDeff(init_network,
-                                        Deff=sim_config['D'],
+                                        Deff=sim_config['Deff'],
                                         dt=sim_config['dt'])
 
     # --- EVOLVE NETWORK
