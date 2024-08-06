@@ -6,9 +6,9 @@ import networkx as nx
 # Add the parent directory to the Python module search path
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(parent_dir)
-import config as cfg
 import auxiliaryFunctions as auxFun
-from TwitterRadicalizationModel import TwitterRadicalizationModel
+from TwitterRadicalizationModel import TwitterRadicalizationModel, \
+    set_network_evolution_parameters, adjust_time_for_diffusion
 # --- IMPORT TO MAKE PLOTS
 from makePlots.plot_heatmaps import plot_closeness_centrality_heatmap, plot_eigenvector_centrality_heatmap
 from makePlots.plot_network_dynamics import plot_network_dynamics
@@ -50,16 +50,16 @@ number_of_plots_and_checks = 200
 
 # --- FIXED PARAMETERS: AUTOMATIC
 # set beta parameter
-sim_config = cfg.set_network_evolution_parameters(sim_config, sim_config['Deff'], diffusion=sim_config['D'])
+sim_config = set_network_evolution_parameters(sim_config, sim_config['Deff'], diffusion=sim_config['D'])
 
 # set time step and ending time
-sim_config = cfg.adjust_time_for_diffusion(sim_config,
-                                           sim_config['D'],
-                                           base_time_end=time_end,
-                                           base_dt=dt,
-                                           check_interval=number_of_plots_and_checks,
-                                           draw_interval=number_of_plots_and_checks,
-                                           update_interval=number_of_plots_and_checks)
+sim_config = adjust_time_for_diffusion(sim_config,
+                                       sim_config['D'],
+                                       base_time_end=time_end,
+                                       base_dt=dt,
+                                       check_interval=number_of_plots_and_checks,
+                                       draw_interval=number_of_plots_and_checks,
+                                       update_interval=number_of_plots_and_checks)
 # create network and name
 init_network = create_graph(set_affiliation_choice=False, sim_config=sim_config)
 directory_name = create_name(sim_config=sim_config)

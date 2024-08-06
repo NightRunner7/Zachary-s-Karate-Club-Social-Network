@@ -9,8 +9,9 @@ from assistantFunctions import save_phase_scan_over_connectivity
 # Add the parent directory to the Python module search path
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(parent_dir)
-import config as cfg
-from TwitterRadicalizationModel import TwitterRadicalizationModel
+# --- SET MODEL !!!
+from TwitterRadicalizationModel import TwitterRadicalizationModel, \
+    set_network_evolution_parameters, adjust_time_for_diffusion
 # --- SET INITIAL GRAP !!!
 from initialGraph.watts_NS_UW import create_graph, create_name
 
@@ -40,17 +41,17 @@ def simulate_phase_point(radical_members, k, probability, val_D, val_Deff, run, 
     time_moment = 0.0  # set time of reaching stable phase
 
     # --- INITIALIZE MODEL
-    sim_config = cfg.set_network_evolution_parameters(sim_config,
-                                                      sim_config['Deff'],
-                                                      diffusion=sim_config['D'])
+    sim_config = set_network_evolution_parameters(sim_config,
+                                                  sim_config['Deff'],
+                                                  diffusion=sim_config['D'])
 
-    sim_config = cfg.adjust_time_for_diffusion(sim_config,
-                                               sim_config['D'],
-                                               base_time_end=time_end,
-                                               base_dt=dt,
-                                               check_interval=time_end,
-                                               draw_interval=time_end,
-                                               update_interval=time_end)
+    sim_config = adjust_time_for_diffusion(sim_config,
+                                           sim_config['D'],
+                                           base_time_end=time_end,
+                                           base_dt=dt,
+                                           check_interval=time_end,
+                                           draw_interval=time_end,
+                                           update_interval=time_end)
 
     init_network = create_graph(set_affiliation_choice=False,
                                 sim_config=sim_config)

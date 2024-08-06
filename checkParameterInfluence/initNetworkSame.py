@@ -5,8 +5,8 @@ import time
 # Add the parent directory to the Python module search path
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(parent_dir)
-import config as cfg
-from TwitterRadicalizationModel import TwitterRadicalizationModel
+from TwitterRadicalizationModel import TwitterRadicalizationModel, \
+    set_network_evolution_parameters, adjust_time_for_diffusion
 from initialGraph.watts_NS_UW import create_graph
 
 
@@ -30,8 +30,8 @@ number_runs = 3
 
 # settings of dynamic evolution: CLASS
 Deff = 5/10
-sim_config = cfg.set_network_evolution_parameters(sim_config, Deff, diffusion=5.0)
-sim_config = cfg.adjust_time_for_diffusion(sim_config, sim_config['D'], base_time_end=80, base_dt=0.005)
+sim_config = set_network_evolution_parameters(sim_config, Deff, diffusion=5.0)
+sim_config = adjust_time_for_diffusion(sim_config, sim_config['D'], base_time_end=80, base_dt=0.005)
 
 # --- SCAN OVER RUNS
 for run in range(0, number_runs):

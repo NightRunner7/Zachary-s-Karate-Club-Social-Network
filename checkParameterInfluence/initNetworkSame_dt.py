@@ -7,9 +7,9 @@ import matplotlib.pyplot as plt
 # Add the parent directory to the Python module search path
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(parent_dir)
-import config as cfg
 import auxiliaryFunctions as auxFun
-from TwitterRadicalizationModel import TwitterRadicalizationModel
+from TwitterRadicalizationModel import TwitterRadicalizationModel, \
+    set_network_evolution_parameters, adjust_time_for_diffusion
 from initialGraph.watts_NS_UW import create_graph, create_name
 
 
@@ -47,7 +47,7 @@ number_runs = len(dt_list)
 
 # settings of dynamic evolution: CLASS
 Deff = 5/10
-sim_config = cfg.set_network_evolution_parameters(sim_config, Deff, diffusion=5.0)
+sim_config = set_network_evolution_parameters(sim_config, Deff, diffusion=5.0)
 
 # --- SETTINGS OF SIMULATIONS: AUTOMATIC
 main_dir = f"{name}-Deff{sim_config['Deff']:.1f}-D{sim_config['D']:.1f}"
@@ -55,13 +55,13 @@ main_dir = f"{name}-Deff{sim_config['Deff']:.1f}-D{sim_config['D']:.1f}"
 # --- SCAN OVER RUNS
 for run in range(0, number_runs):
     # --- PREPARE RUN: WHAT PARAMETERS CHANGE IN THESE RUNS
-    sim_config = cfg.adjust_time_for_diffusion(sim_config,
-                                               sim_config['D'],
-                                               base_time_end=time_end,
-                                               base_dt=dt,
-                                               check_interval=number_of_plots_and_checks,
-                                               draw_interval=number_of_plots_and_checks,
-                                               update_interval=number_of_plots_and_checks)
+    sim_config = adjust_time_for_diffusion(sim_config,
+                                           sim_config['D'],
+                                           base_time_end=time_end,
+                                           base_dt=dt,
+                                           check_interval=number_of_plots_and_checks,
+                                           draw_interval=number_of_plots_and_checks,
+                                           update_interval=number_of_plots_and_checks)
     output_main = f"{main_dir}/dt{sim_config['dt']:.3f}"
 
     # --- PREPARE RUN: BASIC SETTINGS

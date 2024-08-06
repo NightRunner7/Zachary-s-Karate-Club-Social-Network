@@ -7,9 +7,12 @@ import matplotlib.pyplot as plt
 # Add the parent directory to the Python module search path
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(parent_dir)
-import config as cfg
 import auxiliaryFunctions as auxFun
-from TwitterRadicalizationModel import TwitterRadicalizationModel
+
+# --- SET MODEL !!!
+from NetworkEvolutionDeff import NetworkEvolutionDeff, \
+    adjust_time_for_diffusion, set_network_evolution_parameters
+# --- SET INITIAL GRAP !!!
 from initialGraph.watts_NS_UW import create_graph, create_name
 
 
@@ -23,7 +26,7 @@ sim_config = {
     # base parameters
     'members': 1000,
     'radical_members': 10,
-    'k': 70,
+    'k': 34,
     'p': 0.02,
     # Weights distribution, set zero if they not normal distributed
     'mean': 0.5,
@@ -36,18 +39,11 @@ dt = 0.001
 number_of_plots_and_checks = 200
 
 # create network and name
-sim_config = cfg.adjust_time_for_diffusion(sim_config,
-                                           sim_config['D'],
-                                           base_time_end=time_end,
-                                           base_dt=dt,
-                                           check_interval=number_of_plots_and_checks,
-                                           draw_interval=number_of_plots_and_checks,
-                                           update_interval=number_of_plots_and_checks)
+init_network = create_graph(set_affiliation_choice=False, sim_config=sim_config)
 name = create_name(sim_config=sim_config)
 
 # --- SETTING OF SIMULATION: USER
 # basic setting
-diffusion = 5.0
 Deff_arr_up = [1.0, 2.0, 5.0, 10.0, 20.0, 50.0, 100.0, 200.0, 500.0]
 Deff_arr_down = [0.2, 0.1, 0.05, 0.02, 0.01, 0.005, 0.002, 0.001, 0.0005]
 Deff_arr = Deff_arr_up + [0.5] + Deff_arr_down
@@ -56,16 +52,18 @@ Deff_arr.sort(reverse=True)
 number_runs = len(Deff_arr)
 
 # set time step and ending time: CLASS
-sim_config = cfg.adjust_time_for_diffusion(sim_config, diffusion, base_time_end=100, base_dt=0.005)
-
+sim_config = adjust_time_for_diffusion(sim_config, base_time_end=200,
+                                       check_interval=200, draw_interval=200, update_interval=200,
+                                       base_dt=0.001)
 # --- SETTINGS OF SIMULATIONS: AUTOMATIC
-main_dir = f"{name}-D{diffusion:.1f}"
+main_dir = f"{name}"
 
 # --- SCAN OVER RUNS
 for run in range(0, number_runs):
     # --- PREPARE RUN: WHAT PARAMETERS CHANGE IN THESE RUNS
     val_Deff = Deff_arr[run]
-    sim_config = cfg.set_network_evolution_parameters(sim_config, val_Deff, diffusion=diffusion)
+    print("Deff:", val_Deff)
+    sim_config = set_network_evolution_parameters(sim_config, effective_diffusion=val_Deff)
     output_main = f"{main_dir}/Deff{sim_config['Deff']:.3f}"
 
     # --- PREPARE RUN: BASIC SETTINGS
@@ -90,10 +88,9 @@ for run in range(0, number_runs):
         auxFun.make_directory(output_evolutionHistoState)
 
     # --- CREATE MODEL
-    TwitterModel = TwitterRadicalizationModel(init_network.copy(),
-                                              D=sim_config['D'],
-                                              beta=sim_config['beta'],
-                                              dt=sim_config['dt'])  # COPY NEEDED !!!
+    TwitterModel = NetworkEvolutionDeff(init_network.copy(),
+                                        Deff=sim_config['Deff'],
+                                        dt=sim_config['dt'])  # COPY NEEDED !!!
 
     # --- EVOLVE NETWORK
     start_time = time.time()  # Start timing the simulation for performance measurement.

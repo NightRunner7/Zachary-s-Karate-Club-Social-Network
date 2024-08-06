@@ -10,8 +10,7 @@
         # Weights distribution, set zero if they not normal distributed
         'mean': 0.5,
         'std_dev': 0.05,
-        # Diffusion and effective diffusion
-        'D': val_D,
+        # Effective diffusion
         'Deff': val_Deff,
         # Other
         'run': run
@@ -22,11 +21,11 @@ import networkx as nx
 import numpy as np
 
 # ---------------------------------- FUNCTIONS: SETS PARAMETERS ------------------------------------------------------ #
-def set_network_evolution_parameters(sim_config, effective_diffusion, diffusion=5.0):
+def set_network_evolution_parameters(sim_config, effective_diffusion):
     """
     Configures network evolution parameters by calculating the beta value required to achieve a specified effective
     diffusion rate (Deff) given a diffusion rate (D). This function updates the simulation configuration dictionary
-    with the diffusion rate, effective diffusion, and the calculated beta value.
+    with the effective diffusion.
 
     This setup is crucial for studies where understanding the interaction between diffusion and edge weight adjustment
     dynamics is essential, such as validating theoretical models or conducting sensitivity analyses.
@@ -36,55 +35,40 @@ def set_network_evolution_parameters(sim_config, effective_diffusion, diffusion=
         effective_diffusion (float): The target effective diffusion rate (Deff), which is a key parameter in the model
             influencing the network dynamics. This rate combines the effects of node state diffusion (D) and edge
             weight adjustments.
-        diffusion (float, optional): The base diffusion rate (D) used in the simulation, defaulted to 5.0. This
-            represents the rate at which states propagate through the network independently of edge adjustments.
 
     Returns:
         dict: The updated simulation configuration dictionary with the newly set parameters.
 
     Updates:
-        - 'D': Sets the diffusion rate in the configuration.
         - 'Deff': Sets the effective diffusion rate.
-        - 'beta': Sets the beta parameter calculated to achieve the specified effective diffusion given the diffusion
-          rate. Beta reflects the rate at which edge weights are adjusted in response to state differences between
-          connected nodes.
 
     Note:
         - It is critical to ensure that the effective_diffusion rate provided is attainable with the given diffusion
         parameter, as incorrect configurations can lead to unrealistic or unstable simulation behavior.
     """
-    beta = diffusion / effective_diffusion
-
     sim_config.update({
-        "D": diffusion,
         "Deff": effective_diffusion,
-        "beta": beta,
     })
 
     return sim_config
 
-
 def adjust_time_for_diffusion(sim_config,
-                              diffusion,
                               base_dt=0.001,
                               base_time_end=200,
                               check_interval=200,
                               draw_interval=200,
                               update_interval=200):
     """
-    Scales time-related simulation parameters based on the diffusion rate, ensuring time steps and durations
-    are adjusted to reflect changes in state propagation speeds due to diffusion. This adjustment helps maintain
-    consistent simulation dynamics.
+    This function will be used to define time steps and duration. We have to keep in mind, we are using the
+    dimensionless units of time in this approach [t^hat = t * D], where [D] = [1/t]: diffusion. We believe that
+    way helps maintain consistent simulation dynamics.
 
-    This function scales the simulation timings based on the diffusion rate (D), where D represents the rate of
-    change propagation across the network. While this function uses the diffusion rate directly, it is important
-    to understand the concept of the effective diffusion rate (Deff), which is D divided by β (beta), the rate of
-    edge weight adjustments. Deff provides a conceptual understanding of the interaction between node state
-    diffusion and edge dynamics.
+    It is important to understand the concept of the effective diffusion rate (Deff), which is D (diffusion rate)
+    divided by β (beta), the rate of edge weight adjustments. Deff provides a conceptual understanding of the
+    interaction between node state diffusion and edge dynamics.
 
     Args:
         sim_config (dict): Configuration dictionary for simulation parameters.
-        diffusion (float): Diffusion rate D, used directly to scale time parameters.
         base_dt (float): Initial time step before scaling.
         base_time_end (int): Initial total simulation time before scaling.
         check_interval (int): How many times you want to stability phase checks.
@@ -103,9 +87,8 @@ def adjust_time_for_diffusion(sim_config,
         - The file `initNetwork_dt.py` shows the maximal value of `dt`, which gives us stable evolution of the
           network. It seems a good choice is: `0.001 >= dt`.
     """
-    scale_factor = 5 / diffusion
-    adjusted_dt = base_dt * scale_factor
-    adjusted_time_end = base_time_end * scale_factor
+    adjusted_dt = base_dt
+    adjusted_time_end = base_time_end
     total_steps = int(adjusted_time_end / adjusted_dt)
 
     sim_config.update({
@@ -119,81 +102,18 @@ def adjust_time_for_diffusion(sim_config,
 
     return sim_config
 
-
-def adjust_time_for_diffusion_vol2(sim_config,
-                                   diffusion,
-                                   base_dt=0.001,
-                                   base_time_end=200,
-                                   check_interval=200,
-                                   draw_interval=200,
-                                   update_interval=200):
-    """
-    Adjusts time-related simulation parameters based on the diffusion rate, focusing on testing the hypothesis
-    that network evolution shows universal characteristics when scaled by the effective diffusion rate (Deff = D/β).
-    This function modifies the simulation configuration to reflect changes in temporal dynamics influenced by
-    diffusion, thereby facilitating the exploration of this hypothesis in network behavior.
-
-    Args:
-        sim_config (dict): Configuration dictionary for simulation parameters.
-        diffusion (float): Diffusion rate D, directly used to scale time parameters, particularly the total simulation
-            time.
-        base_dt (float): Initial time step before scaling, remains constant in this function to isolate the effect of
-            diffusion on total time.
-        base_time_end (int): Initial total simulation time before scaling.
-        check_interval (int): Base number of steps between stability phase checks.
-        draw_interval (int): Base number of steps between network redraws.
-        update_interval (int): Base number of steps between updates of simulation data.
-
-    Returns:
-        dict: Updated simulation configuration with adjusted time parameters, allowing for testing of the universality
-            hypothesis in network evolution.
-
-    Notes:
-        - Deff (D/β) is conceptually crucial for understanding how diffusion and edge dynamics interact in the model.
-          While β is not explicitly used in this function, it is inherently part of understanding Deff's role.
-        - The function scales the number of steps for checks, drawing, and updates proportionally to how the total
-          simulation time is adjusted,
-          ensuring that the observational granularity adapts with the changes in the simulation timeline.
-        - This function supports the research documented in `initNetworkSame_checkHypothesis.py`, where the evolution
-          of the network is analyzed under different scenarios to validate the universality of Deff in determining
-          network dynamics.
-        - The file `initNetwork_dt.py` shows the maximal value of `dt`, which gives us stable evolution of the
-          network. It seems a good choice is: `0.001 >= dt`.
-    """
-    # Calculate scale factor based on the diffusion rate
-    scale_factor = 5 / diffusion
-
-    # Adjusted time step remains constant; total simulation time is scaled
-    adjusted_dt = base_dt
-    adjusted_time_end = base_time_end * scale_factor
-    total_steps = int(adjusted_time_end / adjusted_dt)
-
-    # Adjusting intervals for various checks and updates based on scale factor
-    sim_config.update({
-        "dt": adjusted_dt,
-        "time_end": adjusted_time_end,
-        "timeSteps": total_steps,
-        "timeStepsToCheck": total_steps // (check_interval * scale_factor),
-        "timeStepsDraw": total_steps // (draw_interval * scale_factor),
-        "timeStepsUpdateData": total_steps // (update_interval * scale_factor)
-    })
-
-    return sim_config
-
 # ---------------------------------- DEAL WITH NETWORK EVOLUTION ----------------------------------------------------- #
-class TwitterRadicalizationModel:
-    def __init__(self, network, D=5., beta=10., dt=0.01):
+class NetworkEvolutionDeff:
+    def __init__(self, network, Deff=0.5, dt=0.001):
         """
         Initialize the model with given parameters and set up the initial network.
 
         :param network: A NetworkX graph with nodes that may have 'affirmation' attributes.
-        :param D: Diffusion coefficient.
-        :param beta: Coupling parameter.
+        :param Deff: Effective diffusion coefficient.
         :param dt: Time step.
         """
         # --- Evolution graph coefficients
-        self.D = D
-        self.beta = beta
+        self.Deff = Deff
         self.dt = dt
 
         # --- Load the initial graph
@@ -331,7 +251,7 @@ class TwitterRadicalizationModel:
     def update_weights(self):
         """Update the weights of the edges based on the states of the connected nodes."""
         interaction = self.f()
-        dwij_dt = -self.beta * self.w_mat.data * (1 - self.w_mat.data) * interaction
+        dwij_dt = -1/self.Deff * self.w_mat.data * (1 - self.w_mat.data) * interaction
 
         # Update weights
         self.w_mat.data += self.dt * dwij_dt
@@ -339,7 +259,7 @@ class TwitterRadicalizationModel:
     def update_states(self):
         """Update the states of the nodes based on the weights of the connecting edges."""
         # Compute the state changes using sparse matrix operations
-        delta_s_vec = self.D * (self.w_mat @ self.s_vec - self.s_vec * self.w_mat.sum(axis=1))
+        delta_s_vec = (self.w_mat @ self.s_vec - self.s_vec * self.w_mat.sum(axis=1))
 
         # Update states
         self.s_vec += self.dt * delta_s_vec
@@ -544,6 +464,8 @@ class TwitterRadicalizationModel:
         """Perform one evolution step: update weights and then update states."""
         self.update_weights()
         self.update_states()
+        # clip states: try to avoid unstable network evolution
+        self.s_vec = np.clip(self.s_vec, 0, 1)
 
     # ----------------------------------------- RETURN --------------------------------------------------------------- #
     def return_network(self):

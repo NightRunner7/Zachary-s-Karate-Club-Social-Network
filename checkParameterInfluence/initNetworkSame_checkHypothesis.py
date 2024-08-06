@@ -13,8 +13,8 @@ import matplotlib.pyplot as plt
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(parent_dir)
 import auxiliaryFunctions as auxFun
-import config as cfg
-from TwitterRadicalizationModel import TwitterRadicalizationModel
+from TwitterRadicalizationModel import TwitterRadicalizationModel, \
+    adjust_time_for_diffusion_vol2
 from initialGraph.watts_NS_UW import create_graph, create_name
 
 
@@ -53,9 +53,9 @@ for run in range(0, number_runs):
     # --- PREPARE RUN: WHAT PARAMETERS CHANGE IN THESE RUNS
     sim_config['D'] = val_D_arr[run]
     sim_config['beta'] = val_beta_arr[run]
-    sim_config = cfg.adjust_time_for_diffusion_vol2(sim_config,
-                                                    sim_config['D'],
-                                                    base_time_end=100)
+    sim_config = adjust_time_for_diffusion_vol2(sim_config,
+                                                sim_config['D'],
+                                                base_time_end=100)
     output_main = f"{main_dir}/D{sim_config['D']:.1f}"  # specific dir name
 
     # --- PREPARE RUN: BASIC SETTINGS
