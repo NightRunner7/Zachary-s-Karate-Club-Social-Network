@@ -53,8 +53,8 @@ def set_network_evolution_parameters(sim_config, effective_diffusion):
     return sim_config
 
 def adjust_time_for_diffusion(sim_config,
-                              base_dt=0.001,
-                              base_time_end=200,
+                              base_dt=0.005,
+                              base_time_end=1000,
                               check_interval=200,
                               draw_interval=200,
                               update_interval=200):

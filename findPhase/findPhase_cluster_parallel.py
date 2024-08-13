@@ -17,7 +17,7 @@ from initialGraph.watts_NS_UW import create_graph, create_name
 
 
 # ---------------------------------------- SIMULATE WITH FIXED PARAMS ------------------------------------------------ #
-def simulate_phase_point(radical_members, k, probability, val_D, val_Deff, run, time):
+def simulate_phase_point(radical_members, k, probability, val_D, val_Deff, run, time, intervals):
     # --- FIXED PARAMETERS: USER
     sim_config = {
         # Base parameters
@@ -46,9 +46,9 @@ def simulate_phase_point(radical_members, k, probability, val_D, val_Deff, run, 
     sim_config = adjust_time_for_diffusion(sim_config=sim_config,
                                            base_time_end=time_end,
                                            base_dt=dt,
-                                           check_interval=time_end,
-                                           draw_interval=time_end,
-                                           update_interval=time_end)
+                                           check_interval=intervals,
+                                           draw_interval=intervals,
+                                           update_interval=intervals)
 
     init_network = create_graph(set_affiliation_choice=False,
                                 sim_config=sim_config)
@@ -78,7 +78,7 @@ def simulate_phase_point(radical_members, k, probability, val_D, val_Deff, run, 
     return [time_moment, phase, stable_evolution]
 
 # ---------------------------------------- MAIN FUNCTION ------------------------------------------------------------- #
-def main(radical_members, probability, val_D, val_Deff, run, time, num_processes):
+def main(radical_members, probability, val_D, val_Deff, run, time, intervals, num_processes):
     # Collect data and path/name
     str_nrad = f"{radical_members}"
     directory_name = create_name(members=1000, probability=probability,
@@ -89,7 +89,7 @@ def main(radical_members, probability, val_D, val_Deff, run, time, num_processes
     # Set the range of connectivity
     k_arr = np.arange(2, 302, 2)
     # k_arr = np.arange(30, 34, 2)
-    params = [(radical_members, k, probability, val_D, val_Deff, run, time) for k in k_arr]
+    params = [(radical_members, k, probability, val_D, val_Deff, run, time, intervals) for k in k_arr]
 
     with Pool(processes=num_processes) as pool:  # Utilize as many cores as are beneficial
         results_list = pool.starmap(simulate_phase_point, params)
@@ -112,7 +112,8 @@ if __name__ == "__main__":
     parser.add_argument("--val_Deff", type=float, required=True)
     parser.add_argument("--run", type=int, required=True)
     parser.add_argument("--time", type=int, required=True)
+    parser.add_argument("--intervals", type=int, required=True)
     parser.add_argument("--num_processes", type=int, default=20, help="Number of processes to use in the Pool")
 
     args = parser.parse_args()
-    main(args.radical_members, args.probability, args.val_D, args.val_Deff, args.run, args.time, args.num_processes)
+    main(args.radical_members, args.probability, args.val_D, args.val_Deff, args.run, args.time, args.intervals, args.num_processes)
