@@ -36,7 +36,7 @@ def simulate_phase_point(radical_members, k, probability, val_D, val_Deff, run, 
 
     # Manage time settings
     time_end = time
-    dt = 0.001
+    dt = 0.005
     time_moment = 0.0  # set time of reaching stable phase
 
     # --- INITIALIZE MODEL
