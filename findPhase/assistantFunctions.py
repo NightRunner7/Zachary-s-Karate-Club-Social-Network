@@ -88,7 +88,10 @@ def load_phase_scan_data(file_name, localization="./OutputPhase", with_entropy=F
         print(f"Error reading from file: {e}")
         return [], [], [], []
 
-    return k_values, time_values, phase_values, stable_evo_values, entropy_values
+    if with_entropy:
+        return k_values, time_values, phase_values, stable_evo_values, entropy_values
+    else:
+        return k_values, time_values, phase_values, stable_evo_values
 
 def compile_phase_data(localization="./OutputPhase", half_max_nrad=250, with_entropy=False):
     """
@@ -112,7 +115,7 @@ def compile_phase_data(localization="./OutputPhase", half_max_nrad=250, with_ent
     for file in files:
         nrad = int(file[len('phasePoints_'):-len('.txt')])
         if with_entropy:
-            k_arr, time_arr, phase_arr, stable_evolution_arr, entropy_arr = load_phase_scan_data(file, localization)
+            k_arr, time_arr, phase_arr, stable_evolution_arr, entropy_arr = load_phase_scan_data(file, localization, with_entropy=True)
         else:
             k_arr, time_arr, phase_arr, stable_evolution_arr = load_phase_scan_data(file, localization)
 

@@ -99,8 +99,7 @@ def main(radical_members, probability, val_D, val_Deff, run, time, intervals, nu
     time_moment_arr = np.array([result[0] for result in results_list])
     phase_arr = np.array([result[1] for result in results_list])
     stable_evolution_arr = np.array([result[2] for result in results_list])
-    entropy_arr = np.array([result[2] for result in results_list])
-
+    entropy_arr = np.array([result[3] for result in results_list])
 
     # Save our data
     save_phase_scan_over_connectivity(k_arr, phase_arr, time_moment_arr, stable_evolution_arr, entropy_arr,
