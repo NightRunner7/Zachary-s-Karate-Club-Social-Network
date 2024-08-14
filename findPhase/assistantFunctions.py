@@ -2,7 +2,7 @@ import os
 import numpy as np
 
 # ----------------------------------- DEAL WITH DATA ----------------------------------------------------------------- #
-def save_phase_scan_over_connectivity(k_arr, phase_arr, time_arr, stable_evolution_arr,
+def save_phase_scan_over_connectivity(k_arr, phase_arr, time_arr, stable_evolution_arr, entropy_arr,
                                       str_nrad, directory_name, directory_localization="./OutputPhase"):
     """
     Saves two lists into a text file with a custom format and name, using tab delimiters for readability and
@@ -42,11 +42,12 @@ def save_phase_scan_over_connectivity(k_arr, phase_arr, time_arr, stable_evoluti
             time_val = time_arr[i] if i < len(time_arr) else ""
             phase_val = phase_arr[i] if i < len(phase_arr) else ""
             stable_evolution = stable_evolution_arr[i] if i < len(stable_evolution_arr) else ""
-            file.write(f"{k_val}\t{time_val}\t{phase_val}\t{stable_evolution}\n")
+            entropy_val = entropy_arr[i] if i < len(entropy_arr) else ""
+            file.write(f"{k_val}\t{time_val}\t{phase_val}\t{stable_evolution}\t{entropy_val}\n")
 
     print(f"Data successfully saved in {filename}")
 
-def load_phase_scan_data(file_name, localization="./OutputPhase"):
+def load_phase_scan_data(file_name, localization="./OutputPhase", with_entropy=False):
     """
     Reads a formatted text file from a specified directory and returns three lists containing the values of each column:
     k-values, time-values, and phase-values.
@@ -62,6 +63,7 @@ def load_phase_scan_data(file_name, localization="./OutputPhase"):
     time_values = []
     phase_values = []
     stable_evo_values = []
+    entropy_values = []
 
     # Construct the full file path
     file_path = os.path.join(localization, file_name)
@@ -77,7 +79,8 @@ def load_phase_scan_data(file_name, localization="./OutputPhase"):
                     phase_values.append(float(parts[2]) if parts[2] else None)
                     # Convert 'True'/'False' to 1/0
                     stable_evo_values.append(1 if parts[3] == 'True' else 0)
-                    # stable_evo_values.append(int(parts[3]) if parts[3] else None)
+                    if with_entropy:
+                        entropy_values.append(float(parts[4]) if parts[4] else None)
     except FileNotFoundError:
         print(f"File not found: {file_path}")
         return [], [], [], []
@@ -85,9 +88,9 @@ def load_phase_scan_data(file_name, localization="./OutputPhase"):
         print(f"Error reading from file: {e}")
         return [], [], [], []
 
-    return k_values, time_values, phase_values, stable_evo_values
+    return k_values, time_values, phase_values, stable_evo_values, entropy_values
 
-def compile_phase_data(localization="./OutputPhase", half_max_nrad=250):
+def compile_phase_data(localization="./OutputPhase", half_max_nrad=250, with_entropy=False):
     """
     Compiles data from multiple files into a 2D matrix where rows correspond to Nrad (extracted from filenames)
     and columns correspond to k-values found in each file.
@@ -108,7 +111,10 @@ def compile_phase_data(localization="./OutputPhase", half_max_nrad=250):
 
     for file in files:
         nrad = int(file[len('phasePoints_'):-len('.txt')])
-        k_arr, time_arr, phase_arr, stable_evolution_arr = load_phase_scan_data(file, localization)
+        if with_entropy:
+            k_arr, time_arr, phase_arr, stable_evolution_arr, entropy_arr = load_phase_scan_data(file, localization)
+        else:
+            k_arr, time_arr, phase_arr, stable_evolution_arr = load_phase_scan_data(file, localization)
 
         # all values of k and Nrad are even, so we have to divide those values by 2
         nrad = int(nrad / 2)
@@ -116,20 +122,36 @@ def compile_phase_data(localization="./OutputPhase", half_max_nrad=250):
 
         if k_arr:
             max_k = max(max_k, max(k_arr))  # Update max_k if necessary
-            phase_data[nrad] = (k_arr, phase_arr, time_arr, stable_evolution_arr)
+            if with_entropy:
+                phase_data[nrad] = (k_arr, phase_arr, time_arr, stable_evolution_arr, entropy_arr)
+            else:
+                phase_data[nrad] = (k_arr, phase_arr, time_arr, stable_evolution_arr)
 
     # Initialize the matrix
     phase_matrix = np.full((max_nrad, max_k), np.nan)  # Adjust indices for 0-based
     time_matrix = np.full((max_nrad, max_k), np.nan)  # Adjust indices for 0-based
     stable_evolution_matrix = np.full((max_nrad, max_k), np.nan)  # Adjust indices for 0-based
 
+    if with_entropy:
+        entropy_matrix = np.full((max_nrad, max_k), np.nan)  # Adjust indices for 0-based
 
-    # Fill the matrix
-    for nrad, (k_arr, phase_arr, time_arr, stable_evolution_arr) in phase_data.items():
-        for k, phase, time, stable in zip(k_arr, phase_arr, time_arr, stable_evolution_arr):
-            if k is not None and phase is not None:
-                phase_matrix[nrad - 1, int(k) - 1] = phase
-                time_matrix[nrad - 1, int(k) - 1] = time
-                stable_evolution_matrix[nrad - 1, int(k) - 1] = stable
+        # Fill the matrix
+        for nrad, (k_arr, phase_arr, time_arr, stable_evolution_arr, entropy_arr) in phase_data.items():
+            for k, phase, time, stable, entropy in zip(k_arr, phase_arr, time_arr, stable_evolution_arr, entropy_arr):
+                if k is not None and phase is not None:
+                    phase_matrix[nrad - 1, int(k) - 1] = phase
+                    time_matrix[nrad - 1, int(k) - 1] = time
+                    stable_evolution_matrix[nrad - 1, int(k) - 1] = stable
+                    entropy_matrix[nrad - 1, int(k) - 1] = entropy
 
-    return phase_matrix, time_matrix, stable_evolution_matrix
+        return phase_matrix, time_matrix, stable_evolution_matrix, entropy_matrix
+    else:
+        # Fill the matrix
+        for nrad, (k_arr, phase_arr, time_arr, stable_evolution_arr) in phase_data.items():
+            for k, phase, time, stable in zip(k_arr, phase_arr, time_arr, stable_evolution_arr):
+                if k is not None and phase is not None:
+                    phase_matrix[nrad - 1, int(k) - 1] = phase
+                    time_matrix[nrad - 1, int(k) - 1] = time
+                    stable_evolution_matrix[nrad - 1, int(k) - 1] = stable
+
+        return phase_matrix, time_matrix, stable_evolution_matrix

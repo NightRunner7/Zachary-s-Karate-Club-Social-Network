@@ -20,6 +20,7 @@
 
 import networkx as nx
 import numpy as np
+from scipy.stats import entropy
 
 # ---------------------------------- FUNCTIONS: SETS PARAMETERS ------------------------------------------------------ #
 def set_network_evolution_parameters(sim_config, effective_diffusion, diffusion=5.0):
@@ -230,6 +231,9 @@ class TwitterRadicalizationModel:
         # set flag for stable graf evolution
         self.stable_evolution = True
 
+        # --- Defaults settings of calculate phases, which distinguishable behaviour of whole network: second approach
+        self.neutral_nodes_indices = self.get_neutral_nodes()
+
     # ----------------------------------------- BASE METHODS --------------------------------------------------------- #
     def count_affirmations(self, out_of_class=False, network=None):
         """
@@ -315,6 +319,19 @@ class TwitterRadicalizationModel:
         elif "lowerTime_of_same_phase" in dictionary:
             self.lowerTime_of_same_phase = dictionary["lowerTime_of_same_phase"]
 
+    def get_neutral_nodes(self):
+        """
+        Retrieve the states of neutral nodes in a network.
+
+        :return: A list of states corresponding to neutral nodes.
+        """
+        neutral_nodes = []
+        for node in self.network.nodes():
+            if self.network.nodes[node].get('affirmation') is None:
+                neutral_nodes.append(node)
+
+        return neutral_nodes
+
     # ----------------------------------------- INTERACTIONS --------------------------------------------------------- #
     def f(self):
         """
@@ -382,6 +399,34 @@ class TwitterRadicalizationModel:
         division_strength = sum_weights - r_weights - l_weights
 
         return division_strength
+
+    # ----------------------------------------- SHANON ENTROPY ------------------------------------------------------- #
+    def find_the_entropy(self):
+        """
+        Determine the entropy of the system based on the distribution of state values and using the definition
+        of shannon entropy. These entropy can be also useful to determine the evolution of the network
+        (probably can replace the phases' definition).
+
+        Returns:
+            entropy (float): the shanon entropy, which represents the stage of evolution of the system.
+
+        """
+        neutral_states = [self.network.nodes[node]['state'] for node in self.neutral_nodes_indices]
+
+        # Define bin edges from 0 to 1 with specified bin_width
+        bin_edges = np.arange(0, 1 + self.epsilon, self.epsilon)
+
+        # Histogram the state values into these bins
+        state_counts, _ = np.histogram(neutral_states, bins=bin_edges)
+
+        # Compute probabilities by normalizing the counts
+        probabilities = state_counts / np.sum(state_counts)
+
+        # Filter out zero probabilities for valid entropy calculation
+        probabilities = probabilities[probabilities > 0]
+
+        # Calculate Shannon entropy
+        return entropy(probabilities, base=2)
 
     # ----------------------------------------- DEAL WITH PHASES AND STOP EVOLUTION ---------------------------------- #
     def find_the_phase(self, epsilon=0.05, neutral_width=0.4, division_threshold=0.2, wall_threshold=0.2,
@@ -563,6 +608,13 @@ class TwitterRadicalizationModel:
         """Return the current state vector"""
         return self.s_vec
 
+    def return_neutral_state_vector(self):
+        """Return the current neutral state vector"""
+        arr = [self.network.nodes[node]['state'] for node in self.neutral_nodes_indices]
+        arr.append(1)
+        arr.append(0)
+        return arr
+
     def return_network_evolution_state(self):
         """Return dictionary containing the evolution of the states of the nodes."""
         return self.networkState
@@ -574,3 +626,8 @@ class TwitterRadicalizationModel:
     def return_stable_evolution(self):
         """Return flags, which differentiate stable and non-stable evolution of the network"""
         return self.stable_evolution
+
+    def return_entropy(self):
+        """Return the present value of the shanon entropy"""
+        val_entropy = self.find_the_entropy()
+        return val_entropy

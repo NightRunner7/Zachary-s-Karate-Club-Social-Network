@@ -1,6 +1,9 @@
 import os
 import sys
 import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import kurtosis, skew, entropy
+
 # --- IMPORT FROM FILES
 # Add the parent directory to the Python module search path
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -15,13 +18,32 @@ from makePlots.plot_phase_value_over_time import plot_phase_value_over_time
 # --- SETS THE INITIAL GRAPH: USER
 from initialGraph.watts_NS_UW import create_graph, create_name
 
+def calculate_entropy_from_continuous_states(states, bin_width=0.05, print_flag=False):
+    # Define bin edges from 0 to 1 with specified bin_width
+    bin_edges = np.arange(0, 1 + bin_width, bin_width)
+
+    # Histogram the state values into these bins
+    state_counts, _ = np.histogram(states, bins=bin_edges)
+
+    # Compute probabilities by normalizing the counts
+    probabilities = state_counts / np.sum(state_counts)
+
+    # Filter out zero probabilities for valid entropy calculation
+    probabilities = probabilities[probabilities > 0]
+
+    if print_flag:
+        print("probabilities:", probabilities)
+
+    # Calculate Shannon entropy
+    return entropy(probabilities, base=2)
+
 # --- FIXED PARAMETERS: USER
 sim_config = {
     # Base parameters
     'members': 1000,
-    'radical_members': 340,
-    'k': 60,
-    'p': 0.0,
+    'radical_members': 120,
+    'k': 80,
+    'p': 0.02,
     # Weights distribution, set zero if they not normal distributed
     'mean': 0.5,
     'std_dev': 0.05,
@@ -68,6 +90,9 @@ network_dynamics = dict()
 network_dynamics['time_arr'] = np.array([])
 network_dynamics['connection_str'] = np.array([])
 network_dynamics['phase_arr'] = np.array([])
+network_dynamics['skewness'] = np.array([])
+network_dynamics['kurtosis'] = np.array([])
+network_dynamics['entropy'] = np.array([])
 
 # Make directory
 output_evolutionGraph = f"{output_main}/evolutionGraph"
@@ -113,6 +138,24 @@ for step in range(sim_config['timeSteps']):
                                 mean_val=sim_config['mean'], std_dev_val=sim_config['std_dev'],
                                 output_path=output_evolutionHistoState, file_name=name)
 
+    # --- strength of connection, calculate phase and update data
+    # strength of connection
+    connection_strength = TwitterModel.connection_strength_of_division()
+    network_dynamics['connection_str'] = np.append(network_dynamics['connection_str'], connection_strength)
+    network_dynamics['time_arr'] = np.append(network_dynamics['time_arr'], time)
+    # calculate phase
+    phase_val = TwitterModel.find_the_phase()
+    network_dynamics['phase_arr'] = np.append(network_dynamics['phase_arr'], phase_val)
+    # find skewness and kurtosis
+    s_neutral_vec = TwitterModel.return_neutral_state_vector()
+    kur = kurtosis(s_neutral_vec)
+    network_dynamics['kurtosis'] = np.append(network_dynamics['kurtosis'], kur)
+    skw = skew(s_neutral_vec)
+    network_dynamics['skewness'] = np.append(network_dynamics['skewness'], skw)
+
+    entropy_val = calculate_entropy_from_continuous_states(s_neutral_vec, bin_width=0.05)
+    network_dynamics['entropy'] = np.append(network_dynamics['entropy'], entropy_val)
+
     if step % sim_config['timeStepsToCheck'] == 0:
         # Periodically check the network's phase status, stop simulation if: achieve stable phase, non-stable network.
         # phase_val = TwitterModel.return_phase_value()
@@ -122,15 +165,6 @@ for step in range(sim_config['timeSteps']):
         stop_simulation_flag = TwitterModel.stop_simulation_criteria(time_moment)
         if stop_simulation_flag:
             break
-
-    # --- strength of connection, calculate phase and update data
-    # strength of connection
-    connection_strength = TwitterModel.connection_strength_of_division()
-    network_dynamics['connection_str'] = np.append(network_dynamics['connection_str'], connection_strength)
-    network_dynamics['time_arr'] = np.append(network_dynamics['time_arr'], time)
-    # calculate phase
-    phase_val = TwitterModel.find_the_phase()
-    network_dynamics['phase_arr'] = np.append(network_dynamics['phase_arr'], phase_val)
 
     # --- save data and do evolution step
     # do evolution step
@@ -144,3 +178,41 @@ plot_connection_strength(network_dynamics, output_main, log_scale=False)
 
 # --- PHASE EVOLUTION PLOT
 plot_phase_value_over_time(network_dynamics, output_main)
+
+# Plotting
+plt.figure(figsize=(10, 5))
+
+# Plot for skewness
+plt.subplot(1, 2, 1)  # 1 row, 2 columns, 1st subplot
+plt.plot(network_dynamics['time_arr'], network_dynamics['skewness'], marker='o', linestyle='-')
+plt.title('Skewness Over Time')
+plt.xlabel('Time')
+plt.ylabel('Skewness')
+
+# Plot for kurtosis
+plt.subplot(1, 2, 2)  # 1 row, 2 columns, 2nd subplot
+plt.plot(network_dynamics['time_arr'], network_dynamics['kurtosis'], marker='o', linestyle='-')
+plt.title('Kurtosis Over Time')
+plt.xlabel('Time')
+plt.ylabel('Kurtosis')
+
+plt.savefig(f"{output_main}/skewness_and_kurtosis_over_time.png")
+plt.close()
+
+# print last values of two parameters
+print("last skewness:", network_dynamics['skewness'][-1])
+print("last kurtosis:", network_dynamics['kurtosis'][-1])
+print("last entropy:", network_dynamics['entropy'][-1])
+
+# s_neutral_vec = TwitterModel.return_neutral_state_vector()
+# entropy_val = calculate_entropy_from_continuous_states(s_neutral_vec, bin_width=0.05, print_flag=True)
+# print("last entropy:", entropy_val)
+
+plt.subplot(1, 1, 1)  # 1 row, 2 columns, 1st subplot
+plt.plot(network_dynamics['time_arr'], network_dynamics['entropy'], marker='o', linestyle='-')
+plt.title('Entropy Over Time')
+plt.xlabel('Time')
+plt.ylabel('Entropy')
+
+plt.savefig(f"{output_main}/entropy_over_time.png")
+plt.close()
