@@ -5,9 +5,10 @@ import matplotlib.pyplot as plt
 
 # --- Flags
 savePlot = True
+time_max = 1000
 
 # --- Read the data from directory
-localization_main = "./ResultsPhase/Watts-NS-UW-N1000-p0.02-mean0.5-std0.05-D5.0-Deff5.0-run4"
+localization_main = "./ResultsPhase/Watts-NS-UW-N1000-p0.02-mean0.5-std0.05-D5.0-Deff50.0-run4"
 localization_files = f"{localization_main}/phaseSpace"
 
 # Regular expressions to find specific patterns
@@ -139,7 +140,7 @@ cmap = plt.get_cmap('viridis')
 fig = plt.figure(figsize=(12, 10))
 ax = fig.add_subplot(111)
 cax = ax.imshow(time_wall_matrix, interpolation='nearest', cmap=cmap, aspect='auto', origin='lower')
-cax.set_clim(vmin=0, vmax=200.0)
+cax.set_clim(vmin=0, vmax=time_max)
 cbar = fig.colorbar(cax, orientation='vertical')
 
 # Adding custom text annotations within the colorbar
@@ -172,7 +173,7 @@ cmap = plt.get_cmap('viridis')
 fig = plt.figure(figsize=(12, 10))
 ax = fig.add_subplot(111)
 cax = ax.imshow(time_division_matrix, interpolation='nearest', cmap=cmap, aspect='auto', origin='lower')
-cax.set_clim(vmin=0, vmax=200.0)
+cax.set_clim(vmin=0, vmax=time_max)
 cbar = fig.colorbar(cax, orientation='vertical')
 
 # Adding custom text annotations within the colorbar
@@ -205,7 +206,7 @@ cmap = plt.get_cmap('viridis')
 fig = plt.figure(figsize=(12, 10))
 ax = fig.add_subplot(111)
 cax = ax.imshow(time_fullDivision_matrix, interpolation='nearest', cmap=cmap, aspect='auto', origin='lower')
-cax.set_clim(vmin=0, vmax=200.0)
+cax.set_clim(vmin=0, vmax=time_max)
 cbar = fig.colorbar(cax, orientation='vertical')
 
 # Adding custom text annotations within the colorbar
@@ -238,7 +239,7 @@ cmap = plt.get_cmap('viridis')
 fig = plt.figure(figsize=(12, 10))
 ax = fig.add_subplot(111)
 cax = ax.imshow(time_fullDivision_matrix, interpolation='nearest', cmap=cmap, aspect='auto', origin='lower')
-cax.set_clim(vmin=0, vmax=200.0)
+cax.set_clim(vmin=0, vmax=time_max)
 cbar = fig.colorbar(cax, orientation='vertical')
 
 # Adding custom text annotations within the colorbar

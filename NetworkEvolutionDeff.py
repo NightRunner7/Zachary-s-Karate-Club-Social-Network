@@ -331,7 +331,7 @@ class NetworkEvolutionDeff:
             entropy (float): the shanon entropy, which represents the stage of evolution of the system.
 
         """
-        neutral_states = [self.network.nodes[node]['state'] for node in self.neutral_nodes_indices]
+        neutral_states = [self.s_vec[node] for node in self.neutral_nodes_indices]
 
         # Define bin edges from 0 to 1 with specified bin_width
         bin_edges = np.arange(0, 1 + self.epsilon, self.epsilon)
