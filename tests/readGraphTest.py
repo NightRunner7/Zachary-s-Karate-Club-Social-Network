@@ -2,7 +2,7 @@ import pickle
 import auxiliaryFunctions as auxFun
 
 # Replace 'path_to_your_file.pkl' with the actual path to your PKL file
-file_path = '../analysisOpinionEvolution/Results/ResultsToSegregation/Watts-NS-UW-N1000-Nrad160-k40-p0.01-mean0.5-std0.05-D5.0-beta10.0-dt0.001-Run7/saveGraph/network_at__99.0.pkl'
+file_path = '../analysisOpinionEvolution/Results/Watts-p0.02-Deff0.5/Parameters-lead-to-All-Phases/Watts-NS-UW-N1000-Nrad210-k170-p0.02-mean0.5-std0.05-D5.0-Deff0.5-dt0.001-run2/saveGraph/network_at_199.0.pkl'
 
 # Open the file in binary mode and load the data
 with open(file_path, 'rb') as file:

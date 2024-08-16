@@ -5,10 +5,10 @@ import matplotlib.pyplot as plt
 
 # --- Flags
 savePlot = True
-time_max = 1000
+time_max = 2000
 
 # --- Read the data from directory
-localization_main = "./ResultsPhase/Watts-NS-UW-N1000-p0.02-mean0.5-std0.05-D5.0-Deff50.0-run4"
+localization_main = "./ResultsPhase/Watts-NS-UW-N1000-p0.02-mean0.5-std0.05-D5.0-Deff1.0-run4-time2000"
 localization_files = f"{localization_main}/phaseSpace"
 
 # Regular expressions to find specific patterns

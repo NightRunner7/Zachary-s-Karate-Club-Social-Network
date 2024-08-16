@@ -143,8 +143,8 @@ class NetworkEvolutionDeff:
         self.counter_of_domination_phase = 0  # we reach `dominant` phase
         self.counter_of_fullDivision_phase = 0  # we reach `full division` phase
         self.counter_of_same_phase = 0  # how many times we have reached exactly same phase
-        self.upperLimit_of_same_phase = 10  # how many times we can reach exactly same phase before stop simulation
-        self.lowerTime_of_same_phase = 80  # the first steps can lead to same phase, we have take that into account
+        self.upperLimit_of_same_phase = 20  # how many times we can reach exactly same phase before stop simulation
+        self.lowerTime_of_same_phase = 400  # the first steps can lead to same phase, we have take that into account
         # set as: 'nonrecognition' phase
         self.previous_phase = np.nan
         self.present_phase = np.nan
