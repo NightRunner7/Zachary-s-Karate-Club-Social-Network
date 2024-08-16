@@ -5,10 +5,11 @@ import matplotlib.pyplot as plt
 
 # --- Flags
 savePlot = True
+entropyFlag = True
 time_max = 2000
 
 # --- Read the data from directory
-localization_main = "./ResultsPhase/Watts-NS-UW-N1000-p0.02-mean0.5-std0.05-D5.0-Deff1.0-run4-time2000"
+localization_main = "./ResultsPhase/Watts-NS-UW-N1000-p0.02-mean0.5-std0.05-D5.0-Deff0.5-run11"
 localization_files = f"{localization_main}/phaseSpace"
 
 # Regular expressions to find specific patterns
@@ -22,8 +23,14 @@ val_Deff = float(re.search(pattern_Deff, localization_main).group(1))
 val_D = float(re.search(pattern_D, localization_main).group(1))
 
 # Extract data from .txt file
-phase_matrix, time_matrix, stable_evolution_matrix = compile_phase_data(localization=localization_files,
-                                                                        half_max_nrad=250)
+if entropyFlag:
+    phase_matrix, time_matrix, stable_evolution_matrix, entropy_matrix = \
+        compile_phase_data(localization=localization_files,
+                           half_max_nrad=250,
+                           with_entropy=entropyFlag)
+else:
+    phase_matrix, time_matrix, stable_evolution_matrix = compile_phase_data(localization=localization_files,
+                                                                            half_max_nrad=250)
 
 Nrow = len(phase_matrix)
 Ncol = len(phase_matrix[0, :])
@@ -263,3 +270,36 @@ if savePlot:
     plt.close()
 else:
     plt.show()
+
+# --------------------------------------- IMSHOW GRID: ENTROPY ---------------------------------------- #
+if entropyFlag:
+    cmap = plt.get_cmap('viridis')
+
+    # Plotting using imshow
+    fig = plt.figure(figsize=(12, 10))
+    ax = fig.add_subplot(111)
+    cax = ax.imshow(entropy_matrix, interpolation='nearest', cmap=cmap, aspect='auto', origin='lower')
+    cax.set_clim(vmin=0, vmax=4.5)
+    cbar = fig.colorbar(cax, orientation='vertical')
+
+    # Adding custom text annotations within the colorbar
+    cbar.ax.text(3, 0.4, 'Shanon Entropy', transform=cbar.ax.transAxes,  rotation=90,
+                 va='bottom', ha='right', fontsize=15, color='black')
+
+    # label
+    plt.xlabel('Connectivity (k / 2)')
+    plt.ylabel('Number of Radicals (Nrad / 2)')
+    plt.title(f'Shanon entropy for: p={val_p}, Deff={val_Deff}, D={val_D}', fontsize=18)
+
+    # Adjust ticks on the x and y-axis to display every 10 units
+    ax.set_xticks([i for i, k in enumerate(full_k_range) if k % 10 == 0])
+    ax.set_xticklabels([k for k in full_k_range if k % 10 == 0])
+
+    ax.set_yticks([i for i, n in enumerate(full_nrad_range) if n % 10 == 0])
+    ax.set_yticklabels([n for n in full_nrad_range if n % 10 == 0])
+
+    if savePlot:
+        plt.savefig(f"{localization_main}/shanon_entropy.png")
+        plt.close()
+    else:
+        plt.show()
