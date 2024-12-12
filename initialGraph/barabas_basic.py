@@ -2,6 +2,10 @@ import numpy as np
 import networkx as nx
 
 # ------------------------------------------- HELPFULLY FUNCTION ----------------------------------------------------- #
+def return_name():
+    """Return the basic name, which indicates the initial graph which you have been chosen"""
+    return f"Albert-ConS-ConW"
+
 def create_name(members, radical_members, popular_members):
     """
     Constructs a unique name string based on the number of members, radical members, and popular members.
